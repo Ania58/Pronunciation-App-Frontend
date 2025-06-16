@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { fetchSampleWords } from '../services/wordService';
 import type { Word } from '../types/word';
 
@@ -28,8 +29,10 @@ export default function WordList() {
       <h2>Sample Words</h2>
       <ul>
         {words.map((word) => (
-          <li key={word.id}>{word.word}</li>
-        ))}
+          <li key={word.id}>
+            <Link to={`/words/${word.id}`}>{word.word}</Link>
+          </li>
+    ))}
       </ul>
     </div>
   );

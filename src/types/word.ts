@@ -6,4 +6,5 @@ export interface Word {
   difficulty?: string;
   category?: string;
   language: string;
+  audioUrl?: string;
 }
