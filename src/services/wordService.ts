@@ -9,7 +9,7 @@ type PaginatedResponse = {
   results: Word[];
 };
 
-export const fetchSampleWords = async (): Promise<Word[]> => {
+export const fetchFilteredWords = async (): Promise<Word[]> => {
   const res = await api.get<PaginatedResponse>('/words');
    console.log('📦 API response:', res.data);
   return res.data.results; 

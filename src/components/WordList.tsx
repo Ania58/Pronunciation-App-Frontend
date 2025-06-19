@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { fetchSampleWords } from '../services/wordService';
+import { api } from '../services/api';
 import type { Word } from '../types/word';
 
 export default function WordList() {
@@ -9,9 +9,9 @@ export default function WordList() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetchSampleWords()
-      .then((data) => {
-        setWords(data);
+    api.get('/words/all')
+      .then((res) => {
+        setWords(res.data);
         setLoading(false);
       })
       .catch((err) => {
@@ -26,9 +26,9 @@ export default function WordList() {
 
   return (
     <div>
-      <h2>Sample Words</h2>
+      <h2>All Words</h2>
       <ul>
-        {words.map((word) => (
+        {words.slice(0, 200).map((word) => (
           <li key={word.id}>
             <Link to={`/words/${word.id}`}>{word.word}</Link>
           </li>
