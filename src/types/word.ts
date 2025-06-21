@@ -7,4 +7,5 @@ export interface Word {
   category?: string;
   language: string;
   audioUrl?: string;
+  status?: 'mastered' | 'practice'; 
 }

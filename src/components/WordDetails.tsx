@@ -11,6 +11,21 @@ export default function WordDetails() {
   const [error, setError] = useState('');
   const [audioExists, setAudioExists] = useState(false);
 
+  const updateStatus = async (newStatus: 'mastered' | 'practice') => {
+  try {
+    if (!word || !word.id) return;
+    await api.post(`/words/${word.id}/status`, { status: newStatus });
+    setWord((prevWord) => {
+      if (!prevWord) return prevWord;
+      return { ...prevWord, status: newStatus };
+    });
+
+  } catch (err) {
+    console.error('Failed to update word status:', err);
+  }
+};
+
+
   useEffect(() => {
     console.log("Fetching word with id:", id);
     api.get(`/words/id/${id}`)
@@ -46,6 +61,23 @@ export default function WordDetails() {
       {audioExists && (
         <audio controls src={`https://api.dictionaryapi.dev/media/pronunciations/en/${word.word}-us.mp3`} />
       )}
+      {word.status && (
+        <p className="mt-2 text-sm">Current status: <strong>{word.status}</strong></p>
+      )}
+      <div className="mt-4 flex gap-2">
+        <button
+          onClick={() => updateStatus('mastered')}
+          className="bg-green-200 px-2 py-1 rounded hover:bg-green-300"
+        >
+          ✅ Mastered
+        </button>
+        <button
+          onClick={() => updateStatus('practice')}
+          className="bg-yellow-200 px-2 py-1 rounded hover:bg-yellow-300"
+        >
+          🕒 Needs Practice
+        </button>
+      </div>
     </div>
   );
 }

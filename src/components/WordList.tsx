@@ -11,6 +11,7 @@ export default function WordList() {
   const [totalPages, setTotalPages] = useState(1);
   const [search, setSearch] = useState('');
   const searchTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  
 
   useEffect(() => {
     setLoading(true);
@@ -67,8 +68,10 @@ export default function WordList() {
         <>
           <ul>
             {words.map((word) => (
-              <li key={word.id}>
-                <Link to={`/words/${word.id}`}>{word.word}</Link>
+              <li key={word.id} className="mb-2">
+                <Link to={`/words/${word.id}`} className="text-blue-600 hover:underline">
+                    {word.word}
+                </Link>
               </li>
             ))}
           </ul>
