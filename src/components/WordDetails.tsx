@@ -47,35 +47,40 @@ export default function WordDetails() {
       });
   }, [id]);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>{error}</p>;
+  if (loading) return <p className="text-center text-gray-500">Loading...</p>;
+  if (error) return <p className="text-center text-red-500">{error}</p>;
   if (!word) return null;
 
   return (
-    <div>
-      <h2>{word.word}</h2>
-      <p><strong>IPA:</strong> {word.ipa}</p>
-      <p><strong>Language:</strong> {word.language}</p>
-      {word.category && <p><strong>Category:</strong> {word.category}</p>}
-      {word.difficulty && <p><strong>Difficulty:</strong> {word.difficulty}</p>}
+    <div className="max-w-xl mx-auto p-6 bg-white shadow-md rounded-md">
+      <h2 className="text-2xl font-bold mb-4">{word.word}</h2>
+      <p className="mb-2"><strong>IPA:</strong> {word.ipa}</p>
+      <p className="mb-2"><strong>Language:</strong> {word.language}</p>
+      {word.category && <p className="mb-2"><strong>Category:</strong> {word.category}</p>}
+      {word.difficulty && <p className="mb-2"><strong>Difficulty:</strong> {word.difficulty}</p>}
+
       {audioExists && (
-        <audio controls src={`https://api.dictionaryapi.dev/media/pronunciations/en/${word.word}-us.mp3`} />
+        <audio className="my-4 w-full" controls src={`https://api.dictionaryapi.dev/media/pronunciations/en/${word.word}-us.mp3`} />
       )}
+
       {word.status && (
-        <p className="mt-2 text-sm">Current status: <strong>{word.status}</strong></p>
+        <p className="text-sm text-gray-700 mb-2">
+          Current status: <strong>{word.status}</strong>
+        </p>
       )}
-      <div className="mt-4 flex gap-2">
+
+      <div className="flex gap-4 mt-4">
         <button
           onClick={() => updateStatus('mastered')}
-          className="bg-green-200 px-2 py-1 rounded hover:bg-green-300"
+          className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 cursor-pointer"
         >
           ✅ Mastered
         </button>
         <button
           onClick={() => updateStatus('practice')}
-          className="bg-yellow-200 px-2 py-1 rounded hover:bg-yellow-300"
+          className="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500 cursor-pointer"
         >
-          🕒 Needs Practice
+          🕒 Practice
         </button>
       </div>
     </div>

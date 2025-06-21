@@ -49,15 +49,15 @@ export default function WordList() {
   };
 
   return (
-    <div>
-      <h2>All Words</h2>
+    <div className="max-w-4xl mx-auto p-6">
+      <h2 className="text-2xl font-bold mb-4">All Words</h2>
 
       <input
         type="text"
         defaultValue={search}
         onChange={handleSearchChange}
         placeholder="Search words..."
-        className="border p-2 mb-4 w-full max-w-md"
+        className="border border-gray-300 p-2 rounded w-full max-w-md mb-4"
       />
 
       {loading ? (
@@ -66,21 +66,24 @@ export default function WordList() {
         <p className="text-red-600">{error}</p>
       ) : (
         <>
-          <ul>
-            {words.map((word) => (
-              <li key={word.id} className="mb-2">
-                <Link to={`/words/${word.id}`} className="text-blue-600 hover:underline">
-                    {word.word}
+          <ul className="space-y-2">
+            {words.map(word => (
+              <li key={word.id}>
+                <Link
+                  to={`/words/${word.id}`}
+                  className="text-blue-600 hover:underline"
+                >
+                  {word.word}
                 </Link>
               </li>
             ))}
           </ul>
 
-          <div className="flex items-center gap-4 mt-4">
+          <div className="flex items-center gap-4 mt-6">
             <button
-              onClick={() => setPage((p) => Math.max(1, p - 1))}
+              onClick={() => setPage(p => Math.max(1, p - 1))}
               disabled={page === 1}
-              className="px-4 py-2 border rounded"
+              className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 disabled:opacity-50 cursor-pointer"
             >
               Previous
             </button>
@@ -90,9 +93,9 @@ export default function WordList() {
             </span>
 
             <button
-              onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+              onClick={() => setPage(p => Math.min(totalPages, p + 1))}
               disabled={page === totalPages}
-              className="px-4 py-2 border rounded"
+              className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 disabled:opacity-50 cursor-pointer"
             >
               Next
             </button>
