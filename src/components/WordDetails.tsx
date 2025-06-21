@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { api } from '../services/api';
 import type { Word } from '../types/word';
@@ -6,6 +6,7 @@ import type { Word } from '../types/word';
 
 export default function WordDetails() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [word, setWord] = useState<Word | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -53,6 +54,14 @@ export default function WordDetails() {
 
   return (
     <div className="max-w-xl mx-auto p-6 bg-white shadow-md rounded-md">
+      <div className="flex justify-between items-center mb-4">
+        <button onClick={() => navigate(-1)} className="text-blue-600 hover:underline cursor-pointer">
+          ← Go Back
+        </button>
+        <Link to="/" className="text-blue-600 hover:underline">
+          🏠 Home
+        </Link>
+      </div>
       <h2 className="text-2xl font-bold mb-4">{word.word}</h2>
       <p className="mb-2"><strong>IPA:</strong> {word.ipa}</p>
       <p className="mb-2"><strong>Language:</strong> {word.language}</p>

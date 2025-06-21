@@ -20,6 +20,9 @@ export default function WordBrowser() {
 
    return (
     <div className="max-w-4xl mx-auto p-6">
+      <Link to="/" className="text-blue-600 hover:underline mb-4 block">
+          🏠 Home
+        </Link>
       <h2 className="text-2xl font-bold mb-4">Browse All Words</h2>
 
       <div className="flex flex-col sm:flex-row gap-4 mb-4">
