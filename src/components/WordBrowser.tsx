@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { fetchAllWords } from '../services/wordService';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { fetchAllWords, fetchFilteredWords } from '../services/wordService';
 import { Link } from 'react-router-dom';
 import type { Word } from '../types/word';
 
@@ -10,13 +11,38 @@ export default function WordBrowser() {
   const [query, setQuery] = useState('');
   const [sort, setSort] = useState('word');
   const [order, setOrder] = useState<'asc' | 'desc'>('asc');
+  const [category, setCategory] = useState('');
+  const [difficulty, setDifficulty] = useState('');
 
-  useEffect(() => {
-    fetchAllWords(page, 50, sort, order, query).then(data => {
-      setWords(data.results);
-      setTotalPages(data.totalPages);
-    });
-  }, [page, sort, order, query]);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+
+ useEffect(() => {
+
+  const queryParams = new URLSearchParams(location.search);
+
+  const categoryFromUrl = queryParams.get('category') || '';
+  const difficultyFromUrl = queryParams.get('difficulty') || '';
+
+  if (category !== categoryFromUrl) setCategory(categoryFromUrl);
+  if (difficulty !== difficultyFromUrl) setDifficulty(difficultyFromUrl);
+
+  const fetchData = async () => {
+  if (categoryFromUrl || difficultyFromUrl) {
+    const filteredWords = await fetchFilteredWords(categoryFromUrl, difficultyFromUrl); 
+    setWords(filteredWords);
+    setTotalPages(1); 
+  } else {
+    const fullData = await fetchAllWords(page, 50, sort, order, query);
+    setWords(fullData.results);
+    setTotalPages(fullData.totalPages);
+  }
+};
+fetchData();
+
+}, [page, sort, order, query, location.search]);
+
 
    return (
     <div className="max-w-4xl mx-auto p-6">
@@ -36,6 +62,54 @@ export default function WordBrowser() {
           }}
           className="border border-gray-300 p-2 rounded w-full sm:w-1/2"
         />
+        <select
+          value={category}
+          onChange={(e) => {
+          const value = e.target.value;
+          const params = new URLSearchParams(location.search);
+          if (value) {
+            params.set('category', value);
+          } else {
+            params.delete('category');
+          }
+          navigate(`/words-browser?${params.toString()}`);
+          setPage(1);
+        }}
+
+          className="border p-2 rounded"
+        >
+          <option value="">All Categories</option>
+          <option value="vowels">Vowels</option>
+          <option value="consonant clusters">Consonant Clusters</option>
+          <option value="voiced th">Voiced TH</option>
+          <option value="voiceless th">Voiceless TH</option>
+          <option value="diphthongs">Diphthongs</option>
+          <option value="schwa">Schwa</option>
+          <option value="stress">Stress</option>
+          <option value="other">Other</option>
+        </select>
+
+        <select
+          value={difficulty}
+          onChange={(e) => {
+          const value = e.target.value;
+          const params = new URLSearchParams(location.search);
+          if (value) {
+            params.set('difficulty', value);
+          } else {
+            params.delete('difficulty');
+          }
+          navigate(`/words-browser?${params.toString()}`);
+          setPage(1);
+        }}
+
+          className="border p-2 rounded"
+        >
+          <option value="">All Difficulties</option>
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
         <select
           onChange={e => setSort(e.target.value)}
           value={sort}
