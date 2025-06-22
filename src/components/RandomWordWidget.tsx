@@ -38,7 +38,7 @@ return (
       </Link>
       <button
         onClick={fetchRandom}
-        className="text-sm px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded border border-gray-300"
+        className="text-sm px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded border border-gray-300 cursor-pointer"
       >
         Show Another
       </button>

@@ -47,7 +47,7 @@ export default function WordSearchBar() {
         }}
         className="border p-2 rounded w-full max-w-xs"
       />
-      <button type="submit" className="px-4 py-2 bg-blue-600 text-white rounded">
+      <button type="submit" className="px-4 py-2 bg-blue-600 text-white rounded cursor-pointer">
         Search
       </button>
       {error && <p className="text-red-600 ml-2">{error}</p>}
