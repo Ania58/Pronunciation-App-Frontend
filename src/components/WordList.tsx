@@ -65,11 +65,15 @@ export default function WordList() {
     <div className="max-w-4xl mx-auto p-6">
       <Link to="/" className="text-blue-600 hover:underline mb-4 block">
           🏠 Home
-        </Link>
-      <h2 className="text-2xl font-bold mb-4">All Words</h2>
-      <Link to="/words-browser" className="text-blue-500 underline hover:text-blue-700 mb-4 block">
-        👉 Try the new Word Browser with advanced filters
       </Link>
+      <h2 className="text-2xl font-bold mb-4">All Words</h2>
+      <Link to="/words-browser"
+      className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 text-blue-700 rounded-md shadow-sm hover:bg-blue-200 transition-colors duration-200 mb-4"
+      >
+        <span role="img" aria-label="pointing hand">👉</span>
+        <span className="font-medium">Try the new Word Browser with advanced filters</span>
+      </Link>
+
       <input
         type="text"
         defaultValue={search}
