@@ -46,9 +46,14 @@ fetchData();
 
    return (
     <div className="max-w-4xl mx-auto p-6">
-      <Link to="/" className="text-blue-600 hover:underline mb-4 block">
+      <div className="flex justify-between items-center mb-4">
+        <button onClick={() => navigate(-1)} className="text-blue-600 hover:underline cursor-pointer">
+          ← Go Back
+        </button>
+        <Link to="/" className="text-blue-600 hover:underline">
           🏠 Home
         </Link>
+      </div>
       <h2 className="text-2xl font-bold mb-4">Browse All Words</h2>
 
       <div className="flex flex-col sm:flex-row gap-4 mb-4">
