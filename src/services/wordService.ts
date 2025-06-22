@@ -11,12 +11,14 @@ type PaginatedResponse = {
 
 export const fetchFilteredWords = async (
   category: string,
-  difficulty: string
+  difficulty: string,
+  query?: string
 ): Promise<Word[]> => {
   const res = await api.get<PaginatedResponse>('/words', {
     params: {
       category,
       difficulty,
+      query
     },
   });
   console.log('✅ Filtered words API response:', res.data);

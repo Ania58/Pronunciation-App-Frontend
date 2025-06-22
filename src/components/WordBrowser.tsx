@@ -30,7 +30,7 @@ export default function WordBrowser() {
 
   const fetchData = async () => {
   if (categoryFromUrl || difficultyFromUrl) {
-    const filteredWords = await fetchFilteredWords(categoryFromUrl, difficultyFromUrl); 
+    const filteredWords = await fetchFilteredWords(categoryFromUrl, difficultyFromUrl, query); 
     setWords(filteredWords);
     setTotalPages(1); 
   } else {
