@@ -21,24 +21,28 @@ export default function RandomWordWidget() {
 
   if (!word) return null;
 
-  return (
-    <div className="border p-4 rounded shadow mb-4 bg-white">
-      <h3 className="text-lg font-semibold mb-2">Random Word</h3>
-      <p><strong>{word.word}</strong> ({word.language})</p>
-      {word.ipa && <p><em>{word.ipa}</em></p>}
-      {word.category && <p>Category: {word.category}</p>}
+return (
+  <div className="border rounded-lg shadow-sm p-6 bg-white mb-6 flex justify-between items-center">
+    <div>
+      <h3 className="text-xl font-bold text-gray-800 mb-1">{word.word}</h3>
+      <p className="text-gray-600 italic">{word.ipa}</p>
+      <p className="text-sm text-gray-500">{word.language} • {word.category}</p>
+    </div>
+
+    <div className="flex flex-col items-end gap-2">
       <Link
         to={`/words/${word.id}`}
-        className="text-blue-600 underline text-sm"
+        className="text-blue-600 hover:underline text-sm"
       >
         View Details
       </Link>
       <button
         onClick={fetchRandom}
-        className="mt-2 px-2 py-1 text-sm border rounded"
+        className="text-sm px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded border border-gray-300"
       >
         Show Another
       </button>
     </div>
-  );
+  </div>
+);
 }
