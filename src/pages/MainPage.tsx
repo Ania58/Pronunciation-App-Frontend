@@ -14,71 +14,61 @@ export default function MainPage() {
       <WordSearchBar />
       <RandomWordWidget />
 
-      <nav className="mt-6">
-        <p className="text-lg mb-2 font-medium">Explore:</p>
-        <ul className="list-disc list-inside space-y-1">
-          <li>
-            <Link to="/words" className="text-blue-600 underline hover:text-blue-800">
-              Browse All Words
+      <nav className="mt-10">
+        <p className="text-2xl font-semibold mb-4">Explore Words</p>
+
+        <div className="mb-6">
+          <p className="text-lg font-medium mb-2">By Difficulty</p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <Link to="/words?difficulty=easy" className="block bg-blue-100 hover:bg-blue-200 text-blue-800 px-4 py-2 rounded text-center shadow">
+              Easy
             </Link>
-          </li>
-          <li>
-            <Link to="/words?difficulty=easy" className="text-blue-600 underline hover:text-blue-800">
-              Easy Words
+            <Link to="/words?difficulty=medium" className="block bg-yellow-100 hover:bg-yellow-200 text-yellow-800 px-4 py-2 rounded text-center shadow">
+              Medium
             </Link>
-          </li>
-          <li>
-            <Link to="/words?difficulty=medium" className="text-blue-600 underline hover:text-blue-800">
-              Medium Words
+            <Link to="/words?difficulty=hard" className="block bg-red-100 hover:bg-red-200 text-red-800 px-4 py-2 rounded text-center shadow">
+              Hard
             </Link>
-          </li>
-          <li>
-            <Link to="/words?difficulty=hard" className="text-blue-600 underline hover:text-blue-800">
-              Hard Words
-            </Link>
-          </li>
-          <li>
-            <Link to="/words?category=voiceless%20TH" className="text-blue-600 underline hover:text-blue-800">
+          </div>
+        </div>
+
+        <div className="mb-6">
+          <p className="text-lg font-medium mb-2">By Category</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+            <Link to="/words?category=voiceless%20TH" className="block bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded text-center shadow">
               Voiceless TH
             </Link>
-          </li>
-          <li>
-            <Link to="/words?category=voiced%20TH" className="text-blue-600 underline hover:text-blue-800">
+            <Link to="/words?category=voiced%20TH" className="block bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded text-center shadow">
               Voiced TH
             </Link>
-          </li>
-          <li>
-            <Link to="/words?category=schwa" className="text-blue-600 underline hover:text-blue-800">
+            <Link to="/words?category=schwa" className="block bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded text-center shadow">
               Schwa
             </Link>
-          </li>
-          <li>
-            <Link to="/words?category=diphthongs" className="text-blue-600 underline hover:text-blue-800">
+            <Link to="/words?category=diphthongs" className="block bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded text-center shadow">
               Diphthongs
             </Link>
-          </li>
-          <li>
-            <Link to="/words?category=stress" className="text-blue-600 underline hover:text-blue-800">
+            <Link to="/words?category=stress" className="block bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded text-center shadow">
               Stress
             </Link>
-          </li>
-          <li>
-            <Link to="/words?category=consonant%20clusters" className="text-blue-600 underline hover:text-blue-800">
+            <Link to="/words?category=consonant%20clusters" className="block bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded text-center shadow">
               Consonant Clusters
             </Link>
-          </li>
-          <li>
-            <Link to="/words?category=vowels" className="text-blue-600 underline hover:text-blue-800">
+            <Link to="/words?category=vowels" className="block bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded text-center shadow">
               Vowels
             </Link>
-          </li>
-          <li>
-            <Link to="/words?category=other" className="text-blue-600 underline hover:text-blue-800">
+            <Link to="/words?category=other" className="block bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded text-center shadow">
               Other
             </Link>
-          </li>
-        </ul>
+          </div>
+        </div>
+
+        <div className="mt-8">
+          <Link to="/words" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded shadow text-center">
+            🔍 Browse All Words
+          </Link>
+        </div>
       </nav>
+
     </div>
   );
 }
