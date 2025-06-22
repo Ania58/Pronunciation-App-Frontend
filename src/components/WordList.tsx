@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { api } from '../services/api';
 import type { Word } from '../types/word';
 
@@ -12,31 +12,44 @@ export default function WordList() {
   const [search, setSearch] = useState('');
   const searchTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   
-
+  const location = useLocation();
+  
   useEffect(() => {
+      const params = new URLSearchParams(location.search);
+      const category = params.get('category') || '';
+      const difficulty = params.get('difficulty') || '';
+
     setLoading(true);
 
-    api
-      .get('/words/all', {
-        params: {
-          page,
-          limit: 50,
-          sort: 'word',
-          order: 'asc',
-          query: search,
-        },
-      })
-      .then((res) => {
+    const fetchData = async () => {
+    try {
+      if (category || difficulty) {
+        const res = await api.get('/words', { params: { category, difficulty } });
+        setWords(res.data.results);
+        setTotalPages(1); 
+      } else {
+        const res = await api.get('/words/all', {
+          params: {
+            page,
+            limit: 50,
+            sort: 'word',
+            order: 'asc',
+            query: search,
+          },
+      });
         setWords(res.data.results);
         setTotalPages(res.data.totalPages);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError('Failed to load words.');
-        console.error(err);
-        setLoading(false);
-      });
-  }, [page, search]);
+      }
+      setLoading(false);
+    } catch (err) {
+      setError('Failed to load words.');
+      console.error(err);
+      setLoading(false);
+    }
+  };
+
+  fetchData();
+}, [page, search, location.search]);
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -54,7 +67,9 @@ export default function WordList() {
           🏠 Home
         </Link>
       <h2 className="text-2xl font-bold mb-4">All Words</h2>
-
+      <Link to="/words-browser" className="text-blue-500 underline hover:text-blue-700 mb-4 block">
+        👉 Try the new Word Browser with advanced filters
+      </Link>
       <input
         type="text"
         defaultValue={search}
