@@ -2,6 +2,8 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { api } from '../services/api';
 import type { Word } from '../types/word';
+import RecorderWidget from '../features/record/RecorderWidget';
+
 
 
 export default function WordDetails() {
@@ -71,6 +73,13 @@ export default function WordDetails() {
       {audioExists && (
         <audio className="my-4 w-full" controls src={`https://api.dictionaryapi.dev/media/pronunciations/en/${word.word}-us.mp3`} />
       )}
+
+      <div className="mt-6 p-4 bg-gray-100 rounded shadow">
+        <h3 className="text-lg font-semibold mb-2">🎤 Practice Your Pronunciation</h3>
+        <p className="mb-4 text-sm text-gray-700">Record yourself and compare with the native pronunciation above.</p>
+        <RecorderWidget />
+      </div>
+
 
       {word.status && (
         <p className="text-sm text-gray-700 mb-2">
