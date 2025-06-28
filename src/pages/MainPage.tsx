@@ -66,6 +66,7 @@ export default function MainPage() {
           <Link to="/words" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded shadow text-center">
             🔍 Browse All Words
           </Link>
+          <Link to="/record">Practice Pronunciation</Link>
         </div>
       </nav>
 
