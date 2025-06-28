@@ -61,15 +61,21 @@ export default function MainPage() {
             </Link>
           </div>
         </div>
-
-        <div className="mt-8">
-          <Link to="/words" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded shadow text-center">
+        <div className="mt-8 flex flex-col sm:flex-row items-center gap-4">
+          <Link
+            to="/words"
+            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded shadow text-center w-full sm:w-auto"
+          >
             🔍 Browse All Words
           </Link>
-          <Link to="/record">Practice Pronunciation</Link>
+          <Link
+            to="/record"
+            className="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded shadow text-center w-full sm:w-auto"
+          >
+            🎤 Practice Pronunciation
+          </Link>
         </div>
       </nav>
-
     </div>
   );
 }
