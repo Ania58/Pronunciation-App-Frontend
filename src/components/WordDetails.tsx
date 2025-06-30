@@ -2,9 +2,16 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { api } from '../services/api';
 import type { Word } from '../types/word';
-import RecorderWidget from '../features/record/RecorderWidget';
+import { useRecorder } from '../hooks/useRecorder';
 
-
+interface Attempt {
+  _id: string;
+  userId: string;
+  wordId: string;
+  audioUrl: string;
+  score?: number;
+  feedback?: string;
+}
 
 export default function WordDetails() {
   const { id } = useParams();
@@ -13,6 +20,12 @@ export default function WordDetails() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [audioExists, setAudioExists] = useState(false);
+
+  const [attempts, setAttempts] = useState<Attempt[]>([]);
+  
+  const {isRecording, audioUrl: recordedUrl, audioBlob, startRecording, stopRecording } = useRecorder();
+
+  const fakeUserId = 'dev-user-001';
 
   const updateStatus = async (newStatus: 'mastered' | 'practice') => {
   try {
@@ -28,9 +41,38 @@ export default function WordDetails() {
   }
 };
 
+  const fetchAttempts = async () => {
+    try {
+      const res = await api.get(`/pronunciation/${id}/attempts`, {
+        params: { userId: fakeUserId },
+      });
+      setAttempts(res.data);
+    } catch (error) {
+      console.error('Error fetching attempts:', error);
+    }
+  };
+
+  const submitAttempt = async () => {
+  try {
+    if (!audioBlob || !id) return;
+
+    const tempUrl = URL.createObjectURL(audioBlob);
+
+    await api.post(`/pronunciation/${id}`, {
+      userId: fakeUserId,
+      wordId: id,
+      audioUrl: tempUrl, 
+    });
+
+    fetchAttempts();
+  } catch (error) {
+    console.error('Error submitting attempt:', error);
+  }
+};
 
   useEffect(() => {
     console.log("Fetching word with id:", id);
+    if (!id) return;
     api.get(`/words/id/${id}`)
       .then(res => {
         console.log("Response data:", res.data);
@@ -48,6 +90,7 @@ export default function WordDetails() {
         setError('Word not found');
         setLoading(false);
       });
+      fetchAttempts();
   }, [id]);
 
   if (loading) return <p className="text-center text-gray-500">Loading...</p>;
@@ -77,7 +120,7 @@ export default function WordDetails() {
       <div className="mt-6 p-4 bg-gray-100 rounded shadow">
         <h3 className="text-lg font-semibold mb-2">🎤 Practice Your Pronunciation</h3>
         <p className="mb-4 text-sm text-gray-700">Record yourself and compare with the native pronunciation above.</p>
-        <RecorderWidget />
+  
       </div>
 
 
@@ -87,6 +130,52 @@ export default function WordDetails() {
         </p>
       )}
 
+      <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded">
+        <h3 className="font-semibold mb-2">Submit Your Recording</h3>
+        {recordedUrl && (
+        <div className="mt-4">
+          <p className="text-sm mb-1">Preview:</p>
+          <audio controls src={recordedUrl} className="w-full" />
+        </div>
+      )}
+        <div className="flex flex-col sm:flex-row gap-4 mt-2">
+          <button
+            onClick={isRecording ? stopRecording : startRecording}
+            className={`flex-1 px-6 py-3 rounded font-semibold shadow cursor-pointer ${
+              isRecording
+                ? 'bg-red-500 hover:bg-red-600 text-white'
+                : 'bg-green-500 hover:bg-green-600 text-white'
+            }`}
+          >
+            {isRecording ? '⏹ Stop Recording' : '🎙 Start Recording'}
+          </button>
+
+          <button
+            onClick={submitAttempt}
+            disabled={!audioBlob}
+            className="flex-1 px-6 py-3 rounded bg-blue-500 hover:bg-blue-600 text-white font-semibold shadow disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+          >
+            Submit Attempt
+          </button>
+        </div>
+      </div>
+
+      <div className="mt-6">
+        <h3 className="text-lg font-semibold mb-2">🗂 Your Attempts</h3>
+        {attempts.length === 0 ? (
+          <p className="text-sm text-gray-500">No attempts yet.</p>
+        ) : (
+          <ul className="space-y-2">
+            {attempts.map((a) => (
+              <li key={a._id} className="p-3 border rounded shadow-sm bg-white">
+                <p><strong>Audio:</strong> <a href={a.audioUrl} target="_blank" rel="noreferrer" className="text-blue-600 underline">{a.audioUrl}</a></p>
+                <p><strong>Score:</strong> {a.score ?? 'N/A'}</p>
+                <p><strong>Feedback:</strong> {a.feedback ?? 'Pending'}</p>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
       <div className="flex gap-4 mt-4">
         <button
           onClick={() => updateStatus('mastered')}

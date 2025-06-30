@@ -1,7 +1,15 @@
 import { useRecorder } from '../../hooks/useRecorder';
 
-export default function RecorderWidget() {
-  const { isRecording, audioUrl, startRecording, stopRecording } = useRecorder();
+interface RecorderWidgetProps {
+  onRecordingReady?: (blob: Blob) => void;
+}
+
+export default function RecorderWidget({ onRecordingReady }: RecorderWidgetProps) {
+  const { isRecording, audioUrl,  audioBlob, startRecording, stopRecording } = useRecorder();
+
+   if (audioBlob && onRecordingReady) {
+    onRecordingReady(audioBlob);
+  }
 
   return (
     <div className="bg-white rounded shadow p-6">

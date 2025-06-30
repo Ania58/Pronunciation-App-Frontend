@@ -3,6 +3,7 @@ import { useState, useRef } from 'react';
 export function useRecorder() {
   const [isRecording, setIsRecording] = useState(false);
   const [audioUrl, setAudioUrl] = useState<string | null>(null);
+  const [audioBlob, setAudioBlob] = useState<Blob | null>(null);
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const chunks = useRef<Blob[]>([]);
 
@@ -16,6 +17,7 @@ export function useRecorder() {
 
     mediaRecorderRef.current.onstop = () => {
       const blob = new Blob(chunks.current, { type: 'audio/webm' });
+      setAudioBlob(blob);
       setAudioUrl(URL.createObjectURL(blob));
       chunks.current = [];
     };
@@ -29,5 +31,5 @@ export function useRecorder() {
     setIsRecording(false);
   };
 
-  return { isRecording, audioUrl, startRecording, stopRecording };
+  return { isRecording, audioUrl, audioBlob, startRecording, stopRecording };
 }
