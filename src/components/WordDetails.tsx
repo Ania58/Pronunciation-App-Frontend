@@ -11,6 +11,7 @@ interface Attempt {
   audioUrl: string;
   score?: number;
   feedback?: string;
+  createdAt?: string; 
 }
 
 export default function WordDetails() {
@@ -184,11 +185,21 @@ export default function WordDetails() {
           <p className="text-sm text-gray-500">No attempts yet.</p>
         ) : (
           <ul className="space-y-2">
-            {attempts.map((a) => (
+            {attempts
+            .slice() 
+            .sort((a, b) =>
+              new Date(b.createdAt || '').getTime() - new Date(a.createdAt || '').getTime()
+            )
+            .map((a) => (
               <li key={a._id} className="p-3 border rounded shadow-sm bg-white">
-                <p><strong>Audio:</strong> <a href={a.audioUrl} target="_blank" rel="noreferrer" className="text-blue-600 underline">{a.audioUrl}</a></p>
-                <p><strong>Score:</strong> {a.score ?? 'N/A'}</p>
-                <p><strong>Feedback:</strong> {a.feedback ?? 'Pending'}</p>
+                <div className="border p-4 rounded shadow-sm bg-white space-y-2">
+                  <p className="text-sm text-gray-600">
+                    <strong>Date:</strong> {a.createdAt ? new Date(a.createdAt).toLocaleString() : 'Unknown'}
+                  </p>
+                  <audio controls src={a.audioUrl} className="w-full" />
+                  <p><strong>Score:</strong> {a.score ?? 'N/A'}</p>
+                  <p><strong>Feedback:</strong> {a.feedback ?? 'Pending'}</p>
+                </div>
               </li>
             ))}
           </ul>
