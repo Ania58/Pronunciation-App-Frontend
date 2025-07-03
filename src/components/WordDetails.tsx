@@ -79,6 +79,21 @@ export default function WordDetails() {
   }
 };
 
+const handleDeleteAttempt = async (attemptId: string) => {
+  if (!window.confirm('Are you sure you want to delete this attempt?')) return;
+
+  try {
+    await api.delete(`/pronunciation/${attemptId}`, {
+      params: { userId: fakeUserId },
+    });
+    setAttempts((prev) => prev.filter((a) => a._id !== attemptId));
+  } catch (error) {
+    console.error('Failed to delete attempt:', error);
+    alert('An error occurred while deleting the attempt.');
+  }
+};
+
+
 
   useEffect(() => {
     console.log("Fetching word with id:", id);
@@ -199,6 +214,12 @@ export default function WordDetails() {
                   <audio controls src={a.audioUrl} className="w-full" />
                   <p><strong>Score:</strong> {a.score ?? 'N/A'}</p>
                   <p><strong>Feedback:</strong> {a.feedback ?? 'Pending'}</p>
+                   <button
+                    onClick={() => handleDeleteAttempt(a._id)}
+                    className="inline-flex items-center gap-1 text-sm text-red-600 hover:text-red-700 hover:underline font-medium transition-colors cursor-pointer"
+                  >
+                    🗑 Delete
+                  </button>
                 </div>
               </li>
             ))}
