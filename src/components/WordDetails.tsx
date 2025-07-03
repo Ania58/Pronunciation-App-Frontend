@@ -25,6 +25,8 @@ export default function WordDetails() {
   
   const {isRecording, audioUrl: recordedUrl, audioBlob, startRecording, stopRecording } = useRecorder();
 
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+
   const fakeUserId = 'dev-user-001';
 
   const updateStatus = async (newStatus: 'mastered' | 'practice') => {
@@ -56,19 +58,26 @@ export default function WordDetails() {
   try {
     if (!audioBlob || !id) return;
 
+    setSubmitStatus('submitting');
+
     const tempUrl = URL.createObjectURL(audioBlob);
 
     await api.post(`/pronunciation/${id}`, {
       userId: fakeUserId,
       wordId: id,
-      audioUrl: tempUrl, 
+      audioUrl: tempUrl,
     });
 
+    setSubmitStatus('success');
     fetchAttempts();
   } catch (error) {
     console.error('Error submitting attempt:', error);
+    setSubmitStatus('error');
+  } finally {
+    setTimeout(() => setSubmitStatus('idle'), 3000); 
   }
 };
+
 
   useEffect(() => {
     console.log("Fetching word with id:", id);
@@ -157,6 +166,15 @@ export default function WordDetails() {
           >
             Submit Attempt
           </button>
+          {submitStatus === 'submitting' && (
+            <p className="text-blue-600 text-sm mt-2">Uploading your recording...</p>
+          )}
+          {submitStatus === 'success' && (
+            <p className="text-green-600 text-sm mt-2">✅ Attempt submitted!</p>
+          )}
+          {submitStatus === 'error' && (
+            <p className="text-red-600 text-sm mt-2">❌ Something went wrong. Please try again.</p>
+          )}
         </div>
       </div>
 
