@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import { api } from '../services/api';
 import type { Word } from '../types/word';
 import { useRecorder } from '../hooks/useRecorder';
+import { uploadAudio } from '../utils/uploadAudio';
+
 
 interface Attempt {
   _id: string;
@@ -61,12 +63,13 @@ export default function WordDetails() {
 
     setSubmitStatus('submitting');
 
-    const tempUrl = URL.createObjectURL(audioBlob);
+    const file = new File([audioBlob], 'recording.webm', { type: 'audio/webm' });
+    const cloudUrl = await uploadAudio(file);
 
     await api.post(`/pronunciation/${id}`, {
       userId: fakeUserId,
       wordId: id,
-      audioUrl: tempUrl,
+      audioUrl: cloudUrl,
     });
 
     setSubmitStatus('success');
