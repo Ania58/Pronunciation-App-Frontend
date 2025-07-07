@@ -32,6 +32,9 @@ export default function WordDetails() {
 
   const fakeUserId = 'dev-user-001';
 
+  const [latestFeedback, setLatestFeedback] = useState<string>('');
+
+
   const updateStatus = async (newStatus: 'mastered' | 'practice') => {
   try {
     if (!word || !word.id) return;
@@ -57,30 +60,41 @@ export default function WordDetails() {
     }
   };
 
-  const submitAttempt = async () => {
+const submitAttempt = async () => {
   try {
     if (!audioBlob || !id) return;
 
     setSubmitStatus('submitting');
+    setLatestFeedback(''); 
 
     const file = new File([audioBlob], 'recording.webm', { type: 'audio/webm' });
     const cloudUrl = await uploadAudio(file);
 
-    await api.post(`/pronunciation/${id}`, {
+    const createRes = await api.post(`/pronunciation/${id}`, {
       userId: fakeUserId,
       wordId: id,
       audioUrl: cloudUrl,
     });
 
+    const newAttemptId = createRes.data.attempt._id;
+
+    const transcribeRes = await api.post(`/pronunciation/${newAttemptId}/transcribe`,{
+      audioUrl: cloudUrl,
+    });
+
+    const { feedback } = transcribeRes.data;
+    setLatestFeedback(feedback); 
+
     setSubmitStatus('success');
-    fetchAttempts();
+    fetchAttempts(); 
   } catch (error) {
     console.error('Error submitting attempt:', error);
     setSubmitStatus('error');
   } finally {
-    setTimeout(() => setSubmitStatus('idle'), 3000); 
+    setTimeout(() => setSubmitStatus('idle'), 3000);
   }
 };
+
 
 const handleDeleteAttempt = async (attemptId: string) => {
   if (!window.confirm('Are you sure you want to delete this attempt?')) return;
@@ -95,7 +109,6 @@ const handleDeleteAttempt = async (attemptId: string) => {
     alert('An error occurred while deleting the attempt.');
   }
 };
-
 
 
   useEffect(() => {
@@ -196,6 +209,11 @@ const handleDeleteAttempt = async (attemptId: string) => {
           )}
         </div>
       </div>
+      {latestFeedback && (
+        <div className="mt-4 p-4 bg-green-100 border border-green-400 text-green-800 rounded shadow">
+          <strong>AI Feedback:</strong> {latestFeedback}
+        </div>
+      )}
 
       <div className="mt-6">
         <h3 className="text-lg font-semibold mb-2">🗂 Your Attempts</h3>
