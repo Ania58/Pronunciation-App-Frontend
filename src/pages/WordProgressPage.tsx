@@ -49,6 +49,14 @@ export default function WordProgressPage() {
 
   return (
     <div className="max-w-3xl mx-auto p-6 bg-white rounded shadow">
+        <div className="mb-4">
+            <Link
+                to="/"
+                className="text-blue-600 hover:underline"
+            >
+                🏠 Home
+            </Link>
+        </div>
       <h1 className="text-2xl font-bold mb-4">🧠 Your Word Progress</h1>
       <p className="text-sm text-gray-600 mb-6">All words you’ve marked as “mastered” or “practice”.</p>
 
