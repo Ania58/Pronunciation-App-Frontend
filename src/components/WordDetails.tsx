@@ -26,7 +26,7 @@ export default function WordDetails() {
 
   const [attempts, setAttempts] = useState<Attempt[]>([]);
   
-  const {isRecording, audioUrl: recordedUrl, audioBlob, startRecording, stopRecording } = useRecorder();
+  const {isRecording, audioUrl: recordedUrl, audioBlob, setAudioUrl, setAudioBlob, startRecording, stopRecording } = useRecorder();
 
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
@@ -174,11 +174,21 @@ const handleDeleteAttempt = async (attemptId: string) => {
       <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded">
         <h3 className="font-semibold mb-2">Submit Your Recording</h3>
         {recordedUrl && (
-        <div className="mt-4">
-          <p className="text-sm mb-1">Preview:</p>
-          <audio controls src={recordedUrl} className="w-full" />
-        </div>
-      )}
+          <div className="mt-4 space-y-2">
+            <p className="text-sm mb-1">Preview:</p>
+            <audio controls src={recordedUrl} className="w-full" />
+            <button
+              onClick={() => {
+                setAudioUrl('');
+                setAudioBlob(null);
+              }}
+              className="px-4 py-2 bg-red-500 hover:bg-red-600 text-white font-semibold rounded shadow cursor-pointer text-sm"
+            >
+              ❌ Delete Recording
+            </button>
+          </div>
+        )}
+
         <div className="flex flex-col sm:flex-row gap-4 mt-2">
           <button
             onClick={isRecording ? stopRecording : startRecording}

@@ -31,5 +31,5 @@ export function useRecorder() {
     setIsRecording(false);
   };
 
-  return { isRecording, audioUrl, audioBlob, startRecording, stopRecording };
+  return { isRecording, audioUrl, audioBlob, setAudioUrl, setAudioBlob, startRecording, stopRecording };
 }
