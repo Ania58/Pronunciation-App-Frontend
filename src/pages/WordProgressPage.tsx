@@ -47,6 +47,26 @@ export default function WordProgressPage() {
     fetchStatusesAndWords();
   }, []);
 
+  const handleRemoveWord = async (wordId: string, wordText: string) => {
+    const confirmed = window.confirm(`Are you sure you want to remove "${wordText}" from your progress?`);
+    if (!confirmed) return;
+
+    try {
+      await api.delete(`/words/${wordId}/status`, {
+        params: { userId: fakeUserId },
+      });
+
+      setWords(prev => prev.filter(word => word.id !== wordId));
+      setStatuses(prev => {
+        const updated = { ...prev };
+        delete updated[wordId];
+        return updated;
+      });
+    } catch (err) {
+      console.error('Failed to delete word status', err);
+    }
+  };
+
   return (
     <div className="max-w-3xl mx-auto p-6 bg-white rounded shadow">
         <div className="mb-4">
@@ -78,10 +98,16 @@ export default function WordProgressPage() {
               <tr key={w.id}>
                 <td className="p-2 border font-medium">{w.word}</td>
                 <td className="p-2 border capitalize">{statuses[w.id]}</td>
-                <td className="p-2 border">
-                  <Link to={`/words/${w.id}`} className="text-blue-600 hover:underline">
-                    View →
-                  </Link>
+                <td className="p-2 border space-x-2">
+                    <Link to={`/words/${w.id}`} className="text-blue-600 hover:underline">
+                        View →
+                    </Link>
+                    <button
+                        onClick={() => handleRemoveWord(w.id, w.word)}
+                        className="text-red-600 hover:underline cursor-pointer"
+                    >
+                        Remove
+                    </button>
                 </td>
               </tr>
             ))}
