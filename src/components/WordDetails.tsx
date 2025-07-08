@@ -102,13 +102,28 @@ const submitAttempt = async () => {
 
 
 const handleDeleteAttempt = async (attemptId: string) => {
-  if (!window.confirm('Are you sure you want to delete this attempt?')) return;
+  if (!window.confirm('Are you sure you want to delete this attempt? By accepting, you will also remove it from your progress.')) return;
 
   try {
     await api.delete(`/pronunciation/${attemptId}`, {
       params: { userId: fakeUserId },
     });
-    setAttempts((prev) => prev.filter((a) => a._id !== attemptId));
+
+    const updatedAttempts = attempts.filter((a) => a._id !== attemptId);
+    setAttempts(updatedAttempts);
+
+    if (updatedAttempts.length === 0 && word?.id) {
+      try {
+        await api.delete(`/words/${word.id}/status`, {
+          params: { userId: fakeUserId },
+        });
+
+        setWord((prev) => prev ? { ...prev, status: undefined } : null);
+      } catch (statusErr) {
+        console.error('Failed to delete word status after removing last attempt:', statusErr);
+      }
+    }
+
   } catch (error) {
     console.error('Failed to delete attempt:', error);
     alert('An error occurred while deleting the attempt.');
