@@ -34,15 +34,20 @@ export default function WordDetails() {
 
   const [latestFeedback, setLatestFeedback] = useState<string>('');
 
+  const [statusMessage, setStatusMessage] = useState('');
+
 
   const updateStatus = async (newStatus: 'mastered' | 'practice') => {
   try {
     if (!word || !word.id) return;
-    await api.post(`/words/${word.id}/status`, { status: newStatus });
+    await api.post(`/words/${word.id}/status`, { status: newStatus, userId: fakeUserId });
     setWord((prevWord) => {
       if (!prevWord) return prevWord;
       return { ...prevWord, status: newStatus };
     });
+
+    setStatusMessage(`✅ Status set to "${newStatus}" successfully!`);
+    setTimeout(() => setStatusMessage(''), 3000); 
 
   } catch (err) {
     console.error('Failed to update word status:', err);
@@ -224,7 +229,11 @@ const handleDeleteAttempt = async (attemptId: string) => {
           <strong>AI Feedback:</strong> {latestFeedback}
         </div>
       )}
-
+      {statusMessage && (
+        <div className="mt-4 p-3 bg-green-100 border border-green-400 text-green-800 rounded shadow text-sm">
+          {statusMessage}
+        </div>
+      )}
       <div className="mt-6">
         <h3 className="text-lg font-semibold mb-2">🗂 Your Attempts</h3>
         {attempts.length === 0 ? (
