@@ -74,6 +74,9 @@ export default function MainPage() {
           >
             🎤 Practice Pronunciation
           </Link>
+          <Link to="/progress" className="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 py-3 rounded shadow text-center w-full sm:w-auto">
+            📊 See Your Progress
+          </Link>
         </div>
       </nav>
     </div>
