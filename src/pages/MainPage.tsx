@@ -77,6 +77,7 @@ export default function MainPage() {
           <Link to="/progress" className="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 py-3 rounded shadow text-center w-full sm:w-auto">
             📊 See Your Progress
           </Link>
+          <Link to="/attempts" className="bg-pink-600 hover:bg-pink-700 text-white font-semibold px-6 py-3 rounded shadow text-center w-full sm:w-auto">🎧 Your Attempts</Link>
         </div>
       </nav>
     </div>
