@@ -36,6 +36,8 @@ export default function WordDetails() {
 
   const [statusMessage, setStatusMessage] = useState('');
 
+  const [hasReachedLimit, setHasReachedLimit] = useState(false);
+
 
   const updateStatus = async (newStatus: 'mastered' | 'practice') => {
   try {
@@ -60,6 +62,11 @@ export default function WordDetails() {
         params: { userId: fakeUserId },
       });
       setAttempts(res.data);
+        const today = new Date().toDateString();
+        const todaysAttempts = res.data.filter((a: Attempt) =>
+        new Date(a.createdAt || '').toDateString() === today
+      );
+      setHasReachedLimit(todaysAttempts.length >= 20);
     } catch (error) {
       console.error('Error fetching attempts:', error);
     }
@@ -92,9 +99,15 @@ const submitAttempt = async () => {
 
     setSubmitStatus('success');
     fetchAttempts(); 
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error submitting attempt:', error);
-    setSubmitStatus('error');
+      if (error.response?.status === 429) {
+      setSubmitStatus('error');
+      setLatestFeedback('⚠️ You’ve reached your daily limit of 20 pronunciation attempts. Try again tomorrow!');
+    } else {
+      setSubmitStatus('error');
+      setLatestFeedback('❌ Something went wrong. Please try again.');
+    }
   } finally {
     setTimeout(() => setSubmitStatus('idle'), 3000);
   }
@@ -223,11 +236,16 @@ const handleDeleteAttempt = async (attemptId: string) => {
 
           <button
             onClick={submitAttempt}
-            disabled={!audioBlob}
+            disabled={!audioBlob || hasReachedLimit}
             className="flex-1 px-6 py-3 rounded bg-blue-500 hover:bg-blue-600 text-white font-semibold shadow disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
           >
             Submit Attempt
           </button>
+          {hasReachedLimit && (
+            <p className="text-red-600 text-sm mt-2">
+              ⚠️ You’ve reached your daily limit of 20 pronunciation attempts.
+            </p>
+          )}
           {submitStatus === 'submitting' && (
             <p className="text-blue-600 text-sm mt-2">Uploading your recording...</p>
           )}
