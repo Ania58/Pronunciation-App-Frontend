@@ -1,3 +1,17 @@
 {
-  "welcome": "Welcome"
+  "title": "Explore Words",
+  "byDifficulty": "By Difficulty",
+  "byCategory": "By Category",
+  "easy": "Easy",
+  "medium": "Medium",
+  "hard": "Hard",
+  "browseAll": "🔍 Browse All Words",
+  "practicePronunciation": "🎤 Practice Pronunciation",
+  "seeProgress": "📊 See Your Progress",
+  "yourAttempts": "🎧 Your Attempts",
+  "footer": {
+    "rights": "all rights reserved. Created by Anna Heliasz."
+  }
 }
+
+

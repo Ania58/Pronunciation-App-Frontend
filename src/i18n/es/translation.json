@@ -1,3 +1,17 @@
 {
-  "welcome": "Welcome"
+  "title": "Explora palabras",
+  "byDifficulty": "Por dificultad",
+  "byCategory": "Por categoría",
+  "easy": "Fácil",
+  "medium": "Intermedio",
+  "hard": "Difícil",
+  "browseAll": "🔍 Explorar todas las palabras",
+  "practicePronunciation": "🎤 Practicar pronunciación",
+  "seeProgress": "📊 Ver tu progreso",
+  "yourAttempts": "🎧 Tus intentos",
+   "footer": {
+    "rights": "todos los derechos reservados. Creado por Anna Heliasz."
+  }
 }
+
+

@@ -1,3 +1,17 @@
 {
-  "welcome": "Welcome"
+  "title": "Odkrywaj słowa",
+  "byDifficulty": "Według trudności",
+  "byCategory": "Według kategorii",
+  "easy": "Łatwe",
+  "medium": "Średnie",
+  "hard": "Trudne",
+  "browseAll": "🔍 Przeglądaj wszystkie słowa",
+  "practicePronunciation": "🎤 Ćwicz wymowę",
+  "seeProgress": "📊 Zobacz swoje postępy",
+  "yourAttempts": "🎧 Twoje próby",
+   "footer": {
+    "rights": "wszystkie prawa zastrzeżone. Stworzone przez Annę Heliasz."
+  }
 }
+
+
