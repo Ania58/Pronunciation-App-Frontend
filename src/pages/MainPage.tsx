@@ -14,8 +14,10 @@ export default function MainPage() {
         <h1 className="text-3xl font-bold mb-4">Welcome to SayRight</h1>
 
         <p className="mb-6 text-lg">
-            SayRight helps you master English pronunciation through interactive learning. Browse words by category or difficulty, see IPA transcriptions, and hear native-like audio. 
-            When you sign up, you’ll be able to record yourself and get AI-powered feedback with tips on how to improve. Track your progress by marking words as "mastered" or "practice more" and build your personal learning list.  
+            SayRight is your AI-powered companion for mastering English word pronunciation. 
+            Browse thousands of words with IPA transcriptions, native audio, categories, and difficulty levels. 
+            Sign up to record your pronunciation and receive intelligent feedback with improvement tips. 
+            Track your progress by saving words you've mastered or need more practice with. 
             Ready to speak clearly and confidently? Let’s get started!
         </p>
 
