@@ -23,7 +23,7 @@ export default function RecorderWidget({ onRecordingReady }: RecorderWidgetProps
             : 'bg-green-500 hover:bg-green-600 text-white'
         }`}
       >
-        {isRecording ? t('⏹ stopRecording') : t('🎙 startRecording')}
+        {isRecording ? '⏹ ' + t('stop') : '🎙 ' + t('start')}
       </button>
 
       {audioUrl && (
