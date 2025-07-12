@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { fetchAllWords, fetchFilteredWords } from '../services/wordService';
 import { Link } from 'react-router-dom';
 import type { Word } from '../types/word';
@@ -16,6 +17,8 @@ export default function WordBrowser() {
 
   const location = useLocation();
   const navigate = useNavigate();
+
+  const { t } = useTranslation();
 
 
  useEffect(() => {
@@ -48,24 +51,24 @@ fetchData();
     <div className="max-w-4xl mx-auto p-6">
       <div className="flex justify-between items-center mb-4">
         <button onClick={() => navigate(-1)} className="text-blue-600 hover:underline cursor-pointer">
-          ← Go Back
+          ← {t('goBack')}
         </button>
         <Link to="/" className="text-blue-600 hover:underline">
-          🏠 Home
+          🏠 {t('home')}
         </Link>
       </div>
-      <h2 className="text-2xl font-bold mb-4">Browse All Words</h2>
+      <h2 className="text-2xl font-bold mb-4">{t('browseAllWords')}</h2>
 
       <div className="flex flex-col sm:flex-row gap-4 mb-4">
         <input
           type="text"
-          placeholder="Search..."
+          placeholder={t('searchPlaceholder')}
           value={query}
           onChange={e => {
             setQuery(e.target.value);
             setPage(1);
           }}
-          className="border border-gray-300 p-2 rounded w-full sm:w-1/2"
+          className="border border-gray-300 p-2 rounded w-full sm:w-[250px] md:w-[300px] lg:w-[350px]"
         />
         <select
           value={category}
@@ -83,15 +86,15 @@ fetchData();
 
           className="border p-2 rounded"
         >
-          <option value="">All Categories</option>
-          <option value="vowels">Vowels</option>
-          <option value="consonant clusters">Consonant Clusters</option>
-          <option value="voiced th">Voiced TH</option>
-          <option value="voiceless th">Voiceless TH</option>
-          <option value="diphthongs">Diphthongs</option>
-          <option value="schwa">Schwa</option>
-          <option value="stress">Stress</option>
-          <option value="other">Other</option>
+          <option value="">{t('allCategories')}</option>
+          <option value="vowels">{t('vowels')}</option>
+          <option value="consonant clusters">{t('consonantClusters')}</option>
+          <option value="voiced th">{t('voicedTH')}</option>
+          <option value="voiceless th">{t('voicelessTH')}</option>
+          <option value="diphthongs">{t('diphthongs')}</option>
+          <option value="schwa">{t('schwa')}</option>
+          <option value="stress">{t('stress')}</option>
+          <option value="other">{t('other')}</option>
         </select>
 
         <select
@@ -110,27 +113,27 @@ fetchData();
 
           className="border p-2 rounded"
         >
-          <option value="">All Difficulties</option>
-          <option value="easy">Easy</option>
-          <option value="medium">Medium</option>
-          <option value="hard">Hard</option>
+          <option value="">{t('allDifficulties')}</option>
+          <option value="easy">{t('easy')}</option>
+          <option value="medium">{t('medium')}</option>
+          <option value="hard">{t('hard')}</option>
         </select>
         <select
           onChange={e => setSort(e.target.value)}
           value={sort}
           className="border p-2 rounded"
         >
-          <option value="word">Word</option>
-          <option value="ipa">IPA</option>
-          <option value="language">Language</option>
+          <option value="word">{t('sort.word')}</option>
+          <option value="ipa">{t('sort.ipa')}</option>
+          <option value="language">{t('language')}</option>
         </select>
         <select
           onChange={e => setOrder(e.target.value as 'asc' | 'desc')}
           value={order}
           className="border p-2 rounded"
         >
-          <option value="asc">A–Z</option>
-          <option value="desc">Z–A</option>
+          <option value="asc">{t('sort.asc')}</option>
+          <option value="desc">{t('sort.desc')}</option>
         </select>
       </div>
 
@@ -150,15 +153,15 @@ fetchData();
           disabled={page === 1}
           className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 disabled:opacity-50 cursor-pointer"
         >
-          Previous
+           {t('previous')}
         </button>
-        <span>Page {page} / {totalPages}</span>
+        <span>{t('page')} {page} / {totalPages}</span>
         <button
           onClick={() => setPage(p => Math.min(p + 1, totalPages))}
           disabled={page === totalPages}
           className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 disabled:opacity-50 cursor-pointer"
         >
-          Next
+            {t('next')}
         </button>
       </div>
     </div>

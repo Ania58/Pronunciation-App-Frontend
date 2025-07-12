@@ -74,7 +74,17 @@
   "previous": "Anterior",
   "next": "Siguiente",
   "page": "Página",
-  "of": "de"
+  "of": "de",
+
+  "sort": {
+    "word": "Palabra",
+    "ipa": "IPA",
+    "asc": "A–Z",
+    "desc": "Z–A"
+  },
+  "allCategories": "Todas las categorías",
+  "allDifficulties": "Todos los niveles de dificultad",
+  "browseAllWords": "Explorar todas las palabras"
 
 }
 

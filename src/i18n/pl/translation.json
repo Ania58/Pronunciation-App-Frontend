@@ -75,7 +75,17 @@
   "previous": "Poprzednia",
   "next": "Następna",
   "page": "Strona",
-  "of": "z"
+  "of": "z",
+
+   "sort": {
+    "word": "Słowo",
+    "ipa": "IPA",
+    "asc": "A–Z",
+    "desc": "Z–A"
+  },
+  "allCategories": "Wszystkie kategorie",
+  "allDifficulties": "Wszystkie poziomy trudności",
+  "browseAllWords": "Przeglądaj wszystkie słowa"
 
 }
 

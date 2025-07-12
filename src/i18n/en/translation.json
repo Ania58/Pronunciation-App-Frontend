@@ -74,7 +74,17 @@
   "previous": "Previous",
   "next": "Next",
   "page": "Page",
-  "of": "of"
+  "of": "of",
+
+  "sort": {
+    "word": "Word",
+    "ipa": "IPA",
+    "asc": "A–Z",
+    "desc": "Z–A"
+  },
+  "allCategories": "All Categories",
+  "allDifficulties": "All Difficulties",
+  "browseAllWords": "Browse All Words"
 
 }
 
