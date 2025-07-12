@@ -3,6 +3,7 @@ import { api } from '../services/api';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import type { Word } from '../types/word';
+import LanguageSwitcher from '../components/LanguageSwitcher';
 
 interface Attempt {
   _id: string;
@@ -63,6 +64,7 @@ export default function AttemptHistoryPage() {
           🏠 {t('home')}
         </Link>
       </div>
+      <LanguageSwitcher />
       <h1 className="text-2xl font-bold mb-4">{t('yourAttempts')}</h1>
       <p className="text-sm text-gray-600 mb-6">{t('allAttemptsInfo')}</p>
 

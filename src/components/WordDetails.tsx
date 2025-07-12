@@ -5,6 +5,7 @@ import { api } from '../services/api';
 import type { Word } from '../types/word';
 import { useRecorder } from '../hooks/useRecorder';
 import { uploadAudio } from '../utils/uploadAudio';
+import LanguageSwitcher from './LanguageSwitcher';
 
 
 interface Attempt {
@@ -184,6 +185,7 @@ const handleDeleteAttempt = async (attemptId: string) => {
           🏠 {t('home')}
         </Link>
       </div>
+      <LanguageSwitcher />
       <h2 className="text-2xl font-bold mb-4">{word.word}</h2>
       <p className="mb-2"><strong>IPA:</strong> {word.ipa}</p>
       <p className="mb-2"><strong>{t('language')}:</strong> {word.language}</p>

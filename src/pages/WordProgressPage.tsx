@@ -3,6 +3,7 @@ import { api } from '../services/api';
 import type { Word } from '../types/word';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from '../components/LanguageSwitcher';
 
 /*interface StatusEntry {
   wordId: string;
@@ -85,6 +86,7 @@ export default function WordProgressPage() {
                 🏠 {t('home')}
             </Link>
         </div>
+        <LanguageSwitcher />
         <div className="mb-4 flex gap-2">
         {(['all', 'mastered', 'practice'] as const).map(btn => (
           <button

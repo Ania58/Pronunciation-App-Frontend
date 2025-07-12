@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { fetchAllWords, fetchFilteredWords } from '../services/wordService';
 import { Link } from 'react-router-dom';
 import type { Word } from '../types/word';
+import LanguageSwitcher from './LanguageSwitcher';
 
 export default function WordBrowser() {
   const [words, setWords] = useState<Word[]>([]);
@@ -57,6 +58,7 @@ fetchData();
           🏠 {t('home')}
         </Link>
       </div>
+      <LanguageSwitcher />
       <h2 className="text-2xl font-bold mb-4">{t('browseAllWords')}</h2>
 
       <div className="flex flex-col sm:flex-row gap-4 mb-4">

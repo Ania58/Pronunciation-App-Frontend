@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import RecorderWidget from '../features/record/RecorderWidget';
+import LanguageSwitcher from '../components/LanguageSwitcher';
 
 export default function RecordPage() {
   const { t } = useTranslation();
@@ -20,6 +21,7 @@ export default function RecordPage() {
         >
           ⬅ {t('goBack')}
         </Link>
+        <LanguageSwitcher />
       </div>
     </div>
   );
