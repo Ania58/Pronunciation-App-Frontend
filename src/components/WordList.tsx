@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { api } from '../services/api';
 import type { Word } from '../types/word';
+import LanguageSwitcher from './LanguageSwitcher';
 
 export default function WordList() {
   const [words, setWords] = useState<Word[]>([]);
@@ -70,6 +71,7 @@ export default function WordList() {
       <Link to="/" className="text-blue-600 hover:underline mb-4 block">
           🏠 {t('home')}
       </Link>
+      <LanguageSwitcher />
       <h2 className="text-2xl font-bold mb-4">{t('allWords')}</h2>
       <Link to="/words-browser"
       className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 text-blue-700 rounded-md shadow-sm hover:bg-blue-200 transition-colors duration-200 mb-4"
