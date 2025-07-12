@@ -31,7 +31,40 @@
   "errorSearching": "Error al buscar la palabra.",
 
   "viewDetails": "Ver detalles",
-  "showAnother": "Mostrar otro"
+  "showAnother": "Mostrar otro",
+
+  "loading": "Cargando...",
+  "goBack": "Volver",
+  "home": "Inicio",
+  "language": "Idioma",
+  "category": "Categoría",
+  "difficulty": "Dificultad",
+  "practicePrompt": "Practica tu pronunciación",
+  "practiceHint": "Grábate y compáralo con la pronunciación nativa de arriba.",
+  "currentStatus": "Estado actual",
+  "submitRecording": "Enviar grabación",
+  "preview": "Vista previa",
+  "deleteRecording": "Eliminar grabación",
+  "stop": "Detener grabación",
+  "start": "Iniciar grabación",
+  "submit": "Enviar intento",
+  "uploading": "Subiendo tu grabación...",
+  "submitted": "¡Intento enviado!",
+  "submitError": "Algo salió mal. Por favor, inténtalo de nuevo.",
+  "limitReached": "Has alcanzado el límite diario de 20 intentos de pronunciación. ¡Vuelve a intentarlo mañana!",
+  "aiFeedback": "Feedback de la IA",
+  "statusSet": "¡Estado actualizado a \"{{status}}\" correctamente!",
+  "noAttempts": "Aún no hay intentos.",
+  "date": "Fecha",
+  "unknown": "Desconocido",
+  "score": "Puntuación",
+  "feedback": "Comentarios",
+  "pending": "Pendiente",
+  "delete": "Eliminar",
+  "confirmDelete": "¿Estás seguro de que deseas eliminar este intento? Al aceptar, también lo eliminarás de tu progreso.",
+  "deleteError": "Se produjo un error al eliminar el intento.",
+  "mastered": "Dominado",
+  "practice": "Para practicar"
 
 }
 

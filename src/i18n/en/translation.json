@@ -31,7 +31,40 @@
   "errorSearching": "Error searching for word.",
 
   "viewDetails": "View Details",
-  "showAnother": "Show Another"
+  "showAnother": "Show Another",
+
+  "loading": "Loading...",
+  "goBack": "Go Back",
+  "home": "Home",
+  "language": "Language",
+  "category": "Category",
+  "difficulty": "Difficulty",
+  "practicePrompt": "Practice Your Pronunciation",
+  "practiceHint": "Record yourself and compare with the native pronunciation above.",
+  "currentStatus": "Current status",
+  "submitRecording": "Submit Your Recording",
+  "preview": "Preview",
+  "deleteRecording": "Delete Recording",
+  "stop": "Stop Recording",
+  "start": "Start Recording",
+  "submit": "Submit Attempt",
+  "uploading": "Uploading your recording...",
+  "submitted": "Attempt submitted!",
+  "submitError": "Something went wrong. Please try again.",
+  "limitReached": "You’ve reached your daily limit of 20 pronunciation attempts. Try again tomorrow!",
+  "aiFeedback": "AI Feedback",
+  "statusSet": "Status set to \"{{status}}\" successfully!",
+  "noAttempts": "No attempts yet.",
+  "date": "Date",
+  "unknown": "Unknown",
+  "score": "Score",
+  "feedback": "Feedback",
+  "pending": "Pending",
+  "delete": "Delete",
+  "confirmDelete": "Are you sure you want to delete this attempt? By accepting, you will also remove it from your progress.",
+  "deleteError": "An error occurred while deleting the attempt.",
+  "mastered": "Mastered",
+  "practice": "Practice"
 
 }
 

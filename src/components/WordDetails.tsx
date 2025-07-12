@@ -1,5 +1,6 @@
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { api } from '../services/api';
 import type { Word } from '../types/word';
 import { useRecorder } from '../hooks/useRecorder';
@@ -38,6 +39,8 @@ export default function WordDetails() {
 
   const [hasReachedLimit, setHasReachedLimit] = useState(false);
 
+  const { t, i18n } = useTranslation();
+
 
   const updateStatus = async (newStatus: 'mastered' | 'practice') => {
   try {
@@ -48,7 +51,7 @@ export default function WordDetails() {
       return { ...prevWord, status: newStatus };
     });
 
-    setStatusMessage(`✅ Status set to "${newStatus}" successfully!`);
+    setStatusMessage( t('✅ statusSet', { status: t(newStatus === 'mastered' ? 'mastered' : 'practice') }));
     setTimeout(() => setStatusMessage(''), 3000); 
 
   } catch (err) {
@@ -103,10 +106,10 @@ const submitAttempt = async () => {
     console.error('Error submitting attempt:', error);
       if (error.response?.status === 429) {
       setSubmitStatus('error');
-      setLatestFeedback('⚠️ You’ve reached your daily limit of 20 pronunciation attempts. Try again tomorrow!');
+      setLatestFeedback(t('⚠️ limitReached'));
     } else {
       setSubmitStatus('error');
-      setLatestFeedback('❌ Something went wrong. Please try again.');
+      setLatestFeedback(t('❌ submitError'));
     }
   } finally {
     setTimeout(() => setSubmitStatus('idle'), 3000);
@@ -115,7 +118,7 @@ const submitAttempt = async () => {
 
 
 const handleDeleteAttempt = async (attemptId: string) => {
-  if (!window.confirm('Are you sure you want to delete this attempt? By accepting, you will also remove it from your progress.')) return;
+  if (!window.confirm(t('confirmDelete'))) return;
 
   try {
     await api.delete(`/pronunciation/${attemptId}`, {
@@ -139,7 +142,7 @@ const handleDeleteAttempt = async (attemptId: string) => {
 
   } catch (error) {
     console.error('Failed to delete attempt:', error);
-    alert('An error occurred while deleting the attempt.');
+    alert(t('deleteError'));
   }
 };
 
@@ -161,13 +164,13 @@ const handleDeleteAttempt = async (attemptId: string) => {
       })
       .catch(() => {
         console.error("Error fetching word:", error);
-        setError('Word not found');
+        setError(t('wordNotFound'));
         setLoading(false);
       });
       fetchAttempts();
-  }, [id]);
+  }, [id, i18n.language]);
 
-  if (loading) return <p className="text-center text-gray-500">Loading...</p>;
+  if (loading) return <p className="text-center text-gray-500">{t('loading')}</p>;
   if (error) return <p className="text-center text-red-500">{error}</p>;
   if (!word) return null;
 
@@ -175,40 +178,40 @@ const handleDeleteAttempt = async (attemptId: string) => {
     <div className="max-w-xl mx-auto p-6 bg-white shadow-md rounded-md">
       <div className="flex justify-between items-center mb-4">
         <button onClick={() => navigate(-1)} className="text-blue-600 hover:underline cursor-pointer">
-          ← Go Back
+          ← {t('goBack')}
         </button>
         <Link to="/" className="text-blue-600 hover:underline">
-          🏠 Home
+          🏠 {t('home')}
         </Link>
       </div>
       <h2 className="text-2xl font-bold mb-4">{word.word}</h2>
       <p className="mb-2"><strong>IPA:</strong> {word.ipa}</p>
-      <p className="mb-2"><strong>Language:</strong> {word.language}</p>
-      {word.category && <p className="mb-2"><strong>Category:</strong> {word.category}</p>}
-      {word.difficulty && <p className="mb-2"><strong>Difficulty:</strong> {word.difficulty}</p>}
+      <p className="mb-2"><strong>{t('language')}:</strong> {word.language}</p>
+      {word.category && <p className="mb-2"><strong>{t('category')}:</strong> {word.category}</p>}
+      {word.difficulty && <p className="mb-2"><strong>{t('difficulty')}:</strong> {word.difficulty}</p>}
 
       {audioExists && (
         <audio className="my-4 w-full" controls src={`https://api.dictionaryapi.dev/media/pronunciations/en/${word.word}-us.mp3`} />
       )}
 
       <div className="mt-6 p-4 bg-gray-100 rounded shadow">
-        <h3 className="text-lg font-semibold mb-2">🎤 Practice Your Pronunciation</h3>
-        <p className="mb-4 text-sm text-gray-700">Record yourself and compare with the native pronunciation above.</p>
+        <h3 className="text-lg font-semibold mb-2">🎤 {t('practicePrompt')}</h3>
+        <p className="mb-4 text-sm text-gray-700">{t('practiceHint')}</p>
   
       </div>
 
 
       {word.status && (
         <p className="text-sm text-gray-700 mb-2">
-          Current status: <strong>{word.status}</strong>
+          {t('currentStatus')} <strong>{t(word.status)}</strong>
         </p>
       )}
 
       <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded">
-        <h3 className="font-semibold mb-2">Submit Your Recording</h3>
+        <h3 className="font-semibold mb-2">{t('submitRecording')}</h3>
         {recordedUrl && (
           <div className="mt-4 space-y-2">
-            <p className="text-sm mb-1">Preview:</p>
+            <p className="text-sm mb-1">{t('preview')}:</p>
             <audio controls src={recordedUrl} className="w-full" />
             <button
               onClick={() => {
@@ -217,7 +220,7 @@ const handleDeleteAttempt = async (attemptId: string) => {
               }}
               className="px-4 py-2 bg-red-500 hover:bg-red-600 text-white font-semibold rounded shadow cursor-pointer text-sm"
             >
-              ❌ Delete Recording
+              ❌ {t('deleteRecording')}
             </button>
           </div>
         )}
@@ -231,7 +234,7 @@ const handleDeleteAttempt = async (attemptId: string) => {
                 : 'bg-green-500 hover:bg-green-600 text-white'
             }`}
           >
-            {isRecording ? '⏹ Stop Recording' : '🎙 Start Recording'}
+            {isRecording ? '⏹ ' + t('stop') : '🎙 ' + t('start')}
           </button>
 
           <button
@@ -239,27 +242,27 @@ const handleDeleteAttempt = async (attemptId: string) => {
             disabled={!audioBlob || hasReachedLimit}
             className="flex-1 px-6 py-3 rounded bg-blue-500 hover:bg-blue-600 text-white font-semibold shadow disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
           >
-            Submit Attempt
+             {t('submit')}
           </button>
           {hasReachedLimit && (
             <p className="text-red-600 text-sm mt-2">
-              ⚠️ You’ve reached your daily limit of 20 pronunciation attempts.
+              ⚠️ {t('limitReached')}
             </p>
           )}
           {submitStatus === 'submitting' && (
-            <p className="text-blue-600 text-sm mt-2">Uploading your recording...</p>
+            <p className="text-blue-600 text-sm mt-2">{t('uploading')}</p>
           )}
           {submitStatus === 'success' && (
-            <p className="text-green-600 text-sm mt-2">✅ Attempt submitted!</p>
+            <p className="text-green-600 text-sm mt-2">✅ {t('submitted')}</p>
           )}
           {submitStatus === 'error' && (
-            <p className="text-red-600 text-sm mt-2">❌ Something went wrong. Please try again.</p>
+            <p className="text-red-600 text-sm mt-2">❌ {t('submitError')}</p>
           )}
         </div>
       </div>
       {latestFeedback && (
         <div className="mt-4 p-4 bg-green-100 border border-green-400 text-green-800 rounded shadow">
-          <strong>AI Feedback:</strong> {latestFeedback}
+          <strong>{t('aiFeedback')}:</strong> {latestFeedback}
         </div>
       )}
       {statusMessage && (
@@ -268,9 +271,9 @@ const handleDeleteAttempt = async (attemptId: string) => {
         </div>
       )}
       <div className="mt-6">
-        <h3 className="text-lg font-semibold mb-2">🗂 Your Attempts</h3>
+        <h3 className="text-lg font-semibold mb-2">🗂 {t('yourAttempts')}</h3>
         {attempts.length === 0 ? (
-          <p className="text-sm text-gray-500">No attempts yet.</p>
+          <p className="text-sm text-gray-500">{t('noAttempts')}</p>
         ) : (
           <ul className="space-y-2">
             {attempts
@@ -282,16 +285,16 @@ const handleDeleteAttempt = async (attemptId: string) => {
               <li key={a._id} className="p-3 border rounded shadow-sm bg-white">
                 <div className="border p-4 rounded shadow-sm bg-white space-y-2">
                   <p className="text-sm text-gray-600">
-                    <strong>Date:</strong> {a.createdAt ? new Date(a.createdAt).toLocaleString() : 'Unknown'}
+                    <strong>{t('date')}:</strong> {a.createdAt ? new Date(a.createdAt).toLocaleString() : t('unknown')}
                   </p>
                   <audio controls src={a.audioUrl} className="w-full" />
-                  <p><strong>Score:</strong> {a.score ?? 'N/A'}</p>
-                  <p><strong>Feedback:</strong> {a.feedback ?? 'Pending'}</p>
+                  <p><strong>{t('score')}:</strong> {a.score ?? 'N/A'}</p>
+                  <p><strong>{t('feedback')}:</strong> {a.feedback ?? t('pending')}</p>
                    <button
                     onClick={() => handleDeleteAttempt(a._id)}
                     className="inline-flex items-center gap-1 text-sm text-red-600 hover:text-red-700 hover:underline font-medium transition-colors cursor-pointer"
                   >
-                    🗑 Delete
+                    🗑 {t('delete')}
                   </button>
                 </div>
               </li>
@@ -304,13 +307,13 @@ const handleDeleteAttempt = async (attemptId: string) => {
           onClick={() => updateStatus('mastered')}
           className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 cursor-pointer"
         >
-          ✅ Mastered
+          ✅ {t('mastered')}
         </button>
         <button
           onClick={() => updateStatus('practice')}
           className="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500 cursor-pointer"
         >
-          🕒 Practice
+          🕒 {t('practice')}
         </button>
       </div>
     </div>
