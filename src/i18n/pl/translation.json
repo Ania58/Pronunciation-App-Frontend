@@ -88,7 +88,12 @@
   "browseAllWords": "Przeglądaj wszystkie słowa",
 
   "micCheckInfo": "Ta strona służy tylko do testowania mikrofonu.",
-  "micCheckNote": "Nic tutaj nie jest zapisywane ani analizowane. Aby otrzymać opinię wspieraną przez AI, nagraj się przy konkretnym słowie po rejestracji."
+  "micCheckNote": "Nic tutaj nie jest zapisywane ani analizowane. Aby otrzymać opinię wspieraną przez AI, nagraj się przy konkretnym słowie po rejestracji.",
+
+  "allAttemptsInfo": "Wszystkie przesłane próby — wraz z wynikami, opiniami i nagraniami audio.",
+  "word": "Słowo",
+  "audio": "Audio",
+  "noPlayback": "Twoja przeglądarka nie obsługuje odtwarzania dźwięku."
 
 }
 

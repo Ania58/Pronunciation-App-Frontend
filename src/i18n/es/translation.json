@@ -87,7 +87,12 @@
   "browseAllWords": "Explorar todas las palabras",
 
   "micCheckInfo": "Esta página es solo para probar tu micrófono.",
-  "micCheckNote": "Aquí no se guarda ni analiza nada. Para recibir comentarios con IA, graba bajo una palabra específica después de registrarte."
+  "micCheckNote": "Aquí no se guarda ni analiza nada. Para recibir comentarios con IA, graba bajo una palabra específica después de registrarte.",
+
+  "allAttemptsInfo": "Todos los intentos que has enviado, con puntuaciones, comentarios y audio.",
+  "word": "Palabra",
+  "audio": "Audio",
+  "noPlayback": "Tu navegador no admite la reproducción de audio."
 
 }
 
