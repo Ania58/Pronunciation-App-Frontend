@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { api } from '../services/api';
 import type { Word } from '../types/word';
 
 export default function RandomWordWidget() {
   const [word, setWord] = useState<Word | null>(null);
+  const { t } = useTranslation();
 
   const fetchRandom = async () => {
     try {
@@ -34,13 +36,13 @@ return (
         to={`/words/${word.id}`}
         className="text-blue-600 hover:underline text-sm"
       >
-        View Details
+        {t('viewDetails')}
       </Link>
       <button
         onClick={fetchRandom}
         className="text-sm px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded border border-gray-300 cursor-pointer"
       >
-        Show Another
+        {t('showAnother')}
       </button>
     </div>
   </div>

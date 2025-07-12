@@ -29,7 +29,11 @@
   "searchPlaceholder": "Wyszukaj słowo",
   "search": "Szukaj",
   "wordNotFound": "Nie znaleziono słowa.",
-  "errorSearching": "Błąd podczas wyszukiwania."
+  "errorSearching": "Błąd podczas wyszukiwania.",
+
+  "viewDetails": "Zobacz szczegóły",
+  "showAnother": "Pokaż inne"
+
 }
 
 
