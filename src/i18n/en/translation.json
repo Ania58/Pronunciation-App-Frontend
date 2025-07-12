@@ -64,7 +64,17 @@
   "confirmDelete": "Are you sure you want to delete this attempt? By accepting, you will also remove it from your progress.",
   "deleteError": "An error occurred while deleting the attempt.",
   "mastered": "Mastered",
-  "practice": "Practice"
+  "practice": "Practice",
+
+  "allWords": "All Words",
+  "tryWordBrowser": "Try the new Word Browser with advanced filters",
+  "searchWordsPlaceholder": "Search words...",
+  "loadingWords": "Loading words...",
+  "failedToLoadWords": "Failed to load words.",
+  "previous": "Previous",
+  "next": "Next",
+  "page": "Page",
+  "of": "of"
 
 }
 

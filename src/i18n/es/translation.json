@@ -64,7 +64,17 @@
   "confirmDelete": "¿Estás seguro de que deseas eliminar este intento? Al aceptar, también lo eliminarás de tu progreso.",
   "deleteError": "Se produjo un error al eliminar el intento.",
   "mastered": "Dominado",
-  "practice": "Para practicar"
+  "practice": "Para practicar",
+
+  "allWords": "Todas las palabras",
+  "tryWordBrowser": "Prueba el nuevo explorador de palabras con filtros avanzados",
+  "searchWordsPlaceholder": "Buscar palabras...",
+  "loadingWords": "Cargando palabras...",
+  "failedToLoadWords": "Error al cargar las palabras.",
+  "previous": "Anterior",
+  "next": "Siguiente",
+  "page": "Página",
+  "of": "de"
 
 }
 

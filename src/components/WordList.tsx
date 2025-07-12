@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { api } from '../services/api';
 import type { Word } from '../types/word';
 
@@ -13,6 +14,9 @@ export default function WordList() {
   const searchTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   
   const location = useLocation();
+
+  const { t } = useTranslation();
+
   
   useEffect(() => {
       const params = new URLSearchParams(location.search);
@@ -64,26 +68,26 @@ export default function WordList() {
   return (
     <div className="max-w-4xl mx-auto p-6">
       <Link to="/" className="text-blue-600 hover:underline mb-4 block">
-          🏠 Home
+          🏠 {t('home')}
       </Link>
-      <h2 className="text-2xl font-bold mb-4">All Words</h2>
+      <h2 className="text-2xl font-bold mb-4">{t('allWords')}</h2>
       <Link to="/words-browser"
       className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 text-blue-700 rounded-md shadow-sm hover:bg-blue-200 transition-colors duration-200 mb-4"
       >
         <span role="img" aria-label="pointing hand">👉</span>
-        <span className="font-medium">Try the new Word Browser with advanced filters</span>
+        <span className="font-medium">{t('tryWordBrowser')}</span>
       </Link>
 
       <input
         type="text"
         defaultValue={search}
         onChange={handleSearchChange}
-        placeholder="Search words..."
+        placeholder={t('searchWordsPlaceholder')}
         className="border border-gray-300 p-2 rounded w-full max-w-md mb-4"
       />
 
       {loading ? (
-        <p>Loading words...</p>
+        <p>{t('loadingWords')}</p>
       ) : error ? (
         <p className="text-red-600">{error}</p>
       ) : (
@@ -107,11 +111,11 @@ export default function WordList() {
               disabled={page === 1}
               className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 disabled:opacity-50 cursor-pointer"
             >
-              Previous
+              {t('previous')}
             </button>
 
             <span>
-              Page {page} of {totalPages}
+              {t('page')} {page} {t('of')} {totalPages}
             </span>
 
             <button
@@ -119,7 +123,7 @@ export default function WordList() {
               disabled={page === totalPages}
               className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 disabled:opacity-50 cursor-pointer"
             >
-              Next
+              {t('next')}
             </button>
           </div>
         </>

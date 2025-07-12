@@ -65,7 +65,17 @@
   "confirmDelete": "Czy na pewno chcesz usunąć tę próbę? Akceptując, usuniesz to również ze swoich postępów.",
   "deleteError": "Wystąpił błąd podczas usuwania próby",
   "mastered": "Opanowane do perfekcji",
-  "practice": "Do przećwiczenia"
+  "practice": "Do przećwiczenia",
+
+  "allWords": "Wszystkie słowa",
+  "tryWordBrowser": "Wypróbuj nową przeglądarkę słów z zaawansowanymi filtrami",
+  "searchWordsPlaceholder": "Szukaj słów...",
+  "loadingWords": "Ładowanie słów...",
+  "failedToLoadWords": "Nie udało się załadować słów.",
+  "previous": "Poprzednia",
+  "next": "Następna",
+  "page": "Strona",
+  "of": "z"
 
 }
 
