@@ -39,28 +39,28 @@ export default function Header() {
           <p className="text-lg font-medium mb-2">{t('byCategory')}</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
             <Link to="/words?category=voiceless%20TH" className="block bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded text-center shadow">
-              Voiceless TH
+               {t('voicelessTH')}
             </Link>
             <Link to="/words?category=voiced%20TH" className="block bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded text-center shadow">
-              Voiced TH
+               {t('voicedTH')}
             </Link>
             <Link to="/words?category=schwa" className="block bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded text-center shadow">
-              Schwa
+               {t('schwa')}
             </Link>
             <Link to="/words?category=diphthongs" className="block bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded text-center shadow">
-              Diphthongs
+              {t('diphthongs')}
             </Link>
             <Link to="/words?category=stress" className="block bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded text-center shadow">
-              Stress
+               {t('stress')}
             </Link>
             <Link to="/words?category=consonant%20clusters" className="block bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded text-center shadow">
-              Consonant Clusters
+              {t('consonantClusters')}
             </Link>
             <Link to="/words?category=vowels" className="block bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded text-center shadow">
-              Vowels
+               {t('vowels')}
             </Link>
             <Link to="/words?category=other" className="block bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded text-center shadow">
-              Other
+              {t('other')}
             </Link>
           </div>
         </div>

@@ -5,6 +5,16 @@
   "easy": "Fácil",
   "medium": "Intermedio",
   "hard": "Difícil",
+
+  "voicelessTH": "TH sordo (Voiceless TH)",
+  "voicedTH": "TH sonoro (Voiced TH)",
+  "schwa": "Schwa (Schwa)",
+  "diphthongs": "Diptongos (Diphthongs)",
+  "stress": "Acento (Stress)",
+  "consonantClusters": "Grupos consonánticos (Consonant Clusters)",
+  "vowels": "Vocales (Vowels)",
+  "other": "Otros (Other)",
+
   "browseAll": "🔍 Explorar todas las palabras",
   "practicePronunciation": "🎤 Practicar pronunciación",
   "seeProgress": "📊 Ver tu progreso",

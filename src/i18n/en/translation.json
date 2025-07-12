@@ -5,6 +5,16 @@
   "easy": "Easy",
   "medium": "Medium",
   "hard": "Hard",
+  
+  "voicelessTH": "Voiceless TH",
+  "voicedTH": "Voiced TH",
+  "schwa": "Schwa",
+  "diphthongs": "Diphthongs",
+  "stress": "Stress",
+  "consonantClusters": "Consonant Clusters",
+  "vowels": "Vowels",
+  "other": "Other",
+
   "browseAll": "🔍 Browse All Words",
   "practicePronunciation": "🎤 Practice Pronunciation",
   "seeProgress": "📊 See Your Progress",

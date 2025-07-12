@@ -5,6 +5,17 @@
   "easy": "Łatwe",
   "medium": "Średnie",
   "hard": "Trudne",
+  
+  "voicelessTH": "Bezdźwięczne TH (Voiceless TH)",
+  "voicedTH": "Dźwięczne TH (Voiced TH)",
+  "schwa": "Szwa (Schwa)",
+  "diphthongs": "Dwugłoski (Diphthongs)",
+  "stress": "Akcent (Stress)",
+  "consonantClusters": "Zbitki spółgłoskowe (Consonant Clusters)",
+  "vowels": "Samogłoski (Vowels)",
+  "other": "Inne (Other)",
+
+
   "browseAll": "🔍 Przeglądaj wszystkie słowa",
   "practicePronunciation": "🎤 Ćwicz wymowę",
   "seeProgress": "📊 Zobacz swoje postępy",
