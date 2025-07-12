@@ -93,7 +93,13 @@
   "allAttemptsInfo": "Wszystkie przesłane próby — wraz z wynikami, opiniami i nagraniami audio.",
   "word": "Słowo",
   "audio": "Audio",
-  "noPlayback": "Twoja przeglądarka nie obsługuje odtwarzania dźwięku."
+  "noPlayback": "Twoja przeglądarka nie obsługuje odtwarzania dźwięku.",
+
+  "yourProgress": "Twój postęp w słowach",
+  "markedWordsDescription": "Wszystkie słowa oznaczone jako „opanowane” lub „do przećwiczenia”.",
+  "noWordsMarked": "Nie oznaczyłeś jeszcze żadnych słów.",
+  "removeWordConfirm": "Czy na pewno chcesz usunąć \"{{word}}\" ze swojego postępu?",
+  "action": "Opcje"
 
 }
 

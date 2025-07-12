@@ -92,7 +92,13 @@
   "allAttemptsInfo": "All attempts you've submitted, with scores, feedback, and audio.",
   "word": "Word",
   "audio": "Audio",
-  "noPlayback": "Your browser does not support audio playback."
+  "noPlayback": "Your browser does not support audio playback.",
+
+  "yourProgress": "Your Word Progress",
+  "markedWordsDescription": "All words you’ve marked as “mastered” or “practice”.",
+  "noWordsMarked": "You haven’t marked any words yet.",
+  "removeWordConfirm": "Are you sure you want to remove \"{{word}}\" from your progress?",
+  "action": "Action"
 
 
 }

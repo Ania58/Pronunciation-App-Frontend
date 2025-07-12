@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { api } from '../services/api';
 import type { Word } from '../types/word';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 /*interface StatusEntry {
   wordId: string;
@@ -14,6 +15,8 @@ export default function WordProgressPage() {
   const [loading, setLoading] = useState(true);
 
   const fakeUserId = 'dev-user-001';
+
+  const { t } = useTranslation();
 
   useEffect(() => {
     const fetchStatusesAndWords = async () => {
@@ -48,7 +51,7 @@ export default function WordProgressPage() {
   }, []);
 
   const handleRemoveWord = async (wordId: string, wordText: string) => {
-    const confirmed = window.confirm(`Are you sure you want to remove "${wordText}" from your progress?`);
+    const confirmed = window.confirm(t('removeWordConfirm', { word: wordText }));
     if (!confirmed) return;
 
     try {
@@ -74,23 +77,23 @@ export default function WordProgressPage() {
                 to="/"
                 className="text-blue-600 hover:underline"
             >
-                🏠 Home
+                🏠 {t('home')}
             </Link>
         </div>
-      <h1 className="text-2xl font-bold mb-4">🧠 Your Word Progress</h1>
-      <p className="text-sm text-gray-600 mb-6">All words you’ve marked as “mastered” or “practice”.</p>
+      <h1 className="text-2xl font-bold mb-4">🧠 {t('yourProgress')}</h1>
+      <p className="text-sm text-gray-600 mb-6">{t('markedWordsDescription')}</p>
 
       {loading ? (
-        <p className="text-gray-500">Loading...</p>
+        <p className="text-gray-500">{t('loading')}</p>
       ) : words.length === 0 ? (
-        <p className="text-gray-500">You haven’t marked any words yet.</p>
+        <p className="text-gray-500">{t('noWordsMarked')}</p>
       ) : (
         <table className="w-full table-auto border border-gray-200 text-sm">
           <thead>
             <tr className="bg-gray-100">
-              <th className="p-2 border">Word</th>
-              <th className="p-2 border">Status</th>
-              <th className="p-2 border">Action</th>
+              <th className="p-2 border">{t('sort.word')}</th>
+              <th className="p-2 border">{t('currentStatus')}</th>
+              <th className="p-2 border">{t('action')}</th>
             </tr>
           </thead>
           <tbody>
@@ -100,13 +103,13 @@ export default function WordProgressPage() {
                 <td className="p-2 border capitalize">{statuses[w.id]}</td>
                 <td className="p-2 border space-x-2">
                     <Link to={`/words/${w.id}`} className="text-blue-600 hover:underline">
-                        View →
+                        {t('viewDetails')} →
                     </Link>
                     <button
                         onClick={() => handleRemoveWord(w.id, w.word)}
                         className="text-red-600 hover:underline cursor-pointer"
                     >
-                        Remove
+                        {t('delete')}
                     </button>
                 </td>
               </tr>

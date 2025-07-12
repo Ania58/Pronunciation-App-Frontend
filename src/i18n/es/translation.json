@@ -92,7 +92,13 @@
   "allAttemptsInfo": "Todos los intentos que has enviado, con puntuaciones, comentarios y audio.",
   "word": "Palabra",
   "audio": "Audio",
-  "noPlayback": "Tu navegador no admite la reproducción de audio."
+  "noPlayback": "Tu navegador no admite la reproducción de audio.",
+
+  "yourProgress": "Tu progreso con las palabras",
+  "markedWordsDescription": "Todas las palabras que marcaste como “dominadas” o “para practicar”.",
+  "noWordsMarked": "Aún no has marcado ninguna palabra.",
+  "removeWordConfirm": "¿Estás seguro de que deseas eliminar \"{{word}}\" de tu progreso?",
+  "action": "Opciones"
 
 }
 
