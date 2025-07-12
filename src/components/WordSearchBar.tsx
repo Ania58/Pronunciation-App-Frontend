@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { api } from '../services/api';
 import type { Word } from '../types/word';
 
@@ -7,6 +8,7 @@ export default function WordSearchBar() {
   const [search, setSearch] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,11 +27,11 @@ export default function WordSearchBar() {
       if (found.length > 0) {
         navigate(`/words/${found[0].id}`);
       } else {
-        setError('Word not found.');
+        setError(t('wordNotFound'));
       }
     } catch (err) {
       console.error(err);
-      setError('Error searching for word.');
+      setError(t('errorSearching'));
     }
 
     setSearch('');
@@ -40,7 +42,7 @@ export default function WordSearchBar() {
       <input
         type="text"
         value={search}
-        placeholder="Search for a word"
+        placeholder={t('searchPlaceholder')}
         onChange={(e) => {
           setSearch(e.target.value);
           setError('');
@@ -48,7 +50,7 @@ export default function WordSearchBar() {
         className="border p-2 rounded w-full max-w-xs"
       />
       <button type="submit" className="px-4 py-2 bg-blue-600 text-white rounded cursor-pointer">
-        Search
+        {t('search')}
       </button>
       {error && <p className="text-red-600 ml-2">{error}</p>}
     </form>
