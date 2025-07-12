@@ -84,7 +84,11 @@
   },
   "allCategories": "All Categories",
   "allDifficulties": "All Difficulties",
-  "browseAllWords": "Browse All Words"
+  "browseAllWords": "Browse All Words",
+
+  "micCheckInfo": "This page is just for testing your microphone.",
+  "micCheckNote": "Nothing is saved or analyzed here. To receive AI-powered feedback, record under a specific word after signing up."
+
 
 }
 

@@ -1,13 +1,15 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import RecorderWidget from '../features/record/RecorderWidget';
 
 export default function RecordPage() {
+  const { t } = useTranslation();
+
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-4">🎤 Practice Your Pronunciation</h1>
-      <p className="text-lg mb-6">
-        Record yourself saying a word or sentence, and listen to the result.
-      </p>
+      <h1 className="text-3xl font-bold mb-4">🎤 {t('practicePrompt')}</h1>
+      <p className="text-lg mb-2">{t('micCheckInfo')}</p>
+      <p className="text-sm text-gray-600 mb-6">{t('micCheckNote')}</p>
 
       <RecorderWidget />
 
@@ -16,7 +18,7 @@ export default function RecordPage() {
           to="/"
           className="inline-block bg-gray-200 hover:bg-gray-300 text-gray-800 px-5 py-2 rounded shadow cursor-pointer"
         >
-          ⬅ Back to Main Page
+          ⬅ {t('goBack')}
         </Link>
       </div>
     </div>

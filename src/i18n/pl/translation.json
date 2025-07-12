@@ -85,7 +85,10 @@
   },
   "allCategories": "Wszystkie kategorie",
   "allDifficulties": "Wszystkie poziomy trudności",
-  "browseAllWords": "Przeglądaj wszystkie słowa"
+  "browseAllWords": "Przeglądaj wszystkie słowa",
+
+  "micCheckInfo": "Ta strona służy tylko do testowania mikrofonu.",
+  "micCheckNote": "Nic tutaj nie jest zapisywane ani analizowane. Aby otrzymać opinię wspieraną przez AI, nagraj się przy konkretnym słowie po rejestracji."
 
 }
 

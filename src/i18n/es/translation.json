@@ -84,7 +84,10 @@
   },
   "allCategories": "Todas las categorías",
   "allDifficulties": "Todos los niveles de dificultad",
-  "browseAllWords": "Explorar todas las palabras"
+  "browseAllWords": "Explorar todas las palabras",
+
+  "micCheckInfo": "Esta página es solo para probar tu micrófono.",
+  "micCheckNote": "Aquí no se guarda ni analiza nada. Para recibir comentarios con IA, graba bajo una palabra específica después de registrarte."
 
 }
 
