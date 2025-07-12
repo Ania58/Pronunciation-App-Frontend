@@ -98,7 +98,13 @@
   "markedWordsDescription": "All words you’ve marked as “mastered” or “practice”.",
   "noWordsMarked": "You haven’t marked any words yet.",
   "removeWordConfirm": "Are you sure you want to remove \"{{word}}\" from your progress?",
-  "action": "Action"
+  "action": "Action",
+
+  "filter": {
+    "all": "All",
+    "mastered": "Mastered only",
+    "practice": "Practice only"
+  }
 
 
 }

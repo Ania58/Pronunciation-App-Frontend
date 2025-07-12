@@ -13,6 +13,7 @@ export default function WordProgressPage() {
   const [words, setWords] = useState<Word[]>([]);
   const [statuses, setStatuses] = useState<Record<string, 'mastered' | 'practice'>>({});
   const [loading, setLoading] = useState(true);
+  const [filter, setFilter] = useState<'all' | 'mastered' | 'practice'>('all');
 
   const fakeUserId = 'dev-user-001';
 
@@ -50,6 +51,10 @@ export default function WordProgressPage() {
     fetchStatusesAndWords();
   }, []);
 
+  const filtered = words.filter(w =>
+    filter === 'all' ? true : statuses[w.id] === filter
+  );
+
   const handleRemoveWord = async (wordId: string, wordText: string) => {
     const confirmed = window.confirm(t('removeWordConfirm', { word: wordText }));
     if (!confirmed) return;
@@ -80,6 +85,21 @@ export default function WordProgressPage() {
                 🏠 {t('home')}
             </Link>
         </div>
+        <div className="mb-4 flex gap-2">
+        {(['all', 'mastered', 'practice'] as const).map(btn => (
+          <button
+            key={btn}
+            onClick={() => setFilter(btn)}
+            className={`px-3 py-1 rounded border text-sm cursor-pointer ${
+              filter === btn
+                ? 'bg-blue-600 text-white cursor-pointer'
+                : 'border-gray-300 hover:bg-gray-100 cursor-pointer'
+            }`}
+          >
+            {t(`filter.${btn}`)}
+          </button>
+        ))}
+      </div>
       <h1 className="text-2xl font-bold mb-4">🧠 {t('yourProgress')}</h1>
       <p className="text-sm text-gray-600 mb-6">{t('markedWordsDescription')}</p>
 
@@ -97,7 +117,7 @@ export default function WordProgressPage() {
             </tr>
           </thead>
           <tbody>
-            {words.map((w) => (
+            {filtered.map((w) => (
               <tr key={w.id}>
                 <td className="p-2 border font-medium">{w.word}</td>
                 <td className="p-2 border capitalize">{statuses[w.id]}</td>

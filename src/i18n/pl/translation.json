@@ -99,7 +99,14 @@
   "markedWordsDescription": "Wszystkie słowa oznaczone jako „opanowane” lub „do przećwiczenia”.",
   "noWordsMarked": "Nie oznaczyłeś jeszcze żadnych słów.",
   "removeWordConfirm": "Czy na pewno chcesz usunąć \"{{word}}\" ze swojego postępu?",
-  "action": "Opcje"
+  "action": "Opcje",
+
+  "filter": {
+    "all": "Wszystkie",
+    "mastered": "Tylko opanowane",
+    "practice": "Tylko do ćwiczenia"
+  }
+
 
 }
 

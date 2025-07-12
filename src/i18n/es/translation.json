@@ -98,7 +98,14 @@
   "markedWordsDescription": "Todas las palabras que marcaste como “dominadas” o “para practicar”.",
   "noWordsMarked": "Aún no has marcado ninguna palabra.",
   "removeWordConfirm": "¿Estás seguro de que deseas eliminar \"{{word}}\" de tu progreso?",
-  "action": "Opciones"
+  "action": "Opciones",
+
+  "filter": {
+    "all": "Todas",
+    "mastered": "Solo dominadas",
+    "practice": "Solo para practicar"
+  }
+
 
 }
 
