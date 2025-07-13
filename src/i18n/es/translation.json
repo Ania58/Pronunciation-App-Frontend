@@ -104,8 +104,10 @@
     "all": "Todas",
     "mastered": "Solo dominadas",
     "practice": "Solo para practicar"
-  }
+  },
 
+  "practiceHintWithAudio": "Grábate y compara tu pronunciación con el audio nativo.",
+  "practiceHintNoAudio": "Grábate enfocándote en la transcripción fonética (IPA) como guía para tu pronunciación."
 
 }
 

@@ -198,8 +198,9 @@ const handleDeleteAttempt = async (attemptId: string) => {
 
       <div className="mt-6 p-4 bg-gray-100 rounded shadow">
         <h3 className="text-lg font-semibold mb-2">🎤 {t('practicePrompt')}</h3>
-        <p className="mb-4 text-sm text-gray-700">{t('practiceHint')}</p>
-  
+        <p className="mb-4 text-sm text-gray-700">
+          {audioExists ? t('practiceHintWithAudio') : t('practiceHintNoAudio')}
+        </p>
       </div>
 
 

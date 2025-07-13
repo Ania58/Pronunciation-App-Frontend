@@ -104,8 +104,10 @@
     "all": "All",
     "mastered": "Mastered only",
     "practice": "Practice only"
-  }
+  },
 
+  "practiceHintWithAudio": "Record yourself and compare with the native pronunciation above.",
+  "practiceHintNoAudio": "Record yourself while focusing on the IPA transcription to guide your pronunciation."
 
 }
 

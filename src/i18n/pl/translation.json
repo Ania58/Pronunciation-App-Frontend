@@ -105,7 +105,11 @@
     "all": "Wszystkie",
     "mastered": "Tylko opanowane",
     "practice": "Tylko do ćwiczenia"
-  }
+  },
+
+  "practiceHintWithAudio": "Nagraj się i porównaj swoją wymowę z nagraniem powyżej.",
+  "practiceHintNoAudio": "Nagraj się, koncentrując się na transkrypcji IPA, aby poprawić swoją wymowę."
+
 
 
 }
