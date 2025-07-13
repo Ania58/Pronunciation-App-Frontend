@@ -107,7 +107,20 @@
   },
 
   "practiceHintWithAudio": "Grábate y compara tu pronunciación con el audio nativo.",
-  "practiceHintNoAudio": "Grábate enfocándote en la transcripción fonética (IPA) como guía para tu pronunciación."
+  "practiceHintNoAudio": "Grábate enfocándote en la transcripción fonética (IPA) como guía para tu pronunciación.",
+
+  "contact": {
+    "title": "📬 Contáctame",
+    "description": "¿Tienes una pregunta, comentario o sugerencia? ¿Quieres apuntarte a clases individuales? ¿O necesitas que cree tu sitio web? ¡Envíame un mensaje!",
+    "namePlaceholder": "Tu nombre",
+    "emailPlaceholder": "Tu correo electrónico",
+    "subjectPlaceholder": "Asunto",
+    "messagePlaceholder": "Tu mensaje",
+    "send": "Enviar mensaje",
+    "sending": "Enviando...",
+    "success": "Mensaje enviado con éxito.",
+    "error": "Algo salió mal. Por favor, inténtalo de nuevo."
+}
 
 }
 

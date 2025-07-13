@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { api } from '../services/api'; 
+import { useTranslation } from 'react-i18next';
 
 export default function ContactPage() {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -26,29 +28,29 @@ export default function ContactPage() {
     try {
       const res = await api.post('/contact', formData);
       setStatus('success');
-      setFeedback(res.data.message);
+      setFeedback(res.data.message || t('contact.success'));
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (err: any) {
       console.error(err);
       setStatus('error');
       setFeedback(
-        err.response?.data?.message || 'Something went wrong. Please try again.'
+        err.response?.data?.message || t('contact.error')
       );
     }
   };
 
   return (
     <div className="max-w-xl mx-auto p-6 bg-white rounded shadow">
-      <h1 className="text-2xl font-bold mb-4">📬 Contact Me</h1>
+      <h1 className="text-2xl font-bold mb-4">{t('contact.title')}</h1>
       <p className="mb-6 text-gray-600">
-        Have a question, feedback, or suggestion? Want to sign up for individual classes? Want me to create your website? Send me a message!
+        {t('contact.description')}
       </p>
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
           type="text"
           name="name"
-          placeholder="Your name"
+          placeholder={t('contact.namePlaceholder')}
           value={formData.name}
           onChange={handleChange}
           className="w-full border px-3 py-2 rounded"
@@ -57,7 +59,7 @@ export default function ContactPage() {
         <input
           type="email"
           name="email"
-          placeholder="Your e-mail"
+          placeholder={t('contact.emailPlaceholder')}
           value={formData.email}
           onChange={handleChange}
           className="w-full border px-3 py-2 rounded"
@@ -66,7 +68,7 @@ export default function ContactPage() {
         <input
           type="text"
           name="subject"
-          placeholder="Subject"
+          placeholder={t('contact.subjectPlaceholder')}
           value={formData.subject}
           onChange={handleChange}
           className="w-full border px-3 py-2 rounded"
@@ -74,7 +76,7 @@ export default function ContactPage() {
         />
         <textarea
           name="message"
-          placeholder="Your message"
+          placeholder={t('contact.messagePlaceholder')}
           rows={6}
           value={formData.message}
           onChange={handleChange}
@@ -87,7 +89,7 @@ export default function ContactPage() {
           className="bg-blue-600 text-white px-6 py-2 rounded shadow hover:bg-blue-700 cursor-pointer"
           disabled={status === 'sending'}
         >
-          {status === 'sending' ? 'Sending...' : 'Send Message'}
+          {status === 'sending' ?  t('contact.sending') : t('contact.send')}
         </button>
 
         {feedback && (

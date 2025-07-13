@@ -108,9 +108,20 @@
   },
 
   "practiceHintWithAudio": "Nagraj się i porównaj swoją wymowę z nagraniem powyżej.",
-  "practiceHintNoAudio": "Nagraj się, koncentrując się na transkrypcji IPA, aby poprawić swoją wymowę."
+  "practiceHintNoAudio": "Nagraj się, koncentrując się na transkrypcji IPA, aby poprawić swoją wymowę.",
 
-
+  "contact": {
+    "title": "📬 Skontaktuj się ze mną",
+    "description": "Masz pytanie, opinię lub sugestię? Chcesz zapisać się na indywidualne zajęcia? A może potrzebujesz strony internetowej? Napisz do mnie!",
+    "namePlaceholder": "Twoje imię",
+    "emailPlaceholder": "Twój e-mail",
+    "subjectPlaceholder": "Temat",
+    "messagePlaceholder": "Twoja wiadomość",
+    "send": "Wyślij wiadomość",
+    "sending": "Wysyłanie...",
+    "success": "Wiadomość została wysłana.",
+    "error": "Coś poszło nie tak. Spróbuj ponownie."
+}
 
 }
 

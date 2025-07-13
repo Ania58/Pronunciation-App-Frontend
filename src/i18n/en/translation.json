@@ -107,7 +107,20 @@
   },
 
   "practiceHintWithAudio": "Record yourself and compare with the native pronunciation above.",
-  "practiceHintNoAudio": "Record yourself while focusing on the IPA transcription to guide your pronunciation."
+  "practiceHintNoAudio": "Record yourself while focusing on the IPA transcription to guide your pronunciation.",
+
+  "contact": {
+    "title": "📬 Contact Me",
+    "description": "Have a question, feedback, or suggestion? Want to sign up for individual classes? Want me to create your website? Send me a message!",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "Your e-mail",
+    "subjectPlaceholder": "Subject",
+    "messagePlaceholder": "Your message",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "success": "Message sent successfully.",
+    "error": "Something went wrong. Please try again."
+}
 
 }
 
