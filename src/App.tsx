@@ -6,6 +6,7 @@ import WordBrowser from './components/WordBrowser';
 import RecordPage from './pages/RecordPage';
 import WordProgressPage from './pages/WordProgressPage';
 import AttemptHistoryPage from './pages/AttemptHistoryPage';
+import ContactPage from './pages/ContactPage';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/record" element={<RecordPage />} /> 
         <Route path="/progress" element={<WordProgressPage />} />
         <Route path="/attempts" element={<AttemptHistoryPage />} />
+        <Route path="/contact" element={<ContactPage />} />
       </Routes>
     </Router>
   );
