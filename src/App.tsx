@@ -7,10 +7,12 @@ import RecordPage from './pages/RecordPage';
 import WordProgressPage from './pages/WordProgressPage';
 import AttemptHistoryPage from './pages/AttemptHistoryPage';
 import ContactPage from './pages/ContactPage';
+import { SupportBanner } from './components/SupportBanner';
 
 function App() {
   return (
     <Router>
+      <SupportBanner />
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/words" element={<WordList />} />
