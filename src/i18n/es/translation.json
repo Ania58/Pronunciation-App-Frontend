@@ -120,8 +120,9 @@
     "sending": "Enviando...",
     "success": "Mensaje enviado con éxito.",
     "error": "Algo salió mal. Por favor, inténtalo de nuevo."
-}
+},
 
+  "contactPage": "Página de contacto"
 }
 
 

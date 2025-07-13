@@ -120,7 +120,9 @@
     "sending": "Sending...",
     "success": "Message sent successfully.",
     "error": "Something went wrong. Please try again."
-}
+},
+
+  "contactPage": "Contact Page"
 
 }
 

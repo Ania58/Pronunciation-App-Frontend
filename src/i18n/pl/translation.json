@@ -121,7 +121,9 @@
     "sending": "Wysyłanie...",
     "success": "Wiadomość została wysłana.",
     "error": "Coś poszło nie tak. Spróbuj ponownie."
-}
+},
+
+  "contactPage": "Strona kontaktowa"
 
 }
 
