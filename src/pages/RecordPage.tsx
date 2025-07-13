@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import RecorderWidget from '../features/record/RecorderWidget';
 import LanguageSwitcher from '../components/LanguageSwitcher';
+import Footer from '../layout/Footer';
 
 export default function RecordPage() {
   const { t } = useTranslation();
@@ -23,6 +24,7 @@ export default function RecordPage() {
         </Link>
         <LanguageSwitcher />
       </div>
+      <Footer />
     </div>
   );
 }

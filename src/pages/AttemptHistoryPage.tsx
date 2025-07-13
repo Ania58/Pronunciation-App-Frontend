@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import type { Word } from '../types/word';
 import LanguageSwitcher from '../components/LanguageSwitcher';
+import Footer from '../layout/Footer';
 
 interface Attempt {
   _id: string;
@@ -105,6 +106,7 @@ export default function AttemptHistoryPage() {
           </tbody>
         </table>
       )}
+      <Footer />
     </div>
   );
 }

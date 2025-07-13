@@ -5,6 +5,7 @@ import { fetchAllWords, fetchFilteredWords } from '../services/wordService';
 import { Link } from 'react-router-dom';
 import type { Word } from '../types/word';
 import LanguageSwitcher from './LanguageSwitcher';
+import Footer from '../layout/Footer';
 
 export default function WordBrowser() {
   const [words, setWords] = useState<Word[]>([]);
@@ -166,6 +167,7 @@ fetchData();
             {t('next')}
         </button>
       </div>
+      <Footer />
     </div>
   );
 }

@@ -6,6 +6,7 @@ import type { Word } from '../types/word';
 import { useRecorder } from '../hooks/useRecorder';
 import { uploadAudio } from '../utils/uploadAudio';
 import LanguageSwitcher from './LanguageSwitcher';
+import Footer from '../layout/Footer';
 
 
 interface Attempt {
@@ -319,6 +320,7 @@ const handleDeleteAttempt = async (attemptId: string) => {
           🕒 {t('practice')}
         </button>
       </div>
+      <Footer />
     </div>
   );
 }

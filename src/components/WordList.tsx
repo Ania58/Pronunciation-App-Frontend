@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { api } from '../services/api';
 import type { Word } from '../types/word';
 import LanguageSwitcher from './LanguageSwitcher';
+import Footer from '../layout/Footer';
 
 export default function WordList() {
   const [words, setWords] = useState<Word[]>([]);
@@ -130,6 +131,7 @@ export default function WordList() {
           </div>
         </>
       )}
+      <Footer />
     </div>
   );
 }
