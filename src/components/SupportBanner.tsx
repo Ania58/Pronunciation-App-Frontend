@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export const SupportBanner = () => {
   const [visible, setVisible] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const hasSeen = sessionStorage.getItem('supportBannerDismissed');
@@ -18,7 +20,7 @@ export const SupportBanner = () => {
   return (
     <div className="bg-yellow-100 text-gray-900 text-sm px-4 py-3 flex flex-col md:flex-row items-center justify-between border-b border-yellow-300">
       <p className="text-center md:text-left mb-2 md:mb-0">
-        💡 This website is powered by my time, creativity, and some AI magic — which all come with a cost. If you enjoy it or find it useful, you can support my work by buying me a coffee. ☕
+         {t('supportBanner.message')}
       </p>
       <div className="flex items-center gap-2">
         <a
@@ -27,10 +29,10 @@ export const SupportBanner = () => {
           rel="noopener noreferrer"
           className="bg-yellow-400 text-black font-semibold px-4 py-2 rounded hover:bg-yellow-300 transition"
         >
-          Buy me a coffee
+          {t('supportBanner.button')}
         </a>
         <button onClick={dismiss} className="text-xs text-gray-500 hover:underline cursor-pointer">
-          Dismiss
+          {t('supportBanner.dismiss')}
         </button>
       </div>
     </div>

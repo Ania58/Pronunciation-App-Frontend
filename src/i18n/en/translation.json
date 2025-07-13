@@ -122,7 +122,13 @@
     "error": "Something went wrong. Please try again."
 },
 
-  "contactPage": "Contact Page"
+  "contactPage": "Contact Page",
+
+  "supportBanner": {
+    "message": "💡 This website is powered by my time, creativity, and some AI magic — which all come with a cost. If you enjoy it or find it useful, you can support my work by buying me a coffee. ☕",
+    "button": "Buy me a coffee",
+    "dismiss": "Dismiss"
+}
 
 }
 

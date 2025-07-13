@@ -122,7 +122,14 @@
     "error": "Algo salió mal. Por favor, inténtalo de nuevo."
 },
 
-  "contactPage": "Página de contacto"
+  "contactPage": "Página de contacto",
+
+  "supportBanner": {
+    "message": "💡 Este sitio web se basa en mi tiempo, creatividad y algo de magia de IA — todo lo cual tiene un costo. Si te gusta o te resulta útil, puedes apoyar mi trabajo invitándome a un café. ☕",
+    "button": "Invítame a un café",
+    "dismiss": "Ocultar"
+}
+
 }
 
 

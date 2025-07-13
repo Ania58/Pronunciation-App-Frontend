@@ -123,7 +123,13 @@
     "error": "Coś poszło nie tak. Spróbuj ponownie."
 },
 
-  "contactPage": "Strona kontaktowa"
+  "contactPage": "Strona kontaktowa",
+
+  "supportBanner": {
+    "message": "💡 Ta strona powstała dzięki mojemu czasowi, kreatywności i odrobinie magii AI — a to wszystko wiąże się z kosztami. Jeśli strona Ci się podoba lub jest pomocna, możesz wesprzeć mnie, stawiając mi kawę. ☕",
+    "button": "Postaw mi kawę",
+    "dismiss": "Ukryj"
+}
 
 }
 
