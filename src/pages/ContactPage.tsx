@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { api } from '../services/api'; 
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
+import LanguageSwitcher from '../components/LanguageSwitcher';
 
 export default function ContactPage() {
   const { t } = useTranslation();
@@ -41,6 +43,12 @@ export default function ContactPage() {
 
   return (
     <div className="max-w-xl mx-auto p-6 bg-white rounded shadow">
+      <div className="flex justify-between items-center mb-4">
+        <Link to="/" className="text-blue-600 hover:underline">
+          🏠 {t('home')}
+        </Link>
+      </div>
+      <LanguageSwitcher />
       <h1 className="text-2xl font-bold mb-4">{t('contact.title')}</h1>
       <p className="mb-6 text-gray-600">
         {t('contact.description')}
