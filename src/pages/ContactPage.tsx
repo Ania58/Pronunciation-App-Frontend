@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { api } from '../services/api'; 
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import LanguageSwitcher from '../components/LanguageSwitcher';
 
 export default function ContactPage() {
@@ -15,6 +15,8 @@ export default function ContactPage() {
 
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const [feedback, setFeedback] = useState('');
+
+  const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -44,6 +46,9 @@ export default function ContactPage() {
   return (
     <div className="max-w-xl mx-auto p-6 bg-white rounded shadow">
       <div className="flex justify-between items-center mb-4">
+        <button onClick={() => navigate(-1)} className="text-blue-600 hover:underline cursor-pointer">
+          ← {t('goBack')}
+        </button>
         <Link to="/" className="text-blue-600 hover:underline">
           🏠 {t('home')}
         </Link>
