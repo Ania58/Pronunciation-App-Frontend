@@ -128,7 +128,23 @@
     "message": "💡 This website is powered by my time, creativity, and some AI magic — which all come with a cost. If you enjoy it or find it useful, you can support my work by buying me a coffee. ☕",
     "button": "Buy me a coffee",
     "dismiss": "Dismiss"
+},
+
+  "ipa": {
+    "title": "Learn IPA Symbols: Videos + Guide",
+    "intro": "These videos will help you understand how to read phonetic symbols (IPA). One covers consonants, and the other explains vowels and diphthongs. Subtitles are available in English, Polish, and Spanish.",
+    "consonantsTitle": "IPA Consonants: Detailed Guide",
+    "vowelsTitle": "IPA Vowels & Diphthongs: Detailed Guide",
+    "subtitlesHeading": "How to enable subtitles",
+    "subtitlesText": "Click the ⚙️ (Settings) icon on the video, choose 'Subtitles', and pick your preferred language.",
+    "screenshot1Alt": "Click on the gear icon",
+    "screenshot2Alt": "Select subtitle language"
+  },
+
+  "nav": {
+    "ipaGuide": "IPA Guide"
 }
+
 
 }
 

@@ -129,7 +129,22 @@
     "message": "💡 Ta strona powstała dzięki mojemu czasowi, kreatywności i odrobinie magii AI — a to wszystko wiąże się z kosztami. Jeśli strona Ci się podoba lub jest pomocna, możesz wesprzeć mnie, stawiając mi kawę. ☕",
     "button": "Postaw mi kawę",
     "dismiss": "Ukryj"
-}
+},
+
+  "ipa": {
+    "title": "Poznaj symbole IPA: Filmy + Przewodnik",
+    "intro": "Te filmy pomogą Ci zrozumieć, jak czytać symbole fonetyczne (IPA). Jeden dotyczy spółgłosek, a drugi wyjaśnia samogłoski i dwugłoski. Napisy są dostępne po angielsku, polsku i hiszpańsku.",
+    "consonantsTitle": "Spółgłoski IPA: Szczegółowy przewodnik",
+    "vowelsTitle": "Samogłoski i dwugłoski IPA: Szczegółowy przewodnik",
+    "subtitlesHeading": "Jak włączyć napisy",
+    "subtitlesText": "Kliknij ikonę ⚙️ (Ustawienia) na filmie, wybierz 'Napisy' i wybierz preferowany język.",
+    "screenshot1Alt": "Kliknij ikonę koła zębatego",
+    "screenshot2Alt": "Wybierz język napisów"
+},
+
+  "nav": {
+    "ipaGuide": "Przewodnik po IPA"
+  }
 
 }
 

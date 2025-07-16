@@ -128,6 +128,21 @@
     "message": "💡 Este sitio web se basa en mi tiempo, creatividad y algo de magia de IA — todo lo cual tiene un costo. Si te gusta o te resulta útil, puedes apoyar mi trabajo invitándome a un café. ☕",
     "button": "Invítame a un café",
     "dismiss": "Ocultar"
+},
+
+  "ipa": {
+    "title": "Aprende los símbolos IPA: Videos + Guía",
+    "intro": "Estos videos te ayudarán a entender cómo leer los símbolos fonéticos (IPA). Uno trata sobre las consonantes, y el otro explica las vocales y los diptongos. Los subtítulos están disponibles en inglés, polaco y español.",
+    "consonantsTitle": "Consonantes IPA: Guía detallada",
+    "vowelsTitle": "Vocales y diptongos IPA: Guía detallada",
+    "subtitlesHeading": "Cómo activar los subtítulos",
+    "subtitlesText": "Haz clic en el ícono ⚙️ (Configuración) del video, elige 'Subtítulos' y selecciona tu idioma preferido.",
+    "screenshot1Alt": "Haz clic en el ícono del engranaje",
+    "screenshot2Alt": "Selecciona el idioma de los subtítulos"
+},
+
+  "nav": {
+    "ipaGuide": "Guía IPA"
 }
 
 }

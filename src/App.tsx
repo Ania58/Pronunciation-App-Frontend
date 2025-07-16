@@ -8,6 +8,7 @@ import WordProgressPage from './pages/WordProgressPage';
 import AttemptHistoryPage from './pages/AttemptHistoryPage';
 import ContactPage from './pages/ContactPage';
 import { SupportBanner } from './components/SupportBanner';
+import IPAVideosPage from './pages/IPAVideosPage';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/progress" element={<WordProgressPage />} />
         <Route path="/attempts" element={<AttemptHistoryPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/ipa-guide" element={<IPAVideosPage />} />
       </Routes>
     </Router>
   );
