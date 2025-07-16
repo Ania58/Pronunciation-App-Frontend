@@ -23,7 +23,7 @@ const IPAVideosPage = () => {
 
       <div className="mb-8">
         <h2 className="text-xl font-semibold mb-2">{t('ipa.consonantsTitle')}</h2>
-        <div className="aspect-w-16 aspect-h-9">
+        <div className="w-full h-[480px]">
           <iframe
             className="w-full h-full"
             src="https://www.youtube.com/embed/OIl6fp6Qqoo?si=Mc8LdKy4xGS1cbHq"
@@ -35,7 +35,7 @@ const IPAVideosPage = () => {
 
       <div className="mb-8">
         <h2 className="text-xl font-semibold mb-2">{t('ipa.vowelsTitle')}</h2>
-        <div className="aspect-w-16 aspect-h-9">
+        <div className="w-full h-[480px]">
           <iframe
             className="w-full h-full"
             src="https://www.youtube.com/embed/A6tkyCsCF8c?si=MSxYo7t9OlY6Rw4X"
