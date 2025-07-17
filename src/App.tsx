@@ -9,6 +9,7 @@ import AttemptHistoryPage from './pages/AttemptHistoryPage';
 import ContactPage from './pages/ContactPage';
 import { SupportBanner } from './components/SupportBanner';
 import IPAVideosPage from './pages/IPAVideosPage';
+import AboutMePage from './pages/AboutMePage';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/attempts" element={<AttemptHistoryPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/ipa-guide" element={<IPAVideosPage />} />
+        <Route path="/about-me" element={<AboutMePage />} />
       </Routes>
     </Router>
   );

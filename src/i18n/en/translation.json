@@ -20,7 +20,9 @@
   "seeProgress": "📊 See Your Progress",
   "yourAttempts": "🎧 Your Attempts",
   "footer": {
-    "rights": "all rights reserved. Created by Anna Heliasz."
+    "createdBy": "all rights reserved. Created by",
+    "name": "Anna Heliasz",
+    "aboutMe": "About Me"
   },
   "mainTitle": "Welcome to SayRight",
   "mainDescription": "SayRight is your AI-powered companion for mastering English word pronunciation. Browse thousands of words with IPA transcriptions, native audio, categories, and difficulty levels. Sign up to record your pronunciation and receive intelligent feedback with improvement tips. Track your progress by saving words you've mastered or need more practice with. Ready to speak clearly and confidently? Let’s get started!",
@@ -151,6 +153,15 @@
 
   "nav": {
     "ipaGuide": "IPA Guide"
+},
+
+"about": {
+  "title": "About Me",
+  "photoAlt": "Anna Heliasz smiling",
+  "paragraph1": "Hi! I’m Anna Heliasz — an English teacher turned full-stack developer with a passion for language, logic, and learning.",
+  "paragraph2": "I hold a Bachelor’s and a Master’s degree in English Philology, with specializations in teaching and in language, culture, and literature. I've been teaching since 2017, helping hundreds of students in Poland and Spain master the mysteries of English grammar — and survive it with a smile!",
+  "paragraph3": "In 2023, I discovered a new love: programming. I dove headfirst into HTML and CSS, graduated from The Bridge bootcamp in Full Stack Web Development, and continued exploring JavaScript, React, Node.js, PostgreSQL, MongoDB, and TypeScript. And now? I’m building cool things, like this very app!",
+  "paragraph4": "Outside of code and classrooms, I’m curious about AI, SEO, and how to make complex ideas feel simple. This site is a little piece of me — hope it helps you learn and maybe even makes you smile!"
 }
 
 

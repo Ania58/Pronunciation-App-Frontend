@@ -20,7 +20,9 @@
   "seeProgress": "📊 Ver tu progreso",
   "yourAttempts": "🎧 Tus intentos",
    "footer": {
-    "rights": "todos los derechos reservados. Creado por Anna Heliasz."
+    "createdBy": "todos los derechos reservados. Creado por",
+    "name": "Anna Heliasz",
+    "aboutMe": "Sobre mí"
   },
   "mainTitle": "Bienvenido a SayRight",
   "mainDescription": "SayRight es tu compañero impulsado por IA para dominar la pronunciación de palabras en inglés. Explora miles de palabras con transcripciones IPA, audios de hablantes nativos, categorías y niveles de dificultad. Regístrate para grabar tu pronunciación y recibir comentarios inteligentes con consejos de mejora. Haz seguimiento de tu progreso guardando las palabras que ya dominas o con las que necesitas más práctica. ¿Listo para hablar con claridad y confianza? ¡Empecemos!",
@@ -151,6 +153,15 @@
 
   "nav": {
     "ipaGuide": "Guía IPA"
+},
+
+"about": {
+  "title": "Sobre mí",
+  "photoAlt": "Anna Heliasz sonriendo",
+  "paragraph1": "¡Hola! Soy Anna Heliasz — profesora de inglés convertida en desarrolladora full-stack, apasionada por los idiomas, la lógica y el aprendizaje continuo.",
+  "paragraph2": "Tengo una licenciatura y un máster en Filología Inglesa, con especialización en enseñanza y en lengua, cultura y literatura. Desde 2017 he enseñado a cientos de estudiantes en Polonia y España, ayudándoles a dominar la gramática inglesa (¡y hasta disfrutarla!).",
+  "paragraph3": "En 2023 descubrí mi nuevo amor: la programación. Empecé con HTML y CSS, me gradué del bootcamp The Bridge en desarrollo web full-stack, y desde entonces sigo con JavaScript, React, Node.js, PostgreSQL, MongoDB y TypeScript.",
+  "paragraph4": "Fuera del aula y del código, me interesan la inteligencia artificial, el SEO y cómo explicar cosas difíciles de forma sencilla. Esta web es una parte de mí — ¡espero que te sea útil y que te saque una sonrisa!"
 }
 
 }

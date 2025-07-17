@@ -21,7 +21,9 @@
   "seeProgress": "📊 Zobacz swoje postępy",
   "yourAttempts": "🎧 Twoje próby",
    "footer": {
-    "rights": "wszystkie prawa zastrzeżone. Stworzone przez Annę Heliasz."
+    "createdBy": "wszystkie prawa zastrzeżone. Stworzone przez",
+    "name": "Annę Heliasz",
+    "aboutMe": "O mnie"
   },
   "mainTitle": "Witaj w SayRight",
   "mainDescription": "SayRight to Twój wspierany przez AI towarzysz w opanowywaniu angielskiej wymowy. Przeglądaj tysiące słów z transkrypcjami IPA, nagraniami native speakerów, kategoriami i poziomami trudności. Zarejestruj się, aby nagrywać swoją wymowę i otrzymywać inteligentne informacje zwrotne z podpowiedziami, jak mówić lepiej. Śledź swoje postępy, zapisując słowa, które już opanowałeś lub które wymagają więcej ćwiczeń. Gotowy, by mówić wyraźnie i z pewnością siebie? Zaczynajmy!",
@@ -152,7 +154,16 @@
 
   "nav": {
     "ipaGuide": "Przewodnik po IPA"
-  }
+  },
+
+  "about": {
+    "title": "O mnie",
+    "photoAlt": "Anna Heliasz uśmiechnięta",
+    "paragraph1": "Cześć! Nazywam się Anna Heliasz — nauczycielka angielskiego, która zakochała się w programowaniu (i logice, i kodzie, i... no, wiadomo).",
+    "paragraph2": "Mam licencjat i magisterkę z filologii angielskiej, ze specjalizacją w nauczaniu oraz w języku, kulturze i literaturze. Uczę od 2017 roku i przez ten czas pomogłam setkom uczniów w Polsce i Hiszpanii opanować angielską gramatykę (a nawet ją polubić!).",
+    "paragraph3": "W 2023 roku odkryłam nową pasję: programowanie. Zaczęło się od HTML i CSS, a potem skończyło się na intensywnym bootcampie The Bridge z Full Stack Web Development. Dziś pracuję z JavaScriptem, Reactem, Node.js, PostgreSQL, MongoDB i TypeScriptem.",
+    "paragraph4": "Poza kodem i nauczaniem interesuję się AI, SEO i tym, jak tłumaczyć trudne rzeczy w prosty sposób. Ta strona to kawałek mnie — mam nadzieję, że będzie dla Ciebie pomocna (i może nawet, że się uśmiechniesz!)."
+}
 
 }
 
