@@ -133,13 +133,21 @@
 
   "ipa": {
     "title": "Poznaj symbole IPA: Filmy + Przewodnik",
-    "intro": "Te filmy pomogą Ci zrozumieć, jak czytać symbole fonetyczne (IPA). Jeden dotyczy spółgłosek, a drugi wyjaśnia samogłoski i dwugłoski. Napisy są dostępne po angielsku, polsku i hiszpańsku.",
+    "intro": "Przygotowałam dwa filmy, które pomogą Ci zrozumieć, jak wymawiać symbole używane w transkrypcji fonetycznej (IPA). Jeden dotyczy spółgłosek, drugi samogłosek i dwugłosek.",
+    "subtitleNote": "Mówię czasami dość szybko, dlatego polecam włączyć angielskie napisy – są automatycznie generowane, ale zazwyczaj dobrze oddają to, co mówię. Jeśli zamiast wersji angielskiej wolisz polską, oczywiście możesz włączyć polskie napisy.",
+    "extraNote": "Jeśli zauważysz, że napisy po polsku zawierają formy męskie, to wynik tego, jak sztuczna inteligencja tłumaczy język angielski — wiele słów w języku polskim ma przypisany rodzaj gramatyczny, a automatyczne systemy tłumaczeń po prostu zgadują. Zdarza się też, że wtrącam słowa po polsku lub hiszpańsku kiedy mówię po angielsku, więc napisy mogą się chwilami pogubić. Ale bez obaw — wszystko da się zrozumieć!",
     "consonantsTitle": "Spółgłoski IPA: Szczegółowy przewodnik",
     "vowelsTitle": "Samogłoski i dwugłoski IPA: Szczegółowy przewodnik",
     "subtitlesHeading": "Jak włączyć napisy",
-    "subtitlesText": "Kliknij ikonę ⚙️ (Ustawienia) na filmie, wybierz 'Napisy' i wybierz preferowany język.",
-    "screenshot1Alt": "Kliknij ikonę koła zębatego",
-    "screenshot2Alt": "Wybierz język napisów"
+    "subtitlesText": "Kliknij ikonę ⚙️ (Ustawienia) na filmie, wybierz 'Napisy' ('Subtitles') i wybierz preferowany język.",
+    "altGear": "Kliknij ikonę koła zębatego",
+    "altEnglishAuto": "Kliknij na English (auto-generated)",
+    "altEnglishSubs": "Angielskie napisy",
+    "altAutoTranslate": "Wybierz opcję Auto-translate",
+    "altChoosePolish": "Wybierz język polski",
+    "altPolishSubs": "Napisy polskie w działaniu",
+    "altChooseSpanish": "Wybierz język hiszpański",
+    "altSpanishSubs": "Napisy hiszpańskie w działaniu"
 },
 
   "nav": {

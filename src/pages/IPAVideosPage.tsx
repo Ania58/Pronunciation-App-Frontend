@@ -48,30 +48,32 @@ const IPAVideosPage = () => {
       <div>
         <h3 className="text-lg font-semibold mb-2">{t('ipa.subtitlesHeading')}</h3>
         <p className="mb-4">{t('ipa.subtitlesText')}</p>
+        <p className="mb-4">{t('ipa.subtitleNote')}</p>
+        <p className="mb-6">{t('ipa.extraNote')}</p>
 
         <div className="flex flex-col gap-4">
-            <img src={`${basePath}/gear.jpg`} alt="Click the gear icon" loading="lazy" />
-            <img src={`${basePath}/english-auto.jpg`} alt="Click on English (auto-generated)" loading="lazy" />
+            <img src={`${basePath}/gear.jpg`} alt={t('ipa.altGear')}  loading="lazy" />
+            <img src={`${basePath}/english-auto.jpg`} alt={t('ipa.altEnglishAuto')} loading="lazy" />
 
             {lang === 'en' && (
-            <img src={`${basePath}/english-subtitles.jpg`} alt="English subtitles" loading="lazy" />
+            <img src={`${basePath}/english-subtitles.jpg`} alt={t('ipa.altEnglishSubs')} loading="lazy" />
             )}
 
             {(lang === 'pl' || lang === 'es') && (
-                <img src={`${basePath}/auto-translate.jpg`} alt="Choose Auto-translate option" loading="lazy" />
+                <img src={`${basePath}/auto-translate.jpg`} alt={t('ipa.altAutoTranslate')}  loading="lazy" />
             )}
 
             {lang === 'pl' && (
             <>
-                <img src={`${basePath}/choose-polish.jpg`} alt="Choose Polish" loading="lazy" />
-                <img src={`${basePath}/polish-subtitles.jpg`} alt="Polish subtitles at work" loading="lazy" />
+                <img src={`${basePath}/choose-polish.jpg`} alt={t('ipa.altChoosePolish')} loading="lazy" />
+                <img src={`${basePath}/polish-subtitles.jpg`} alt={t('ipa.altPolishSubs')} loading="lazy" />
             </>
             )}
 
             {lang === 'es' && (
             <>
-                <img src={`${basePath}/choose-spanish.jpg`} alt="Choose Spanish" loading="lazy" />
-                <img src={`${basePath}/spanish-subtitles.jpg`} alt="Spanish subtitles at work" loading="lazy" />
+                <img src={`${basePath}/choose-spanish.jpg`} alt={t('ipa.altChooseSpanish')}loading="lazy" />
+                <img src={`${basePath}/spanish-subtitles.jpg`} alt={t('ipa.altSpanishSubs')} loading="lazy" />
             </>
             )}
         </div>

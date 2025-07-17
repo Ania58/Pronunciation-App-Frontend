@@ -132,13 +132,21 @@
 
   "ipa": {
     "title": "Aprende los símbolos IPA: Videos + Guía",
-    "intro": "Estos videos te ayudarán a entender cómo leer los símbolos fonéticos (IPA). Uno trata sobre las consonantes, y el otro explica las vocales y los diptongos. Los subtítulos están disponibles en inglés, polaco y español.",
+    "intro": "He preparado dos videos para ayudarte a entender cómo pronunciar los símbolos utilizados en la transcripción fonética (IPA). Uno trata sobre las consonantes, y el otro sobre las vocales y los diptongos.",
+    "subtitleNote": "A veces hablo bastante rápido, por eso te recomiendo activar los subtítulos en inglés. Son automáticos, pero normalmente captan bien lo que digo. Si prefieres la versión española en lugar de la inglesa, por supuesto puedes activar los subtítulos en español.",
+    "extraNote": "Si notas que los subtítulos en español usan formas masculinas, es por cómo la inteligencia artificial traduce el inglés. El español usa géneros para muchas palabras, y los sistemas automáticos simplemente hacen suposiciones. También uso algunas palabras en polaco o español mientras hablo inglés, lo que puede confundir un poco a los subtítulos. ¡Nada grave, pero que lo sepas!",
     "consonantsTitle": "Consonantes IPA: Guía detallada",
     "vowelsTitle": "Vocales y diptongos IPA: Guía detallada",
     "subtitlesHeading": "Cómo activar los subtítulos",
     "subtitlesText": "Haz clic en el ícono ⚙️ (Configuración) del video, elige 'Subtítulos' y selecciona tu idioma preferido.",
-    "screenshot1Alt": "Haz clic en el ícono del engranaje",
-    "screenshot2Alt": "Selecciona el idioma de los subtítulos"
+    "altGear": "Haz clic en el ícono del engranaje",
+    "altEnglishAuto": "Haz clic en English (auto-generated)",
+    "altEnglishSubs": "Subtítulos en inglés",
+    "altAutoTranslate": "Elige la opción Auto-translate",
+    "altChoosePolish": "Elige el idioma polaco",
+    "altPolishSubs": "Subtítulos en polaco funcionando",
+    "altChooseSpanish": "Elige el idioma español",
+    "altSpanishSubs": "Subtítulos en español funcionando"
 },
 
   "nav": {

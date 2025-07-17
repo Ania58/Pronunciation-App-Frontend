@@ -132,13 +132,21 @@
 
   "ipa": {
     "title": "Learn IPA Symbols: Videos + Guide",
-    "intro": "These videos will help you understand how to read phonetic symbols (IPA). One covers consonants, and the other explains vowels and diphthongs. Subtitles are available in English, Polish, and Spanish.",
+    "intro": "I prepared two videos to help you understand how to pronounce the symbols used in phonetic transcription (IPA). One is about consonants, the other about vowels and diphthongs.",
+    "subtitleNote": "Since I may speak a bit fast, I recommend turning on English subtitles. They're auto-generated, but they usually capture what I say quite well.",
+    "extraNote": "I sometimes use Polish or Spanish words mid-sentence, which might slightly confuse the subtitles. Nothing serious, but now you know!",
     "consonantsTitle": "IPA Consonants: Detailed Guide",
     "vowelsTitle": "IPA Vowels & Diphthongs: Detailed Guide",
     "subtitlesHeading": "How to enable subtitles",
-    "subtitlesText": "Click the ⚙️ (Settings) icon on the video, choose 'Subtitles', and pick your preferred language.",
-    "screenshot1Alt": "Click on the gear icon",
-    "screenshot2Alt": "Select subtitle language"
+    "subtitlesText": "Click the ⚙️ (Settings) icon on the video, choose 'Subtitles', and pick English (auto-generated).",
+    "altGear": "Click the gear icon",
+    "altEnglishAuto": "Click on English (auto-generated)",
+    "altEnglishSubs": "English subtitles",
+    "altAutoTranslate": "Choose Auto-translate option",
+    "altChoosePolish": "Choose Polish",
+    "altPolishSubs": "Polish subtitles at work",
+    "altChooseSpanish": "Choose Spanish",
+    "altSpanishSubs": "Spanish subtitles at work"
   },
 
   "nav": {
