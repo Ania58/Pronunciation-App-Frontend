@@ -152,7 +152,8 @@
   },
 
   "nav": {
-    "ipaGuide": "IPA Guide"
+    "ipaGuide": "IPA Guide",
+    "pronunciationPatterns": "Pronunciation Patterns"
 },
 
 "about": {
@@ -162,8 +163,51 @@
   "paragraph2": "I hold a Bachelor’s and a Master’s degree in English Philology, with specializations in teaching and in language, culture, and literature. I've been teaching since 2017, helping hundreds of students in Poland and Spain master the mysteries of English grammar — and survive it with a smile!",
   "paragraph3": "In 2023, I discovered a new love: programming. I dove headfirst into HTML and CSS, graduated from The Bridge bootcamp in Full Stack Web Development, and continued exploring JavaScript, React, Node.js, PostgreSQL, MongoDB, and TypeScript. And now? I’m building cool things, like this very app!",
   "paragraph4": "Outside of code and classrooms, I’m curious about AI, SEO, and how to make complex ideas feel simple. This site is a little piece of me — hope it helps you learn and maybe even makes you smile!"
-}
+},
 
+"patterns": {
+  "title": "Common Pronunciation Patterns",
+  "intro": "English spelling and pronunciation can be confusing. Below are common combinations that can help you decode how words are typically pronounced.",
+  "silentTitle": "Silent Letters in Combinations",
+  "soundTitle": "Letter Combinations with a Specific Sound",
+  "cautionTitle": "Tricky Combinations with Many Exceptions",
+  "combination": "Combination",
+  "pronunciation": "Pronunciation",
+  "notes": "Notes / Example",
+  "caution": "Caution",
+  "silentCombos": [
+    { "combo": "kn", "sound": "/n/", "example": "knee, knife — k is silent" },
+    { "combo": "gn", "sound": "/n/", "example": "gnome, gnaw — g is silent" },
+    { "combo": "wr", "sound": "/r/", "example": "write, wrist — w is silent" },
+    { "combo": "ps", "sound": "/s/", "example": "psychology — p is silent" },
+    { "combo": "bt", "sound": "/t/", "example": "doubt — b is silent" },
+    { "combo": "mb", "sound": "/m/", "example": "bomb, thumb — b is silent" },
+    { "combo": "lk", "sound": "/k/", "example": "walk, folk — l is often silent" },
+    { "combo": "gh", "sound": "silent or /f/", "example": "high → silent; laugh → /f/" }
+  ],
+  "soundCombos": [
+    { "combo": "ph", "sound": "/f/", "example": "phone, photo" },
+    { "combo": "sh", "sound": "/ʃ/", "example": "shoe, ship" },
+    { "combo": "ch", "sound": "/tʃ/", "example": "chair, chocolate" },
+    { "combo": "th", "sound": "/θ/ or /ð/", "example": "think, this" },
+    { "combo": "qu", "sound": "/kw/", "example": "queen, quick" },
+    { "combo": "wh", "sound": "/w/", "example": "what, where" },
+    { "combo": "ck", "sound": "/k/", "example": "duck, lock" },
+    { "combo": "dge", "sound": "/dʒ/", "example": "bridge, judge" },
+    { "combo": "tch", "sound": "/tʃ/", "example": "watch, match" },
+    { "combo": "ough", "sound": "varies", "example": "tough, though, through" },
+    { "combo": "ai", "sound": "/eɪ/", "example": "rain, mail" },
+    { "combo": "ie", "sound": "/iː/ or /aɪ/", "example": "field, pie" },
+    { "combo": "ch (Greek)", "sound": "/k/", "example": "chorus, chemistry" }
+  ],
+  "cautionCombos": [
+    { "combo": "ough", "warning": "Many pronunciations: tough, though, through, etc." },
+    { "combo": "ea", "warning": "Can be /iː/, /ɛ/, or /eɪ/" },
+    { "combo": "ei/ie", "warning": "Spelling and sound often flip" },
+    { "combo": "ch", "warning": "May be /tʃ/ or /k/ (Greek origin)" }
+  ],
+  "closingNote": "Did you know? In Polish, 'character' is pronounced with 'h', in Spanish with 'k' — in English, it's 'k' because of its Greek origin!"
+}
 
 }
 

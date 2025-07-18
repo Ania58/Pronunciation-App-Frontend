@@ -10,6 +10,7 @@ import ContactPage from './pages/ContactPage';
 import { SupportBanner } from './components/SupportBanner';
 import IPAVideosPage from './pages/IPAVideosPage';
 import AboutMePage from './pages/AboutMePage';
+import PronunciationPatternsPage from './pages/PronunciationPatternsPage';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/ipa-guide" element={<IPAVideosPage />} />
         <Route path="/about-me" element={<AboutMePage />} />
+        <Route path="/pronunciation-patterns" element={<PronunciationPatternsPage />} />
       </Routes>
     </Router>
   );

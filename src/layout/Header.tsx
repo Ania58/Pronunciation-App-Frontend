@@ -65,7 +65,7 @@ export default function Header() {
           </div>
         </div>
 
-        <div className="mt-8 flex flex-col sm:flex-row items-center gap-4">
+        <div className="mt-8 flex flex-col sm:flex-row items-center gap-4 flex-wrap">
           <Link
             to="/words"
             className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded shadow text-center w-full sm:w-auto"
@@ -96,7 +96,12 @@ export default function Header() {
           >
             {t('nav.ipaGuide')}
           </Link>
-
+          <Link
+            to="/pronunciation-patterns"
+            className="bg-indigo-500 hover:bg-indigo-600 text-white font-semibold px-6 py-3 rounded shadow text-center w-full sm:w-auto"
+          >
+            {t('nav.pronunciationPatterns')}
+          </Link>
         </div>
 
         <div className="mt-6 flex gap-2 justify-end">

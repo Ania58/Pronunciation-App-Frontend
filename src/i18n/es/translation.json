@@ -152,7 +152,8 @@
 },
 
   "nav": {
-    "ipaGuide": "Guía IPA"
+    "ipaGuide": "Guía IPA",
+    "pronunciationPatterns": "Patrones de Pronunciación"
 },
 
 "about": {
@@ -162,6 +163,50 @@
   "paragraph2": "Tengo una licenciatura y un máster en Filología Inglesa, con especialización en enseñanza y en lengua, cultura y literatura. Desde 2017 he enseñado a cientos de estudiantes en Polonia y España, ayudándoles a dominar la gramática inglesa (¡y hasta disfrutarla!).",
   "paragraph3": "En 2023 descubrí mi nuevo amor: la programación. Empecé con HTML y CSS, me gradué del bootcamp The Bridge en desarrollo web full-stack, y desde entonces sigo con JavaScript, React, Node.js, PostgreSQL, MongoDB y TypeScript.",
   "paragraph4": "Fuera del aula y del código, me interesan la inteligencia artificial, el SEO y cómo explicar cosas difíciles de forma sencilla. Esta web es una parte de mí — ¡espero que te sea útil y que te saque una sonrisa!"
+},
+
+"patterns": {
+  "title": "Patrones comunes de pronunciación en inglés",
+  "intro": "La ortografía y la pronunciación en inglés pueden ser confusas. Aquí tienes algunas combinaciones comunes que te ayudarán a entender mejor cómo se pronuncian las palabras.",
+  "silentTitle": "Letras silenciosas en combinaciones",
+  "soundTitle": "Combinaciones de letras con pronunciación específica",
+  "cautionTitle": "Combinaciones difíciles con muchas excepciones",
+  "combination": "Combinación",
+  "pronunciation": "Pronunciación",
+  "notes": "Notas / Ejemplo",
+  "caution": "Precaución",
+  "silentCombos": [
+    { "combo": "kn", "sound": "/n/", "example": "knee, knife — la k no se pronuncia" },
+    { "combo": "gn", "sound": "/n/", "example": "gnome, gnaw — la g no se pronuncia" },
+    { "combo": "wr", "sound": "/r/", "example": "write, wrist — la w no se pronuncia" },
+    { "combo": "ps", "sound": "/s/", "example": "psychology — la p no se pronuncia" },
+    { "combo": "bt", "sound": "/t/", "example": "doubt — la b no se pronuncia" },
+    { "combo": "mb", "sound": "/m/", "example": "bomb, thumb — la b no se pronuncia" },
+    { "combo": "lk", "sound": "/k/", "example": "walk, folk — la l a menudo es muda" },
+    { "combo": "gh", "sound": "silencioso o /f/", "example": "high → mudo; laugh → /f/" }
+  ],
+  "soundCombos": [
+    { "combo": "ph", "sound": "/f/", "example": "phone, photo" },
+    { "combo": "sh", "sound": "/ʃ/", "example": "shoe, ship" },
+    { "combo": "ch", "sound": "/tʃ/", "example": "chair, chocolate" },
+    { "combo": "th", "sound": "/θ/ o /ð/", "example": "think, this" },
+    { "combo": "qu", "sound": "/kw/", "example": "queen, quick" },
+    { "combo": "wh", "sound": "/w/", "example": "what, where" },
+    { "combo": "ck", "sound": "/k/", "example": "duck, lock" },
+    { "combo": "dge", "sound": "/dʒ/", "example": "bridge, judge" },
+    { "combo": "tch", "sound": "/tʃ/", "example": "watch, match" },
+    { "combo": "ough", "sound": "varía", "example": "tough, though, through" },
+    { "combo": "ai", "sound": "/eɪ/", "example": "rain, mail" },
+    { "combo": "ie", "sound": "/iː/ o /aɪ/", "example": "field, pie" },
+    { "combo": "ch (griego)", "sound": "/k/", "example": "chorus, chemistry" }
+  ],
+  "cautionCombos": [
+    { "combo": "ough", "warning": "Tiene muchas pronunciaciones: tough, though, through, etc." },
+    { "combo": "ea", "warning": "Puede sonar como /iː/, /ɛ/ o /eɪ/" },
+    { "combo": "ei/ie", "warning": "Ortografía y sonido poco consistentes" },
+    { "combo": "ch", "warning": "Usualmente /tʃ/, pero también /k/ en palabras griegas" }
+  ],
+  "closingNote": "¿Sabías que en inglés palabras como 'chemist', 'school', 'orchestra' o 'echo' se escriben con 'ch' pero se pronuncian como /k/? Es por su origen griego, igual que en español en palabras como 'química', 'escuela' o 'orquesta'."
 }
 
 }
