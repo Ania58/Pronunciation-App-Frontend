@@ -12,6 +12,11 @@ export default function MainPage() {
       <Header />
       
       <div className="max-w-4xl mx-auto px-4 py-8">
+        <img
+          src="/sayright-logo.png"
+          alt="SayRight logo"
+          className="mx-auto mb-6 w-32 sm:w-40"
+        />
         <h1 className="text-3xl font-bold mb-4">{t('mainTitle')}</h1>
         <p className="mb-6 text-lg">{t('mainDescription')}</p>
 
