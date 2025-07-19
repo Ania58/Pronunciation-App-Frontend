@@ -190,8 +190,8 @@ const handleDeleteAttempt = async (attemptId: string) => {
       <h2 className="text-2xl font-bold mb-4">{word.word}</h2>
       <p className="mb-2"><strong>IPA:</strong> {word.ipa}</p>
       <p className="mb-2"><strong>{t('language')}:</strong> {word.language}</p>
-      {word.category && <p className="mb-2"><strong>{t('category')}:</strong> {word.category}</p>}
-      {word.difficulty && <p className="mb-2"><strong>{t('difficulty')}:</strong> {word.difficulty}</p>}
+      {word.category && <p className="mb-2"><strong>{t('category')}:</strong> {t(word.category)}</p>}
+      {word.difficulty && <p className="mb-2"><strong>{t('difficulty')}:</strong> {t(word.difficulty)}</p>}
 
       {audioExists && (
         <audio className="my-4 w-full" controls src={`https://api.dictionaryapi.dev/media/pronunciations/en/${word.word}-us.mp3`} />
