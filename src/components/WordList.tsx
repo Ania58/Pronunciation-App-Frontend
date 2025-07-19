@@ -30,9 +30,16 @@ export default function WordList() {
     const fetchData = async () => {
     try {
       if (category || difficulty) {
-        const res = await api.get('/words', { params: { category, difficulty } });
+        const res = await api.get('/words', { 
+          params: { 
+            category, 
+            difficulty, 
+            limit: 50,
+            sort: 'word',
+            order: 'asc',
+            query: search, } });
         setWords(res.data.results);
-        setTotalPages(1); 
+        setTotalPages(res.data.totalPages);
       } else {
         const res = await api.get('/words/all', {
           params: {
