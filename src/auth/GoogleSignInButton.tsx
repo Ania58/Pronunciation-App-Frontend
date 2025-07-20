@@ -1,15 +1,18 @@
 import { useState } from "react";
 import { signInWithGoogle } from "../firebase/firebaseAuth";
+import { useTranslation } from "react-i18next";
 
 const GoogleSignInButton = () => {
   const [message, setMessage] = useState("");
 
+  const { t } = useTranslation();
+
   const handleGoogleSignIn = async () => {
     try {
       await signInWithGoogle();
-      setMessage("✅ Signed in with Google successfully.");
+      setMessage(t("auth.googleSuccess"));
     } catch (error: any) {
-      setMessage(`❌ Error: ${error.message}`);
+      setMessage(`${t("auth.errorPrefix")} ${error.message}`);
     }
   };
 
@@ -17,9 +20,9 @@ const GoogleSignInButton = () => {
     <div className="mt-4 text-center">
       <button
         onClick={handleGoogleSignIn}
-        className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+        className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 cursor-pointer"
       >
-        Sign in with Google
+         {t("auth.googleSignIn")}
       </button>
       {message && <p className="mt-2 text-sm">{message}</p>}
     </div>

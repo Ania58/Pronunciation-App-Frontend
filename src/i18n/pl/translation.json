@@ -42,7 +42,6 @@
   "language": "Język",
   "category": "Kategoria",
   "difficulty": "Poziom trudności",
-  "loginRequired": "Zaloguj się, aby uzyskać dostęp do tej funkcji.",
   "practicePrompt": "Ćwicz swoją wymowę",
   "practiceHint": "Nagraj siebie i porównaj z wymową native speakera powyżej.",
   "currentStatus": "Obecny status",
@@ -209,6 +208,23 @@
     { "combo": "ch", "warning": "Czasem /tʃ/, ale też /k/ w słowach pochodzenia greckiego" }
   ],
   "closingNote": "Wiesz, że w polskim 'charakter' czytamy przez 'h', a w angielskim przez 'k'? Podobnie jest z 'chemist', 'school', 'orchestra' czy 'echo' – wszystkie mają 'ch', ale wymawiamy je jak /k/. To dlatego, że te słowa pochodzą z greki!"
+},
+
+"auth": {
+  "register": "Zarejestruj się",
+  "login": "Zaloguj się",
+  "logout": "Wyloguj się",
+  "registerSuccess": "✅ Rejestracja zakończona sukcesem. Możesz się teraz zalogować.",
+  "loginSuccess": "✅ Zalogowano pomyślnie.",
+  "logoutSuccess": "✅ Wylogowano pomyślnie.",
+  "loginRequired": "Zaloguj się, aby uzyskać dostęp do tej funkcji.",
+  "emailPlaceholder": "E-mail",
+  "passwordPlaceholder": "Hasło",
+  "loginButton": "Zaloguj się",
+  "registerButton": "Zarejestruj się",
+  "googleSignIn": "Zaloguj się przez Google",
+  "googleSuccess": "✅ Pomyślnie zalogowano przez Google.",
+  "errorPrefix": "❌ Błąd:"
 }
 
 }

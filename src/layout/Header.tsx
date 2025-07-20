@@ -130,15 +130,15 @@ export default function Header() {
             <>
               <Link
                 to="/register"
-                className="text-blue-700 underline hover:text-blue-900 cursor-pointer"
+                className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded shadow cursor-pointer"
               >
-                Register
+                {t('auth.register')}
               </Link>
               <Link
                 to="/login"
-                className="text-green-700 underline hover:text-green-900 cursor-pointer"
+                className="bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 rounded shadow cursor-pointer"
               >
-                Login
+                {t('auth.login')}
               </Link>
             </>
           )}

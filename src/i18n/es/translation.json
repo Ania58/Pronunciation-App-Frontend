@@ -41,7 +41,6 @@
   "language": "Idioma",
   "category": "Categoría",
   "difficulty": "Dificultad",
-  "loginRequired": "Inicia sesión para acceder a esta función.",
   "practicePrompt": "Practica tu pronunciación",
   "practiceHint": "Grábate y compáralo con la pronunciación nativa de arriba.",
   "currentStatus": "Estado actual",
@@ -208,6 +207,23 @@
     { "combo": "ch", "warning": "Usualmente /tʃ/, pero también /k/ en palabras griegas" }
   ],
   "closingNote": "¿Sabías que en inglés palabras como 'chemist', 'school', 'orchestra' o 'echo' se escriben con 'ch' pero se pronuncian como /k/? Es por su origen griego, igual que en español en palabras como 'química', 'escuela' o 'orquesta'."
+},
+
+"auth": {
+  "register": "Registrarse",
+  "login": "Iniciar sesión",
+  "logout": "Cerrar sesión",
+  "registerSuccess": "✅ Registro completado. Ya puedes iniciar sesión.",
+  "loginSuccess": "✅ Sesión iniciada correctamente.",
+  "logoutSuccess": "✅ Sesión cerrada correctamente.",
+  "loginRequired": "Inicia sesión para acceder a esta función.",
+  "emailPlaceholder": "Correo electrónico",
+  "passwordPlaceholder": "Contraseña",
+  "loginButton": "Iniciar sesión",
+  "registerButton": "Registrarse",
+  "googleSignIn": "Iniciar sesión con Google",
+  "googleSuccess": "✅ Has iniciado sesión con Google correctamente.",
+  "errorPrefix": "❌ Error:"
 }
 
 }

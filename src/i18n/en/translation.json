@@ -41,7 +41,6 @@
   "language": "Language",
   "category": "Category",
   "difficulty": "Difficulty",
-  "loginRequired": "Please log in to access this feature.",
   "practicePrompt": "Practice Your Pronunciation",
   "practiceHint": "Record yourself and compare with the native pronunciation above.",
   "currentStatus": "Current status",
@@ -208,6 +207,23 @@
     { "combo": "ch", "warning": "May be /tʃ/ or /k/ (Greek origin)" }
   ],
   "closingNote": "Did you know? In Polish, 'character' is pronounced with 'h', in Spanish with 'k' — in English, it's 'k' because of its Greek origin!"
+},
+
+"auth": {
+  "register": "Register",
+  "login": "Login",
+  "logout": "Logout",
+  "registerSuccess": "✅ Registered successfully. You can now log in.",
+  "loginSuccess": "✅ Logged in successfully.",
+  "logoutSuccess": "✅ Logged out successfully.",
+  "loginRequired": "Please log in to access this feature.",
+  "emailPlaceholder": "Email",
+  "passwordPlaceholder": "Password",
+  "loginButton": "Login",
+  "registerButton": "Register",
+  "googleSignIn": "Sign in with Google",
+  "googleSuccess": "✅ Signed in with Google successfully.",
+  "errorPrefix": "❌ Error:"
 }
 
 }
