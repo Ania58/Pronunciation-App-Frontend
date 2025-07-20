@@ -123,7 +123,7 @@ export default function WordProgressPage() {
             {filtered.map((w) => (
               <tr key={w.id}>
                 <td className="p-2 border font-medium">{w.word}</td>
-                <td className="p-2 border capitalize">{statuses[w.id]}</td>
+                <td className="p-2 border capitalize">{t(statuses[w.id])}</td>
                 <td className="p-2 border space-x-2">
                     <Link to={`/words/${w.id}`} className="text-blue-600 hover:underline">
                         {t('viewDetails')} →
