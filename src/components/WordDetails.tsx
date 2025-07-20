@@ -53,7 +53,7 @@ export default function WordDetails() {
       return { ...prevWord, status: newStatus };
     });
 
-    setStatusMessage( t('✅ statusSet', { status: t(newStatus === 'mastered' ? 'mastered' : 'practice') }));
+    setStatusMessage( t('statusSet', { status: t(newStatus === 'mastered' ? 'mastered' : 'practice') }));
     setTimeout(() => setStatusMessage(''), 3000); 
 
   } catch (err) {
@@ -109,10 +109,10 @@ const submitAttempt = async () => {
     console.error('Error submitting attempt:', error);
       if (error.response?.status === 429) {
       setSubmitStatus('error');
-      setLatestFeedback(t('⚠️ limitReached'));
+      setLatestFeedback(t('limitReached'));
     } else {
       setSubmitStatus('error');
-      setLatestFeedback(t('❌ submitError'));
+      setLatestFeedback(t('submitError'));
     }
   } finally {
     setTimeout(() => setSubmitStatus('idle'), 3000);
@@ -251,17 +251,17 @@ const handleDeleteAttempt = async (attemptId: string) => {
           </button>
           {hasReachedLimit && (
             <p className="text-red-600 text-sm mt-2">
-              ⚠️ {t('limitReached')}
+              {t('limitReached')}
             </p>
           )}
           {submitStatus === 'submitting' && (
             <p className="text-blue-600 text-sm mt-2">{t('uploading')}</p>
           )}
           {submitStatus === 'success' && (
-            <p className="text-green-600 text-sm mt-2">✅ {t('submitted')}</p>
+            <p className="text-green-600 text-sm mt-2">{t('submitted')}</p>
           )}
           {submitStatus === 'error' && (
-            <p className="text-red-600 text-sm mt-2">❌ {t('submitError')}</p>
+            <p className="text-red-600 text-sm mt-2">{t('submitError')}</p>
           )}
         </div>
       </div>
