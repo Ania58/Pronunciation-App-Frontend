@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { registerWithEmail } from "../firebase/firebaseAuth";
 import GoogleSignInButton from "./GoogleSignInButton";
 import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "../components/LanguageSwitcher";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -30,6 +31,15 @@ const Register = () => {
 
   return (
     <div className="p-4 max-w-sm mx-auto bg-white shadow rounded">
+      <div className="flex justify-between items-center mb-4">
+        <button onClick={() => navigate(-1)} className="text-blue-600 hover:underline cursor-pointer">
+          ← {t('goBack')}
+        </button>
+        <Link to="/" className="text-blue-600 hover:underline">
+          🏠 {t('home')}
+        </Link>
+      </div>
+      <LanguageSwitcher />
       <h2 className="text-xl font-bold mb-4">{t("auth.register")}</h2>
       <form onSubmit={handleRegister} className="space-y-3">
         <input
