@@ -1,10 +1,15 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import LogoutButton from '../auth/LogoutButton';
+import { useUser } from '../contexts/UserContext';
+
 
 export default function Header() {
   const { t, i18n } = useTranslation();
 
   const changeLang = (lng: 'en' | 'pl' | 'es') => i18n.changeLanguage(lng);
+
+  const { user } = useUser();
 
   return (
     <header className="w-full bg-white shadow mb-6">
@@ -119,6 +124,25 @@ export default function Header() {
               {lng.toUpperCase()}
             </button>
           ))}
+        </div>
+        <div className="mt-6 flex gap-4 justify-end">
+          {!user && (
+            <>
+              <Link
+                to="/register"
+                className="text-blue-700 underline hover:text-blue-900 cursor-pointer"
+              >
+                Register
+              </Link>
+              <Link
+                to="/login"
+                className="text-green-700 underline hover:text-green-900 cursor-pointer"
+              >
+                Login
+              </Link>
+            </>
+          )}
+          {user && <LogoutButton />}
         </div>
       </div>
     </header>

@@ -1,13 +1,13 @@
 import { initializeApp } from "firebase/app";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyBJ3fX6sUT_AOW04YpuT556un63sh-tMY",
-  authDomain: "sayright-pronunciation-app.firebaseapp.com",
-  projectId: "sayright-pronunciation-app",
-  storageBucket: "sayright-pronunciation-app.appspot.com",
-  messagingSenderId: "919590572342",
-  appId: "1:919590572342:web:c6255a4ba5df9abcbec397",
-  measurementId: "G-DSES0XRPGG"
+export const firebaseConfig = {
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
 export const firebaseApp = initializeApp(firebaseConfig);

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { loginWithEmail } from "../firebase/firebaseAuth";
+import GoogleSignInButton from './GoogleSignInButton';
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -46,6 +47,13 @@ const Login = () => {
         </button>
       </form>
       {message && <p className="mt-4 text-sm">{message}</p>}
+      <button
+        type="button"
+        onClick={GoogleSignInButton}
+        className="w-full mt-4 bg-red-600 hover:bg-red-700 text-white py-2 rounded cursor-pointer"
+      >
+        Sign in with Google
+      </button>
     </div>
   );
 };

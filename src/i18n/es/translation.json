@@ -41,6 +41,7 @@
   "language": "Idioma",
   "category": "Categoría",
   "difficulty": "Dificultad",
+  "loginRequired": "Inicia sesión para acceder a esta función.",
   "practicePrompt": "Practica tu pronunciación",
   "practiceHint": "Grábate y compáralo con la pronunciación nativa de arriba.",
   "currentStatus": "Estado actual",

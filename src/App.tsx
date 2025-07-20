@@ -11,6 +11,8 @@ import { SupportBanner } from './components/SupportBanner';
 import IPAVideosPage from './pages/IPAVideosPage';
 import AboutMePage from './pages/AboutMePage';
 import PronunciationPatternsPage from './pages/PronunciationPatternsPage';
+import RegisterPage from './pages/RegisterPage';
+import LoginPage from './pages/LoginPage';
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
         <Route path="/ipa-guide" element={<IPAVideosPage />} />
         <Route path="/about-me" element={<AboutMePage />} />
         <Route path="/pronunciation-patterns" element={<PronunciationPatternsPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/login" element={<LoginPage />} />
       </Routes>
     </Router>
   );

@@ -42,6 +42,7 @@
   "language": "Język",
   "category": "Kategoria",
   "difficulty": "Poziom trudności",
+  "loginRequired": "Zaloguj się, aby uzyskać dostęp do tej funkcji.",
   "practicePrompt": "Ćwicz swoją wymowę",
   "practiceHint": "Nagraj siebie i porównaj z wymową native speakera powyżej.",
   "currentStatus": "Obecny status",
