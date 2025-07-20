@@ -58,6 +58,21 @@ export default function AttemptHistoryPage() {
     fetchAttempts();
   }, []);
 
+  const handleDeleteAttempt = async (attemptId: string) => {
+  if (!window.confirm(t('confirmDelete'))) return;
+
+  try {
+    await api.delete(`/pronunciation/${attemptId}`, {
+      params: { userId: fakeUserId },
+    });
+
+    setAttempts((prev) => prev.filter((a) => a._id !== attemptId));
+  } catch (error) {
+    console.error('Failed to delete attempt:', error);
+    alert(t('deleteError'));
+  }
+};
+
   return (
     <div className="max-w-4xl mx-auto p-6 bg-white rounded shadow">
       <div className="mb-4">
@@ -77,6 +92,7 @@ export default function AttemptHistoryPage() {
         <table className="w-full table-auto border border-gray-200 text-sm">
           <thead>
             <tr className="bg-gray-100">
+              <th className="p-2 border">{t('actions')}</th>
               <th className="p-2 border">{t('word')}</th>
               <th className="p-2 border">{t('score')}</th>
               <th className="p-2 border">{t('feedback')}</th>
@@ -85,10 +101,26 @@ export default function AttemptHistoryPage() {
             </tr>
           </thead>
           <tbody>
-            {attempts.map((attempt) => (
+            {attempts
+            .slice()
+            .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+            .map((attempt) => (
               <tr key={attempt._id}>
-                <td className="p-2 border font-medium">
-                  {words[attempt.wordId]?.word || t('unknown')}
+                <td className="p-2 border text-center">
+                  <button
+                    onClick={() => handleDeleteAttempt(attempt._id)}
+                    className="text-red-600 hover:text-red-700 hover:underline cursor-pointer text-sm"
+                  >
+                    🗑 {t('delete')}
+                  </button>
+                </td>
+                <td className="p-2 border font-medium hover:underline">
+                  {words[attempt.wordId]?.word ? (
+                    <Link to={`/words/${attempt.wordId}`}>
+                      {words[attempt.wordId].word}
+                    </Link>
+                    ) : ( t('unknown'))
+                  }
                 </td>
                 <td className="p-2 border">{attempt.score ?? '–'}</td>
                 <td className="p-2 border">{attempt.feedback || t('pending')}</td>

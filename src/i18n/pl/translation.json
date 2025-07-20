@@ -64,7 +64,7 @@
   "feedback": "Opinia",
   "pending": "W toku",
   "delete": "Usuń",
-  "confirmDelete": "Czy na pewno chcesz usunąć tę próbę? Akceptując, usuniesz to również ze swoich postępów.",
+  "confirmDelete": "Czy na pewno chcesz usunąć tę próbę? Akceptując, usuniesz ją ze swoich postępów.",
   "deleteError": "Wystąpił błąd podczas usuwania próby",
   "mastered": "Opanowane do perfekcji",
   "practice": "Do przećwiczenia",

@@ -63,7 +63,7 @@
   "feedback": "Comentarios",
   "pending": "Pendiente",
   "delete": "Eliminar",
-  "confirmDelete": "¿Estás seguro de que deseas eliminar este intento? Al aceptar, también lo eliminarás de tu progreso.",
+  "confirmDelete": "¿Estás seguro de que deseas eliminar este intento? Al aceptar, lo eliminarás de tu progreso.",
   "deleteError": "Se produjo un error al eliminar el intento.",
   "mastered": "Dominado",
   "practice": "Para practicar",

@@ -63,7 +63,7 @@
   "feedback": "Feedback",
   "pending": "Pending",
   "delete": "Delete",
-  "confirmDelete": "Are you sure you want to delete this attempt? By accepting, you will also remove it from your progress.",
+  "confirmDelete": "Are you sure you want to delete this attempt? By accepting, you will remove it from your progress.",
   "deleteError": "An error occurred while deleting the attempt.",
   "mastered": "Mastered",
   "practice": "Practice",
