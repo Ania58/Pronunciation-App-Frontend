@@ -2,8 +2,13 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 export default function Footer() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const year = new Date().getFullYear();
+
+   const linkedinUrl =
+    i18n.language === 'es'
+      ? 'https://www.linkedin.com/in/anna-heliasz-dev/'
+      : 'https://www.linkedin.com/in/anna-heliasz-dev/?locale=en_US';
 
   return (
     <footer className="w-full bg-gray-100 mt-12">
@@ -20,6 +25,14 @@ export default function Footer() {
         >
           {t('footer.aboutMe')}
         </Link>
+        <a
+          href={linkedinUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-600 hover:text-black hover:underline transition-colors"
+        >
+          LinkedIn
+        </a>
       </div>
       <div className="max-w-6xl mx-auto text-center py-6 text-sm text-gray-600">
         © {year} SayRight — {t('footer.createdBy')}{' '}
