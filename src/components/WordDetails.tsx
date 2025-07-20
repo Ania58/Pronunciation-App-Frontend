@@ -61,9 +61,10 @@ export default function WordDetails() {
   }
 };
 
-  const fetchAttempts = async () => {
+  const fetchAttempts = async (wordIdParam?: string) => {
     try {
-      const res = await api.get(`/pronunciation/${id}/attempts`, {
+      const finalId = wordIdParam || word?.id || id;
+      const res = await api.get(`/pronunciation/${finalId}/attempts`, {
         params: { userId: fakeUserId },
       });
       setAttempts(res.data);
@@ -163,13 +164,13 @@ const handleDeleteAttempt = async (attemptId: string) => {
         fetch(audioUrl, { method: 'HEAD' }).then((res) => {
           if (res.ok) setAudioExists(true);
         });
+        fetchAttempts(data.id);
       })
       .catch(() => {
         console.error("Error fetching word:", error);
         setError(t('wordNotFound'));
         setLoading(false);
       });
-      fetchAttempts();
   }, [id, i18n.language]);
 
   if (loading) return <p className="text-center text-gray-500">{t('loading')}</p>;
