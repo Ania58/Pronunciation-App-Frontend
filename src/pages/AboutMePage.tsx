@@ -1,18 +1,22 @@
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import LanguageSwitcher from '../components/LanguageSwitcher';
 
 const AboutMePage = () => {
   const { t } = useTranslation();
+   const navigate = useNavigate();
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-8">
       <div className="flex justify-between items-center mb-4">
+        <button onClick={() => navigate(-1)} className="text-blue-600 hover:underline cursor-pointer">
+          ← {t('goBack')}
+        </button>
         <Link to="/" className="text-blue-600 hover:underline">
           🏠 {t('home')}
         </Link>
-        <LanguageSwitcher />
       </div>
+      <LanguageSwitcher />
 
       <h1 className="text-3xl font-bold mb-6">{t('about.title')}</h1>
 
