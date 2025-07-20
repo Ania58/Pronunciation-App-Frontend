@@ -83,18 +83,22 @@ export default function Header() {
           >
             {t('practicePronunciation')}
           </Link>
-          <Link
-            to="/progress"
-            className="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 py-3 rounded shadow text-center w-full sm:w-auto"
-          >
-            {t('seeProgress')}
-          </Link>
-          <Link
-            to="/attempts"
-            className="bg-pink-600 hover:bg-pink-700 text-white font-semibold px-6 py-3 rounded shadow text-center w-full sm:w-auto"
-          >
-            {t('yourAttempts')}
-          </Link>
+          {user && (
+            <>
+              <Link
+                to="/progress"
+                className="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 py-3 rounded shadow text-center w-full sm:w-auto"
+              >
+                {t('seeProgress')}
+              </Link>
+              <Link
+                to="/attempts"
+                className="bg-pink-600 hover:bg-pink-700 text-white font-semibold px-6 py-3 rounded shadow text-center w-full sm:w-auto"
+              >
+                {t('yourAttempts')}
+              </Link>
+            </>
+          )}
           <Link
             to="/ipa-guide"
             className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold px-6 py-3 rounded shadow text-center w-full sm:w-auto"
