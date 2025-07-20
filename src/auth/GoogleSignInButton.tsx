@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { signInWithGoogle } from "../firebase/firebaseAuth";
 import { useTranslation } from "react-i18next";
 
@@ -7,10 +8,15 @@ const GoogleSignInButton = () => {
 
   const { t } = useTranslation();
 
+  const navigate = useNavigate();
+
   const handleGoogleSignIn = async () => {
     try {
       await signInWithGoogle();
       setMessage(t("auth.googleSuccess"));
+      setTimeout(() => {
+        navigate("/");
+      }, 1500);
     } catch (error: any) {
       setMessage(`${t("auth.errorPrefix")} ${error.message}`);
     }

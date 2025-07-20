@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { loginWithEmail } from "../firebase/firebaseAuth";
 import GoogleSignInButton from './GoogleSignInButton';
 import { useTranslation } from "react-i18next";
@@ -10,6 +11,8 @@ const Login = () => {
 
   const { t } = useTranslation();
 
+  const navigate = useNavigate();
+
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
@@ -17,6 +20,9 @@ const Login = () => {
       setMessage(t("auth.loginSuccess"));
       setEmail("");
       setPassword("");
+      setTimeout(() => {
+        navigate("/");
+      }, 1500);
     } catch (error: any) {
       setMessage(`${t("auth.errorPrefix")} ${error.message}`);
     }
