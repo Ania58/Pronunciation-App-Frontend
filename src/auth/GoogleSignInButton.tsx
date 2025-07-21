@@ -24,12 +24,19 @@ const GoogleSignInButton = () => {
 
   return (
     <div className="mt-4 text-center">
-      <button
-        onClick={handleGoogleSignIn}
-        className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 cursor-pointer"
-      >
-         {t("auth.googleSignIn")}
-      </button>
+      <div className="flex justify-center">
+        <button
+          onClick={handleGoogleSignIn}
+          className="flex items-center justify-center gap-2 bg-white text-gray-800 border border-gray-300 px-4 py-2 rounded shadow hover:bg-gray-100 transition-colors w-full max-w-sm cursor-pointer"
+        >
+          <img
+            src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+            alt="Google"
+            className="w-5 h-5"
+          />
+          <span>{t("auth.googleSignIn")}</span>
+        </button>
+      </div>
       {message && <p className="mt-2 text-sm">{message}</p>}
     </div>
   );
