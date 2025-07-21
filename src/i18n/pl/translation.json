@@ -231,7 +231,11 @@
   "googleSuccess": "✅ Zalogowano przez Google pomyślnie.",
   "errorPrefix": "❌ Błąd:",
   "showPassword": "Pokaż hasło",
-  "hidePassword": "Ukryj hasło"
+  "hidePassword": "Ukryj hasło",
+  "forgotPasswordQuestion": "Zapomniałeś hasła?",
+  "forgotPasswordTitle": "Zresetuj hasło",
+  "sendResetLink": "Wyślij link resetujący",
+  "resetEmailSent": "✅ E-mail z resetem wysłany. Sprawdź skrzynkę."
 }
 
 }

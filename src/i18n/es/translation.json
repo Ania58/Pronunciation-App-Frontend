@@ -230,7 +230,11 @@
   "googleSuccess": "✅ Sesión iniciada con Google correctamente.",
   "errorPrefix": "❌ Error:",
   "showPassword": "Mostrar contraseña",
-  "hidePassword": "Ocultar contraseña"
+  "hidePassword": "Ocultar contraseña",
+  "forgotPasswordQuestion": "¿Olvidaste tu contraseña?",
+  "forgotPasswordTitle": "Restablecer la contraseña",
+  "sendResetLink": "Enviar enlace de restablecimiento",
+  "resetEmailSent": "✅ Correo enviado. Revisa tu bandeja de entrada."
 }
 
 }

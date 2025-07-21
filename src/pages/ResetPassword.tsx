@@ -1,29 +1,23 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { loginWithEmail } from "../firebase/firebaseAuth";
-import GoogleSignInButton from './GoogleSignInButton';
+import { sendResetEmail } from "../firebase/firebaseAuth";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "../components/LanguageSwitcher";
 
-const Login = () => {
+const ResetPassword = () => {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
-
   const { t } = useTranslation();
-
   const navigate = useNavigate();
 
-  const handleLogin = async (e: React.FormEvent) => {
+  const handleReset = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await loginWithEmail(email, password);
-      setMessage(t("auth.loginSuccess"));
-      setEmail("");
-      setPassword("");
+      await sendResetEmail(email);
+      setMessage(t("auth.resetEmailSent"));
       setTimeout(() => {
-        navigate("/");
-      }, 1500);
+        navigate("/login");
+      }, 2000);
     } catch (error: any) {
       setMessage(`${t("auth.errorPrefix")} ${error.message}`);
     }
@@ -33,15 +27,15 @@ const Login = () => {
     <div className="p-4 max-w-sm mx-auto bg-white shadow rounded">
       <div className="flex justify-between items-center mb-4">
         <button onClick={() => navigate(-1)} className="text-blue-600 hover:underline cursor-pointer">
-          ← {t('goBack')}
+          ← {t("goBack")}
         </button>
         <Link to="/" className="text-blue-600 hover:underline">
-          🏠 {t('home')}
+          🏠 {t("home")}
         </Link>
       </div>
       <LanguageSwitcher />
-      <h2 className="text-xl font-bold mb-4">{t("auth.login")}</h2>
-      <form onSubmit={handleLogin} className="space-y-3">
+      <h2 className="text-xl font-bold mb-4">{t("auth.forgotPasswordTitle")}</h2>
+      <form onSubmit={handleReset} className="space-y-3">
         <input
           type="email"
           placeholder={t("auth.emailPlaceholder")}
@@ -50,28 +44,16 @@ const Login = () => {
           onChange={(e) => setEmail(e.target.value)}
           required
         />
-        <input
-          type="password"
-          placeholder={t("auth.passwordPlaceholder")}
-          className="w-full border px-3 py-2"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
         <button
           type="submit"
-          className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 cursor-pointer"
+          className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 cursor-pointer"
         >
-          {t("auth.loginButton")}
+          {t("auth.sendResetLink")}
         </button>
       </form>
-      {message && <p className="mt-4 text-sm">{message}</p>}
-      <GoogleSignInButton />
-      <p className="text-sm text-blue-600 hover:underline mt-2">
-        <Link to="/reset-password">{t("auth.forgotPasswordQuestion")}</Link>
-      </p>
+      {message && <p className="mt-4 text-sm text-center">{message}</p>}
     </div>
   );
 };
 
-export default Login;
+export default ResetPassword;

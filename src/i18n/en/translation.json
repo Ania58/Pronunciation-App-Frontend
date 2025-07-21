@@ -230,7 +230,11 @@
   "googleSuccess": "✅ Signed in with Google successfully.",
   "errorPrefix": "❌ Error:",
   "showPassword": "Show password",
-  "hidePassword": "Hide password"
+  "hidePassword": "Hide password",
+  "forgotPasswordQuestion": "Forgot your password?",
+  "forgotPasswordTitle": "Reset Password",
+  "sendResetLink": "Send reset link",
+  "resetEmailSent": "✅ Reset email sent. Please check your inbox."
 }
 
 }

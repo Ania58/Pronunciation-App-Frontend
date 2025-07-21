@@ -13,6 +13,7 @@ import AboutMePage from './pages/AboutMePage';
 import PronunciationPatternsPage from './pages/PronunciationPatternsPage';
 import RegisterPage from './pages/RegisterPage';
 import LoginPage from './pages/LoginPage';
+import ResetPassword from './pages/ResetPassword';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path="/pronunciation-patterns" element={<PronunciationPatternsPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
       </Routes>
     </Router>
   );
