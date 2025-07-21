@@ -213,17 +213,24 @@
   "register": "Register",
   "login": "Login",
   "logout": "Logout",
-  "registerSuccess": "✅ Registered successfully. You can now log in.",
+  "registerSuccess": "✅ Registered successfully.",
   "loginSuccess": "✅ Logged in successfully.",
   "logoutSuccess": "✅ Logged out successfully.",
   "loginRequired": "Please log in to access this feature.",
   "emailPlaceholder": "Email",
   "passwordPlaceholder": "Password",
+  "confirmPasswordPlaceholder": "Confirm Password",
+  "passwordMismatch": "Passwords do not match.",
+  "weakPassword": "Password must be at least 8 characters long and include 1 uppercase letter, 1 number, and 1 special character.",
+  "mustAcceptTerms": "You must accept the terms and conditions.",
+  "agreeToTerms": "I agree to the terms and conditions.",
   "loginButton": "Login",
   "registerButton": "Register",
   "googleSignIn": "Sign in with Google",
   "googleSuccess": "✅ Signed in with Google successfully.",
-  "errorPrefix": "❌ Error:"
+  "errorPrefix": "❌ Error:",
+  "showPassword": "Show password",
+  "hidePassword": "Hide password"
 }
 
 }

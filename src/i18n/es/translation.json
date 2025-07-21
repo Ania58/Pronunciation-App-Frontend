@@ -213,17 +213,24 @@
   "register": "Registrarse",
   "login": "Iniciar sesión",
   "logout": "Cerrar sesión",
-  "registerSuccess": "✅ Registro completado. Ya puedes iniciar sesión.",
-  "loginSuccess": "✅ Sesión iniciada correctamente.",
-  "logoutSuccess": "✅ Sesión cerrada correctamente.",
-  "loginRequired": "Inicia sesión para acceder a esta función.",
+  "registerSuccess": "✅ Registro exitoso.",
+  "loginSuccess": "✅ Sesión iniciada con éxito.",
+  "logoutSuccess": "✅ Sesión cerrada con éxito.",
+  "loginRequired": "Por favor inicia sesión para acceder a esta función.",
   "emailPlaceholder": "Correo electrónico",
   "passwordPlaceholder": "Contraseña",
+  "confirmPasswordPlaceholder": "Confirmar contraseña",
+  "passwordMismatch": "Las contraseñas no coinciden.",
+  "weakPassword": "La contraseña debe tener al menos 8 caracteres, incluir 1 mayúscula, 1 número y 1 carácter especial.",
+  "mustAcceptTerms": "Debes aceptar los términos y condiciones.",
+  "agreeToTerms": "Acepto los términos y condiciones.",
   "loginButton": "Iniciar sesión",
   "registerButton": "Registrarse",
   "googleSignIn": "Iniciar sesión con Google",
-  "googleSuccess": "✅ Has iniciado sesión con Google correctamente.",
-  "errorPrefix": "❌ Error:"
+  "googleSuccess": "✅ Sesión iniciada con Google correctamente.",
+  "errorPrefix": "❌ Error:",
+  "showPassword": "Mostrar contraseña",
+  "hidePassword": "Ocultar contraseña"
 }
 
 }

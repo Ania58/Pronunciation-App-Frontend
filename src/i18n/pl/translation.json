@@ -214,17 +214,24 @@
   "register": "Zarejestruj się",
   "login": "Zaloguj się",
   "logout": "Wyloguj się",
-  "registerSuccess": "✅ Rejestracja zakończona sukcesem. Możesz się teraz zalogować.",
+  "registerSuccess": "✅ Rejestracja zakończona sukcesem.",
   "loginSuccess": "✅ Zalogowano pomyślnie.",
   "logoutSuccess": "✅ Wylogowano pomyślnie.",
   "loginRequired": "Zaloguj się, aby uzyskać dostęp do tej funkcji.",
-  "emailPlaceholder": "E-mail",
+  "emailPlaceholder": "Email",
   "passwordPlaceholder": "Hasło",
+  "confirmPasswordPlaceholder": "Potwierdź hasło",
+  "passwordMismatch": "Hasła nie są takie same.",
+  "weakPassword": "Hasło musi mieć co najmniej 8 znaków i zawierać 1 wielką literę, 1 cyfrę i 1 znak specjalny.",
+  "mustAcceptTerms": "Musisz zaakceptować regulamin.",
+  "agreeToTerms": "Akceptuję regulamin.",
   "loginButton": "Zaloguj się",
   "registerButton": "Zarejestruj się",
   "googleSignIn": "Zaloguj się przez Google",
-  "googleSuccess": "✅ Pomyślnie zalogowano przez Google.",
-  "errorPrefix": "❌ Błąd:"
+  "googleSuccess": "✅ Zalogowano przez Google pomyślnie.",
+  "errorPrefix": "❌ Błąd:",
+  "showPassword": "Pokaż hasło",
+  "hidePassword": "Ukryj hasło"
 }
 
 }
