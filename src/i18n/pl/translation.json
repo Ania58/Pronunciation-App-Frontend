@@ -235,7 +235,10 @@
   "forgotPasswordQuestion": "Zapomniałeś hasła?",
   "forgotPasswordTitle": "Zresetuj hasło",
   "sendResetLink": "Wyślij link resetujący",
-  "resetEmailSent": "✅ E-mail z resetem wysłany. Sprawdź skrzynkę."
+  "resetEmailSent": "✅ E-mail z resetem wysłany. Sprawdź skrzynkę.",
+  "noAccount": "Nie masz konta?",
+  "alreadyHaveAccount": "Masz już konto?"
+
 }
 
 }

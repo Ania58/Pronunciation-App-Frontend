@@ -67,6 +67,12 @@ const Login = () => {
       </form>
       {message && <p className="mt-4 text-sm">{message}</p>}
       <GoogleSignInButton />
+      <p className="text-sm mt-4 text-center">
+        {t("auth.noAccount")}{" "}
+        <Link to="/register" className="text-blue-600 hover:underline">
+          {t("auth.register")}
+        </Link>
+      </p>
       <p className="text-sm text-blue-600 hover:underline mt-2">
         <Link to="/reset-password">{t("auth.forgotPasswordQuestion")}</Link>
       </p>

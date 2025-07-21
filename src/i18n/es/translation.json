@@ -234,7 +234,10 @@
   "forgotPasswordQuestion": "¿Olvidaste tu contraseña?",
   "forgotPasswordTitle": "Restablecer la contraseña",
   "sendResetLink": "Enviar enlace de restablecimiento",
-  "resetEmailSent": "✅ Correo enviado. Revisa tu bandeja de entrada."
+  "resetEmailSent": "✅ Correo enviado. Revisa tu bandeja de entrada.",
+  "noAccount": "¿No tienes una cuenta?",
+  "alreadyHaveAccount": "¿Ya tienes una cuenta?"
+
 }
 
 }

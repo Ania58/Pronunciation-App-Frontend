@@ -234,7 +234,10 @@
   "forgotPasswordQuestion": "Forgot your password?",
   "forgotPasswordTitle": "Reset Password",
   "sendResetLink": "Send reset link",
-  "resetEmailSent": "✅ Reset email sent. Please check your inbox."
+  "resetEmailSent": "✅ Reset email sent. Please check your inbox.",
+  "noAccount": "Don't have an account?",
+  "alreadyHaveAccount": "Already have an account?"
+
 }
 
 }

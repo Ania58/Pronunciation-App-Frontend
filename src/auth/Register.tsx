@@ -121,6 +121,12 @@ const Register = () => {
 
       {message && <p className="mt-4 text-sm text-center">{message}</p>}
       <GoogleSignInButton />
+      <p className="text-sm mt-4 text-center">
+      {t("auth.alreadyHaveAccount")}{" "}
+      <Link to="/login" className="text-blue-600 hover:underline">
+        {t("auth.login")}
+      </Link>
+    </p>
     </div>
   );
 };
