@@ -237,7 +237,9 @@ const handleDeleteAttempt = async (attemptId: string) => {
             onClick={
               () => {
                 if (!user) {
-                  alert(t('auth.loginRequired'));
+                  if (window.confirm(t('auth.loginRequired'))) {
+                    navigate('/login');
+                  }
                   return;
                 }
               isRecording ? stopRecording() : startRecording()
@@ -254,7 +256,9 @@ const handleDeleteAttempt = async (attemptId: string) => {
           <button
             onClick={() => {
               if (!user) {
-                alert(t('auth.loginRequired'));
+                if (window.confirm(t('auth.loginRequired'))) {
+                  navigate('/login');
+                }
                 return;
             }
               submitAttempt();
@@ -313,7 +317,9 @@ const handleDeleteAttempt = async (attemptId: string) => {
                    <button
                     onClick={() => {
                       if (!user) {
-                        alert(t('auth.loginRequired'));
+                        if (window.confirm(t('auth.loginRequired'))) {
+                          navigate('/login');
+                        }
                         return;
                       }
                       handleDeleteAttempt(a._id)
@@ -332,7 +338,9 @@ const handleDeleteAttempt = async (attemptId: string) => {
         <button
           onClick={() => {
             if (!user) {
-              alert(t('auth.loginRequired'));
+              if (window.confirm(t('auth.loginRequired'))) {
+                navigate('/login');
+              }
               return;
             }
             updateStatus('mastered');
@@ -344,8 +352,10 @@ const handleDeleteAttempt = async (attemptId: string) => {
         <button
           onClick={() => {
             if (!user) {
-              alert(t('auth.loginRequired'));
-              return;
+             if (window.confirm(t('auth.loginRequired'))) {
+              navigate('/login');
+            }
+            return;
             }
             updateStatus('practice');
           }}
