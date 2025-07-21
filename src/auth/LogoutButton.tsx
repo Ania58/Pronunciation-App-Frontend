@@ -13,11 +13,11 @@ const LogoutButton = () => {
 
   const handleLogout = async () => {
     await logout();
+    navigate("/"); 
     setShowMessage(true);
 
     setTimeout(() => {
       setShowMessage(false);
-      navigate("/"); 
     }, 1500);
   };
 
