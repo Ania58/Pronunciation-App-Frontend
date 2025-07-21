@@ -73,8 +73,10 @@ const Login = () => {
           {t("auth.register")}
         </Link>
       </p>
-      <p className="text-sm text-blue-600 hover:underline mt-2">
-        <Link to="/reset-password">{t("auth.forgotPasswordQuestion")}</Link>
+      <p className="text-sm mt-2 text-center">
+        <Link to="/reset-password" className="text-blue-600 hover:underline">
+          {t("auth.forgotPasswordQuestion")}
+        </Link>
       </p>
     </div>
   );
