@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { api } from '../services/api';
 import type { Word } from '../types/word';
@@ -10,7 +10,6 @@ export default function WordList() {
   const [words, setWords] = useState<Word[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [search, setSearch] = useState('');
   const searchTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -18,6 +17,12 @@ export default function WordList() {
   const location = useLocation();
 
   const { t } = useTranslation();
+
+  const navigate = useNavigate();
+
+  const params = new URLSearchParams(location.search);
+  const initialPage = parseInt(params.get('page') || '1');
+  const [page, setPage] = useState(initialPage);
 
   
   useEffect(() => {
@@ -37,7 +42,10 @@ export default function WordList() {
             limit: 50,
             sort: 'word',
             order: 'asc',
-            query: search, } });
+            query: search, 
+            page,
+          } 
+        });
         setWords(res.data.results);
         setTotalPages(res.data.totalPages);
       } else {
@@ -73,6 +81,12 @@ export default function WordList() {
       setPage(1);
     }, 300);
   };
+
+  function updateUrlWithPage(newPage: number) {
+  const params = new URLSearchParams(location.search);
+  params.set('page', newPage.toString());
+  navigate({ search: params.toString() }, { replace: true });
+}
 
   return (
     <div className="max-w-4xl mx-auto p-6">
@@ -117,7 +131,11 @@ export default function WordList() {
 
           <div className="flex items-center gap-4 mt-6">
             <button
-              onClick={() => setPage(p => Math.max(1, p - 1))}
+              onClick={() => {
+                const newPage = Math.max(1, page - 1);
+                setPage(newPage);
+                updateUrlWithPage(newPage);
+              }}
               disabled={page === 1}
               className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 disabled:opacity-50 cursor-pointer"
             >
@@ -129,7 +147,11 @@ export default function WordList() {
             </span>
 
             <button
-              onClick={() => setPage(p => Math.min(totalPages, p + 1))}
+              onClick={() => {
+                const newPage = Math.min(totalPages, page + 1);
+                setPage(newPage);
+                updateUrlWithPage(newPage);
+              }}
               disabled={page === totalPages}
               className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 disabled:opacity-50 cursor-pointer"
             >
