@@ -13,7 +13,7 @@ const Register = () => {
   const [acceptTerms, setAcceptTerms] = useState(false);
   const [message, setMessage] = useState("");
 
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
 
   const validatePassword = (password: string) => {
@@ -101,16 +101,32 @@ const Register = () => {
           required
         />
 
-        <label className="flex items-center space-x-2 text-sm">
-          <input
-            type="checkbox"
-            checked={acceptTerms}
-            onChange={() => setAcceptTerms(!acceptTerms)}
-            className="accent-blue-600"
-          />
-          <span>{t("auth.agreeToTerms")}</span>
-        </label>
-
+       <label className="flex items-start space-x-2 text-sm leading-tight">
+        <input
+          type="checkbox"
+          checked={acceptTerms}
+          onChange={() => setAcceptTerms(!acceptTerms)}
+          className="mt-1 accent-blue-600"
+        />
+        <span>
+          {t("auth.agreeTo")}{" "}
+          <a
+            href={
+              i18n.language === "pl"
+                ? "/terms-of-use-pl.pdf"
+                : i18n.language === "es"
+                ? "/terms-of-use-es.pdf"
+                : "/terms-of-use-en.pdf"
+            }
+            target="_blank"
+            rel="noopener noreferrer"
+            title={t("auth.termsTooltip")}
+            className="text-blue-600 underline hover:text-blue-800"
+          >
+            {t("auth.terms")}
+          </a>
+        </span>
+      </label>
         <button
           type="submit"
           className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 cursor-pointer"
