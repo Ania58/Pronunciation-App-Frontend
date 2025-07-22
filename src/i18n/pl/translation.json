@@ -27,7 +27,7 @@
     "terms": "Regulamin",
     "privacy": "Polityka prywatności"
   },
-  
+
   "mainTitle": "Witaj w SayRight",
   "mainDescription": "SayRight to Twój wspierany przez AI towarzysz w opanowywaniu angielskiej wymowy. Przeglądaj tysiące słów z transkrypcjami IPA, nagraniami native speakerów, kategoriami i poziomami trudności. Zarejestruj się, aby nagrywać swoją wymowę i otrzymywać inteligentne informacje zwrotne z podpowiedziami, jak mówić lepiej. Śledź swoje postępy, zapisując słowa, które już opanowałeś lub które wymagają więcej ćwiczeń. Gotowy, by mówić wyraźnie i z pewnością siebie? Zaczynajmy!",
 
@@ -243,7 +243,36 @@
   "resetEmailSent": "✅ E-mail z resetem wysłany. Sprawdź skrzynkę.",
   "noAccount": "Nie masz konta?",
   "alreadyHaveAccount": "Masz już konto?"
+},
 
+"privacyPolicy": {
+  "title": "Polityka prywatności",
+  "sections": [
+    {
+      "heading": "1. Wprowadzenie",
+      "content": "SayRight to edukacyjna platforma dostępna pod adresem gottaspeak.com/sayright. Ma charakter niekomercyjny i nie oferuje usług odpłatnych. Niniejsza strona wyjaśnia zasady przetwarzania i ochrony danych osobowych."
+    },
+    {
+      "heading": "2. Zakres gromadzonych danych",
+      "content": "W przypadku rejestracji zapisywany jest adres e-mail. Formularz kontaktowy umożliwia przesłanie imienia, adresu e-mail i treści wiadomości. Nagrania wymowy są przesyłane do Cloudinary i przetwarzane przez AssemblyAI w celu wygenerowania informacji zwrotnej."
+    },
+    {
+      "heading": "3. Cel wykorzystania danych",
+      "content": "Zebrane dane służą wyłącznie do działania podstawowych funkcji platformy, takich jak logowanie, analiza nagrań i zapisywanie postępów. Dane nie są sprzedawane ani przekazywane podmiotom trzecim w celach marketingowych."
+    },
+    {
+      "heading": "4. Usługi zewnętrzne",
+      "content": "Nagrania są przechowywane w Cloudinary. Analiza mowy odbywa się przy użyciu AssemblyAI. Strona jest hostowana na platformie Netlify. Wszystkie podmioty współpracujące stosują się do obowiązujących standardów ochrony danych."
+    },
+    {
+      "heading": "5. Prawa użytkownika",
+      "content": "Użytkownik ma prawo zażądać dostępu do swoich danych, ich poprawienia lub usunięcia. Żądania należy kierować za pomocą formularza kontaktowego."
+    },
+    {
+      "heading": "6. Kontakt",
+      "content": "Wszelkie pytania dotyczące prywatności można zgłaszać poprzez formularz dostępny na stronie gottaspeak.com/sayright/contact."
+    }
+  ]
 }
 
 }

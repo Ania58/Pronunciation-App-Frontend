@@ -26,7 +26,7 @@
     "terms": "Terms of Use",
     "privacy": "Privacy Policy"
   },
-  
+
   "mainTitle": "Welcome to SayRight",
   "mainDescription": "SayRight is your AI-powered companion for mastering English word pronunciation. Browse thousands of words with IPA transcriptions, native audio, categories, and difficulty levels. Sign up to record your pronunciation and receive intelligent feedback with improvement tips. Track your progress by saving words you've mastered or need more practice with. Ready to speak clearly and confidently? Let’s get started!",
 
@@ -242,7 +242,36 @@
   "resetEmailSent": "✅ Reset email sent. Please check your inbox.",
   "noAccount": "Don't have an account?",
   "alreadyHaveAccount": "Already have an account?"
+},
 
+"privacyPolicy": {
+  "title": "Privacy Policy",
+  "sections": [
+    {
+      "heading": "1. Introduction",
+      "content": "SayRight is an educational platform hosted at gottaspeak.com/sayright. The platform is non-commercial and does not offer paid services. This page describes how personal data is processed and protected."
+    },
+    {
+      "heading": "2. Data Collected",
+      "content": "When a user registers, an email address is stored. When the contact form is used, the submitted name, email, and message are collected. If pronunciation recordings are made, the audio is uploaded to Cloudinary and processed by AssemblyAI to provide feedback."
+    },
+    {
+      "heading": "3. Purpose of Data Use",
+      "content": "Collected data is used solely to enable core platform functionality, such as login, feedback generation, and saving user progress. Data is not sold or shared with third parties for marketing purposes."
+    },
+    {
+      "heading": "4. Third-party Services",
+      "content": "Audio recordings are hosted on Cloudinary. Speech analysis is performed by AssemblyAI. The website is hosted via Netlify. All services follow standard data protection protocols."
+    },
+    {
+      "heading": "5. User Rights",
+      "content": "Each user may request access to, correction of, or deletion of personal data by submitting a request via the contact form."
+    },
+    {
+      "heading": "6. Contact",
+      "content": "All privacy-related queries can be submitted through the contact form at gottaspeak.com/sayright/contact."
+    }
+  ]
 }
 
 }

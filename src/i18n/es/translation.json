@@ -26,7 +26,7 @@
      "terms": "Términos de uso",
     "privacy": "Política de privacidad"
   },
-  
+
   "mainTitle": "Bienvenido a SayRight",
   "mainDescription": "SayRight es tu compañero impulsado por IA para dominar la pronunciación de palabras en inglés. Explora miles de palabras con transcripciones IPA, audios de hablantes nativos, categorías y niveles de dificultad. Regístrate para grabar tu pronunciación y recibir comentarios inteligentes con consejos de mejora. Haz seguimiento de tu progreso guardando las palabras que ya dominas o con las que necesitas más práctica. ¿Listo para hablar con claridad y confianza? ¡Empecemos!",
 
@@ -242,7 +242,36 @@
   "resetEmailSent": "✅ Correo enviado. Revisa tu bandeja de entrada.",
   "noAccount": "¿No tienes una cuenta?",
   "alreadyHaveAccount": "¿Ya tienes una cuenta?"
+},
 
+"privacyPolicy": {
+  "title": "Política de privacidad",
+  "sections": [
+    {
+      "heading": "1. Introducción",
+      "content": "SayRight es una plataforma educativa disponible en gottaspeak.com/sayright. Tiene carácter no comercial y no ofrece servicios de pago. Esta página describe cómo se procesan y protegen los datos personales."
+    },
+    {
+      "heading": "2. Datos recopilados",
+      "content": "Al registrarse, se almacena la dirección de correo electrónico del usuario. Al utilizar el formulario de contacto, se recogen el nombre, el correo y el mensaje enviados. Las grabaciones de pronunciación se suben a Cloudinary y se analizan mediante AssemblyAI para ofrecer retroalimentación."
+    },
+    {
+      "heading": "3. Finalidad del uso de los datos",
+      "content": "Los datos recopilados se utilizan exclusivamente para el funcionamiento de la plataforma, como el inicio de sesión, el análisis de audio y el seguimiento del progreso. Los datos no se venden ni se comparten con fines de marketing."
+    },
+    {
+      "heading": "4. Servicios externos",
+      "content": "Las grabaciones se alojan en Cloudinary. El análisis de voz se realiza a través de AssemblyAI. El sitio web está alojado en Netlify. Todos los servicios utilizados cumplen con los estándares de protección de datos."
+    },
+    {
+      "heading": "5. Derechos del usuario",
+      "content": "Cualquier usuario puede solicitar el acceso, la corrección o la eliminación de sus datos personales mediante el formulario de contacto."
+    },
+    {
+      "heading": "6. Contacto",
+      "content": "Las consultas relacionadas con la privacidad pueden enviarse a través del formulario disponible en gottaspeak.com/sayright/contact."
+    }
+  ]
 }
 
 }
