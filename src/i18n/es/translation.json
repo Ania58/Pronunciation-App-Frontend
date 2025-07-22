@@ -265,7 +265,7 @@
     },
     {
       "heading": "5. Derechos del usuario",
-      "content": "Cualquier usuario puede solicitar el acceso, la corrección o la eliminación de sus datos personales mediante el formulario de contacto."
+      "content": "Cada usuario puede solicitar el acceso, la corrección o la eliminación de sus datos personales, incluida la eliminación de la cuenta. Las solicitudes deben enviarse a través del formulario de contacto. Ten en cuenta que las grabaciones y el historial de práctica pueden almacenarse en servicios externos como Cloudinary o AssemblyAI."
     },
     {
       "heading": "6. Contacto",
