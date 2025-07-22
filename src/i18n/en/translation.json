@@ -125,7 +125,7 @@
     "sending": "Sending...",
     "success": "Message sent successfully.",
     "error": "Something went wrong. Please try again."
-},
+  },
 
   "contactPage": "Contact Page",
 
@@ -133,7 +133,7 @@
     "message": "💡 This website is powered by my time, creativity, and some AI magic — which all come with a cost. If you enjoy it or find it useful, you can support my work by buying me a coffee. ☕",
     "button": "Buy me a coffee",
     "dismiss": "Dismiss"
-},
+  },
 
   "ipa": {
     "title": "Learn IPA Symbols: Videos + Guide",
@@ -157,123 +157,126 @@
   "nav": {
     "ipaGuide": "IPA Guide",
     "pronunciationPatterns": "Pronunciation Patterns"
-},
+  },
 
-"about": {
-  "title": "About Me",
-  "photoAlt": "Anna Heliasz smiling",
-  "paragraph1": "Hi! I’m Anna Heliasz — an English teacher turned full-stack developer with a passion for language, logic, and learning.",
-  "paragraph2": "I hold a Bachelor’s and a Master’s degree in English Philology, with specializations in teaching and in language, culture, and literature. I've been teaching since 2017, helping hundreds of students in Poland and Spain master the mysteries of English grammar — and survive it with a smile!",
-  "paragraph3": "In 2023, I discovered a new love: programming. I dove headfirst into HTML and CSS, graduated from The Bridge bootcamp in Full Stack Web Development, and continued exploring JavaScript, React, Node.js, PostgreSQL, MongoDB, and TypeScript. And now? I’m building cool things, like this very app!",
-  "paragraph4": "Outside of code and classrooms, I’m curious about AI, SEO, and how to make complex ideas feel simple. This site is a little piece of me — hope it helps you learn and maybe even makes you smile!"
-},
+  "about": {
+    "title": "About Me",
+    "photoAlt": "Anna Heliasz smiling",
+    "paragraph1": "Hi! I’m Anna Heliasz — an English teacher turned full-stack developer with a passion for language, logic, and learning.",
+    "paragraph2": "I hold a Bachelor’s and a Master’s degree in English Philology, with specializations in teaching and in language, culture, and literature. I've been teaching since 2017, helping hundreds of students in Poland and Spain master the mysteries of English grammar — and survive it with a smile!",
+    "paragraph3": "In 2023, I discovered a new love: programming. I dove headfirst into HTML and CSS, graduated from The Bridge bootcamp in Full Stack Web Development, and continued exploring JavaScript, React, Node.js, PostgreSQL, MongoDB, and TypeScript. And now? I’m building cool things, like this very app!",
+    "paragraph4": "Outside of code and classrooms, I’m curious about AI, SEO, and how to make complex ideas feel simple. This site is a little piece of me — hope it helps you learn and maybe even makes you smile!"
+  },
 
-"patterns": {
-  "title": "Common Pronunciation Patterns",
-  "intro": "English spelling and pronunciation can be confusing. Below are common combinations that can help you decode how words are typically pronounced.",
-  "silentTitle": "Silent Letters in Combinations",
-  "soundTitle": "Letter Combinations with a Specific Sound",
-  "cautionTitle": "Tricky Combinations with Many Exceptions",
-  "combination": "Combination",
-  "pronunciation": "Pronunciation",
-  "notes": "Notes / Example",
-  "caution": "Caution",
-  "silentCombos": [
-    { "combo": "kn", "sound": "/n/", "example": "knee, knife — k is silent" },
-    { "combo": "gn", "sound": "/n/", "example": "gnome, gnaw — g is silent" },
-    { "combo": "wr", "sound": "/r/", "example": "write, wrist — w is silent" },
-    { "combo": "ps", "sound": "/s/", "example": "psychology — p is silent" },
-    { "combo": "bt", "sound": "/t/", "example": "doubt — b is silent" },
-    { "combo": "mb", "sound": "/m/", "example": "bomb, thumb — b is silent" },
-    { "combo": "lk", "sound": "/k/", "example": "walk, folk — l is often silent" },
-    { "combo": "gh", "sound": "silent or /f/", "example": "high → silent; laugh → /f/" }
-  ],
-  "soundCombos": [
-    { "combo": "ph", "sound": "/f/", "example": "phone, photo" },
-    { "combo": "sh", "sound": "/ʃ/", "example": "shoe, ship" },
-    { "combo": "ch", "sound": "/tʃ/", "example": "chair, chocolate" },
-    { "combo": "th", "sound": "/θ/ or /ð/", "example": "think, this" },
-    { "combo": "qu", "sound": "/kw/", "example": "queen, quick" },
-    { "combo": "wh", "sound": "/w/", "example": "what, where" },
-    { "combo": "ck", "sound": "/k/", "example": "duck, lock" },
-    { "combo": "dge", "sound": "/dʒ/", "example": "bridge, judge" },
-    { "combo": "tch", "sound": "/tʃ/", "example": "watch, match" },
-    { "combo": "ough", "sound": "varies", "example": "tough, though, through" },
-    { "combo": "ai", "sound": "/eɪ/", "example": "rain, mail" },
-    { "combo": "ie", "sound": "/iː/ or /aɪ/", "example": "field, pie" },
-    { "combo": "ch (Greek)", "sound": "/k/", "example": "chorus, chemistry" }
-  ],
-  "cautionCombos": [
-    { "combo": "ough", "warning": "Many pronunciations: tough, though, through, etc." },
-    { "combo": "ea", "warning": "Can be /iː/, /ɛ/, or /eɪ/" },
-    { "combo": "ei/ie", "warning": "Spelling and sound often flip" },
-    { "combo": "ch", "warning": "May be /tʃ/ or /k/ (Greek origin)" }
-  ],
-  "closingNote": "Did you know? In Polish, 'character' is pronounced with 'h', in Spanish with 'k' — in English, it's 'k' because of its Greek origin!"
-},
+  "patterns": {
+    "title": "Common Pronunciation Patterns",
+    "intro": "English spelling and pronunciation can be confusing. Below are common combinations that can help you decode how words are typically pronounced.",
+    "silentTitle": "Silent Letters in Combinations",
+    "soundTitle": "Letter Combinations with a Specific Sound",
+    "cautionTitle": "Tricky Combinations with Many Exceptions",
+    "combination": "Combination",
+    "pronunciation": "Pronunciation",
+    "notes": "Notes / Example",
+    "caution": "Caution",
+    "silentCombos": [
+      { "combo": "kn", "sound": "/n/", "example": "knee, knife — k is silent" },
+      { "combo": "gn", "sound": "/n/", "example": "gnome, gnaw — g is silent" },
+      { "combo": "wr", "sound": "/r/", "example": "write, wrist — w is silent" },
+      { "combo": "ps", "sound": "/s/", "example": "psychology — p is silent" },
+      { "combo": "bt", "sound": "/t/", "example": "doubt — b is silent" },
+      { "combo": "mb", "sound": "/m/", "example": "bomb, thumb — b is silent" },
+      { "combo": "lk", "sound": "/k/", "example": "walk, folk — l is often silent" },
+      { "combo": "gh", "sound": "silent or /f/", "example": "high → silent; laugh → /f/" }
+    ],
+    "soundCombos": [
+      { "combo": "ph", "sound": "/f/", "example": "phone, photo" },
+      { "combo": "sh", "sound": "/ʃ/", "example": "shoe, ship" },
+      { "combo": "ch", "sound": "/tʃ/", "example": "chair, chocolate" },
+      { "combo": "th", "sound": "/θ/ or /ð/", "example": "think, this" },
+      { "combo": "qu", "sound": "/kw/", "example": "queen, quick" },
+      { "combo": "wh", "sound": "/w/", "example": "what, where" },
+      { "combo": "ck", "sound": "/k/", "example": "duck, lock" },
+      { "combo": "dge", "sound": "/dʒ/", "example": "bridge, judge" },
+      { "combo": "tch", "sound": "/tʃ/", "example": "watch, match" },
+      { "combo": "ough", "sound": "varies", "example": "tough, though, through" },
+      { "combo": "ai", "sound": "/eɪ/", "example": "rain, mail" },
+      { "combo": "ie", "sound": "/iː/ or /aɪ/", "example": "field, pie" },
+      { "combo": "ch (Greek)", "sound": "/k/", "example": "chorus, chemistry" }
+    ],
+    "cautionCombos": [
+      { "combo": "ough", "warning": "Many pronunciations: tough, though, through, etc." },
+      { "combo": "ea", "warning": "Can be /iː/, /ɛ/, or /eɪ/" },
+      { "combo": "ei/ie", "warning": "Spelling and sound often flip" },
+      { "combo": "ch", "warning": "May be /tʃ/ or /k/ (Greek origin)" }
+    ],
+    "closingNote": "Did you know? In Polish, 'character' is pronounced with 'h', in Spanish with 'k' — in English, it's 'k' because of its Greek origin!"
+  },
 
-"auth": {
-  "register": "Register",
-  "login": "Login",
-  "logout": "Logout",
-  "registerSuccess": "✅ Registered successfully.",
-  "loginSuccess": "✅ Logged in successfully.",
-  "logoutSuccess": "✅ Logged out successfully.",
-  "loginRequired": "Please log in to access this feature.",
-  "emailPlaceholder": "Email",
-  "passwordPlaceholder": "Password",
-  "confirmPasswordPlaceholder": "Confirm Password",
-  "passwordMismatch": "Passwords do not match.",
-  "weakPassword": "Password must be at least 8 characters long and include 1 uppercase letter, 1 number, and 1 special character.",
-  "mustAcceptTerms": "You must accept the terms and conditions.",
-  "agreeTo": "I agree to the",
-  "terms": "Terms of Use",
-  "termsTooltip": "View the full Terms of Use (PDF)",
-  "loginButton": "Login",
-  "registerButton": "Register",
-  "googleSignIn": "Sign in with Google",
-  "googleSuccess": "✅ Signed in with Google successfully.",
-  "errorPrefix": "❌ Error:",
-  "showPassword": "Show password",
-  "hidePassword": "Hide password",
-  "forgotPasswordQuestion": "Forgot your password?",
-  "forgotPasswordTitle": "Reset Password",
-  "sendResetLink": "Send reset link",
-  "resetEmailSent": "✅ Reset email sent. Please check your inbox.",
-  "noAccount": "Don't have an account?",
-  "alreadyHaveAccount": "Already have an account?"
-},
+  "auth": {
+    "register": "Register",
+    "login": "Login",
+    "logout": "Logout",
+    "registerSuccess": "✅ Registered successfully.",
+    "loginSuccess": "✅ Logged in successfully.",
+    "logoutSuccess": "✅ Logged out successfully.",
+    "loginRequired": "Please log in to access this feature.",
+    "emailPlaceholder": "Email",
+    "passwordPlaceholder": "Password",
+    "confirmPasswordPlaceholder": "Confirm Password",
+    "passwordMismatch": "Passwords do not match.",
+    "weakPassword": "Password must be at least 8 characters long and include 1 uppercase letter, 1 number, and 1 special character.",
+    "mustAcceptTerms": "You must accept the terms and conditions.",
+    "agreeTo": "I agree to the",
+    "terms": "Terms of Use",
+    "termsTooltip": "View the full Terms of Use (PDF)",
+    "loginButton": "Login",
+    "registerButton": "Register",
+    "googleSignIn": "Sign in with Google",
+    "googleSuccess": "✅ Signed in with Google successfully.",
+    "errorPrefix": "❌ Error:",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "forgotPasswordQuestion": "Forgot your password?",
+    "forgotPasswordTitle": "Reset Password",
+    "sendResetLink": "Send reset link",
+    "resetEmailSent": "✅ Reset email sent. Please check your inbox.",
+    "noAccount": "Don't have an account?",
+    "alreadyHaveAccount": "Already have an account?"
+  },
 
-"privacyPolicy": {
-  "title": "Privacy Policy",
-  "sections": [
-    {
-      "heading": "1. Introduction",
-      "content": "SayRight is an educational platform hosted at gottaspeak.com/sayright. The platform is non-commercial and does not offer paid services. This page describes how personal data is processed and protected."
-    },
-    {
-      "heading": "2. Data Collected",
-      "content": "When a user registers, an email address is stored. When the contact form is used, the submitted name, email, and message are collected. If pronunciation recordings are made, the audio is uploaded to Cloudinary and processed by AssemblyAI to provide feedback."
-    },
-    {
-      "heading": "3. Purpose of Data Use",
-      "content": "Collected data is used solely to enable core platform functionality, such as login, feedback generation, and saving user progress. Data is not sold or shared with third parties for marketing purposes."
-    },
-    {
-      "heading": "4. Third-party Services",
-      "content": "Audio recordings are hosted on Cloudinary. Speech analysis is performed by AssemblyAI. The website is hosted via Netlify. All services follow standard data protection protocols."
-    },
-    {
-      "heading": "5. User Rights",
-      "content":"Each user may request access to, correction of, or deletion of personal data, including account deletion. Requests should be submitted via the contact form. Please note that pronunciation recordings and practice history may be stored on third-party services such as Cloudinary and AssemblyAI."
-    },
-    {
-      "heading": "6. Contact",
-      "content": "All privacy-related queries can be submitted through the contact form at gottaspeak.com/sayright/contact."
-    }
-  ]
-}
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "sections": [
+      {
+        "heading": "1. Introduction",
+        "content": "SayRight is an educational platform hosted at gottaspeak.com/sayright. The platform is non-commercial and does not offer paid services. This page describes how personal data is processed and protected."
+      },
+      {
+        "heading": "2. Data Collected",
+        "content": "When a user registers, an email address is stored. When the contact form is used, the submitted name, email, and message are collected. If pronunciation recordings are made, the audio is uploaded to Cloudinary and processed by AssemblyAI to provide feedback."
+      },
+      {
+        "heading": "3. Purpose of Data Use",
+        "content": "Collected data is used solely to enable core platform functionality, such as login, feedback generation, and saving user progress. Data is not sold or shared with third parties for marketing purposes."
+      },
+      {
+        "heading": "4. Third-party Services",
+        "content": "Audio recordings are hosted on Cloudinary. Speech analysis is performed by AssemblyAI. The website is hosted via Netlify. All services follow standard data protection protocols."
+      },
+      {
+        "heading": "5. User Rights",
+        "content":"Each user may request access to, correction of, or deletion of personal data, including account deletion. Requests should be submitted via the contact form. Please note that pronunciation recordings and practice history may be stored on third-party services such as Cloudinary and AssemblyAI."
+      },
+      {
+        "heading": "6. Contact",
+        "content": "All privacy-related queries can be submitted through the contact form at gottaspeak.com/sayright/contact."
+      }
+    ]
+  },
 
+  "maintenance": {
+    "message": "🚧 The site is currently undergoing maintenance. Some features may be temporarily unavailable."
+  }
 }
 
 

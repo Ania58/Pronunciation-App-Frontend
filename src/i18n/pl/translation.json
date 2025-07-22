@@ -21,12 +21,12 @@
   "seeProgress": "📊 Zobacz swoje postępy",
   "yourAttempts": "🎧 Twoje próby",
    "footer": {
-    "createdBy": "wszystkie prawa zastrzeżone. Stworzone przez",
-    "name": "Annę Heliasz",
-    "aboutMe": "O mnie",
-    "terms": "Regulamin",
-    "privacy": "Polityka prywatności"
-  },
+      "createdBy": "wszystkie prawa zastrzeżone. Stworzone przez",
+      "name": "Annę Heliasz",
+      "aboutMe": "O mnie",
+      "terms": "Regulamin",
+      "privacy": "Polityka prywatności"
+    },
 
   "mainTitle": "Witaj w SayRight",
   "mainDescription": "SayRight to Twój wspierany przez AI towarzysz w opanowywaniu angielskiej wymowy. Przeglądaj tysiące słów z transkrypcjami IPA, nagraniami native speakerów, kategoriami i poziomami trudności. Zarejestruj się, aby nagrywać swoją wymowę i otrzymywać inteligentne informacje zwrotne z podpowiedziami, jak mówić lepiej. Śledź swoje postępy, zapisując słowa, które już opanowałeś lub które wymagają więcej ćwiczeń. Gotowy, by mówić wyraźnie i z pewnością siebie? Zaczynajmy!",
@@ -126,7 +126,7 @@
     "sending": "Wysyłanie...",
     "success": "Wiadomość została wysłana.",
     "error": "Coś poszło nie tak. Spróbuj ponownie."
-},
+  },
 
   "contactPage": "Strona kontaktowa",
 
@@ -134,7 +134,7 @@
     "message": "💡 Ta strona powstała dzięki mojemu czasowi, kreatywności i odrobinie magii AI — a to wszystko wiąże się z kosztami. Jeśli strona Ci się podoba lub jest pomocna, możesz wesprzeć mnie, stawiając mi kawę. ☕",
     "button": "Postaw mi kawę",
     "dismiss": "Ukryj"
-},
+  },
 
   "ipa": {
     "title": "Poznaj symbole IPA: Filmy + Przewodnik",
@@ -153,7 +153,7 @@
     "altPolishSubs": "Napisy polskie w działaniu",
     "altChooseSpanish": "Wybierz język hiszpański",
     "altSpanishSubs": "Napisy hiszpańskie w działaniu"
-},
+  },
 
   "nav": {
     "ipaGuide": "Przewodnik po IPA",
@@ -167,114 +167,117 @@
     "paragraph2": "Mam licencjat i magisterkę z filologii angielskiej, ze specjalizacją w nauczaniu oraz w języku, kulturze i literaturze. Uczę od 2017 roku i przez ten czas pomogłam setkom uczniów w Polsce i Hiszpanii opanować angielską gramatykę (a nawet ją polubić!).",
     "paragraph3": "W 2023 roku odkryłam nową pasję: programowanie. Zaczęło się od HTML i CSS, a potem skończyło się na intensywnym bootcampie The Bridge z Full Stack Web Development. Dziś pracuję z JavaScriptem, Reactem, Node.js, PostgreSQL, MongoDB i TypeScriptem.",
     "paragraph4": "Poza kodem i nauczaniem interesuję się AI, SEO i tym, jak tłumaczyć trudne rzeczy w prosty sposób. Ta strona to kawałek mnie — mam nadzieję, że będzie dla Ciebie pomocna (i może nawet, że się uśmiechniesz!)."
-},
+  },
 
-"patterns": {
-  "title": "Typowe wzorce wymowy w języku angielskim",
-  "intro": "Pisownia i wymowa w języku angielskim potrafią być mylące. Oto niektóre typowe kombinacje liter i ich wymowa, które pomogą Ci zrozumieć angielską fonetykę.",
-  "silentTitle": "Niewymawiane litery w kombinacjach",
-  "soundTitle": "Kombinacje liter o określonej wymowie",
-  "cautionTitle": "Trudne przypadki z wieloma wyjątkami",
-  "combination": "Kombinacja",
-  "pronunciation": "Wymowa",
-  "notes": "Uwagi / Przykład",
-  "caution": "Uwaga",
-  "silentCombos": [
-    { "combo": "kn", "sound": "/n/", "example": "knee, knife — k się nie wymawia" },
-    { "combo": "gn", "sound": "/n/", "example": "gnome, gnaw — g się nie wymawia" },
-    { "combo": "wr", "sound": "/r/", "example": "write, wrist — w się nie wymawia" },
-    { "combo": "ps", "sound": "/s/", "example": "psychology — p się nie wymawia" },
-    { "combo": "bt", "sound": "/t/", "example": "doubt — b się nie wymawia" },
-    { "combo": "mb", "sound": "/m/", "example": "bomb, thumb — b się nie wymawia" },
-    { "combo": "lk", "sound": "/k/", "example": "walk, folk — l często się nie wymawia" },
-    { "combo": "gh", "sound": "cisza lub /f/", "example": "high → ciche; laugh → /f/" }
-  ],
-  "soundCombos": [
-    { "combo": "ph", "sound": "/f/", "example": "phone, photo" },
-    { "combo": "sh", "sound": "/ʃ/", "example": "shoe, ship" },
-    { "combo": "ch", "sound": "/tʃ/", "example": "chair, chocolate" },
-    { "combo": "th", "sound": "/θ/ lub /ð/", "example": "think, this" },
-    { "combo": "qu", "sound": "/kw/", "example": "queen, quick" },
-    { "combo": "wh", "sound": "/w/", "example": "what, where" },
-    { "combo": "ck", "sound": "/k/", "example": "duck, lock" },
-    { "combo": "dge", "sound": "/dʒ/", "example": "bridge, judge" },
-    { "combo": "tch", "sound": "/tʃ/", "example": "watch, match" },
-    { "combo": "ough", "sound": "różnie", "example": "tough, though, through" },
-    { "combo": "ai", "sound": "/eɪ/", "example": "rain, mail" },
-    { "combo": "ie", "sound": "/iː/ lub /aɪ/", "example": "field, pie" },
-    { "combo": "ch (greckie)", "sound": "/k/", "example": "chorus, chemistry" }
-  ],
-  "cautionCombos": [
-    { "combo": "ough", "warning": "Wiele wymów: tough, though, through itd." },
-    { "combo": "ea", "warning": "Może być /iː/, /ɛ/ lub /eɪ/" },
-    { "combo": "ei/ie", "warning": "Zamienne pisownie i wymowy" },
-    { "combo": "ch", "warning": "Czasem /tʃ/, ale też /k/ w słowach pochodzenia greckiego" }
-  ],
-  "closingNote": "Wiesz, że w polskim 'charakter' czytamy przez 'h', a w angielskim przez 'k'? Podobnie jest z 'chemist', 'school', 'orchestra' czy 'echo' – wszystkie mają 'ch', ale wymawiamy je jak /k/. To dlatego, że te słowa pochodzą z greki!"
-},
+  "patterns": {
+    "title": "Typowe wzorce wymowy w języku angielskim",
+    "intro": "Pisownia i wymowa w języku angielskim potrafią być mylące. Oto niektóre typowe kombinacje liter i ich wymowa, które pomogą Ci zrozumieć angielską fonetykę.",
+    "silentTitle": "Niewymawiane litery w kombinacjach",
+    "soundTitle": "Kombinacje liter o określonej wymowie",
+    "cautionTitle": "Trudne przypadki z wieloma wyjątkami",
+    "combination": "Kombinacja",
+    "pronunciation": "Wymowa",
+    "notes": "Uwagi / Przykład",
+    "caution": "Uwaga",
+    "silentCombos": [
+      { "combo": "kn", "sound": "/n/", "example": "knee, knife — k się nie wymawia" },
+      { "combo": "gn", "sound": "/n/", "example": "gnome, gnaw — g się nie wymawia" },
+      { "combo": "wr", "sound": "/r/", "example": "write, wrist — w się nie wymawia" },
+      { "combo": "ps", "sound": "/s/", "example": "psychology — p się nie wymawia" },
+      { "combo": "bt", "sound": "/t/", "example": "doubt — b się nie wymawia" },
+      { "combo": "mb", "sound": "/m/", "example": "bomb, thumb — b się nie wymawia" },
+      { "combo": "lk", "sound": "/k/", "example": "walk, folk — l często się nie wymawia" },
+      { "combo": "gh", "sound": "cisza lub /f/", "example": "high → ciche; laugh → /f/" }
+    ],
+    "soundCombos": [
+      { "combo": "ph", "sound": "/f/", "example": "phone, photo" },
+      { "combo": "sh", "sound": "/ʃ/", "example": "shoe, ship" },
+      { "combo": "ch", "sound": "/tʃ/", "example": "chair, chocolate" },
+      { "combo": "th", "sound": "/θ/ lub /ð/", "example": "think, this" },
+      { "combo": "qu", "sound": "/kw/", "example": "queen, quick" },
+      { "combo": "wh", "sound": "/w/", "example": "what, where" },
+      { "combo": "ck", "sound": "/k/", "example": "duck, lock" },
+      { "combo": "dge", "sound": "/dʒ/", "example": "bridge, judge" },
+      { "combo": "tch", "sound": "/tʃ/", "example": "watch, match" },
+      { "combo": "ough", "sound": "różnie", "example": "tough, though, through" },
+      { "combo": "ai", "sound": "/eɪ/", "example": "rain, mail" },
+      { "combo": "ie", "sound": "/iː/ lub /aɪ/", "example": "field, pie" },
+      { "combo": "ch (greckie)", "sound": "/k/", "example": "chorus, chemistry" }
+    ],
+    "cautionCombos": [
+      { "combo": "ough", "warning": "Wiele wymów: tough, though, through itd." },
+      { "combo": "ea", "warning": "Może być /iː/, /ɛ/ lub /eɪ/" },
+      { "combo": "ei/ie", "warning": "Zamienne pisownie i wymowy" },
+      { "combo": "ch", "warning": "Czasem /tʃ/, ale też /k/ w słowach pochodzenia greckiego" }
+    ],
+    "closingNote": "Wiesz, że w polskim 'charakter' czytamy przez 'h', a w angielskim przez 'k'? Podobnie jest z 'chemist', 'school', 'orchestra' czy 'echo' – wszystkie mają 'ch', ale wymawiamy je jak /k/. To dlatego, że te słowa pochodzą z greki!"
+  },
 
-"auth": {
-  "register": "Zarejestruj się",
-  "login": "Zaloguj się",
-  "logout": "Wyloguj się",
-  "registerSuccess": "✅ Rejestracja zakończona sukcesem.",
-  "loginSuccess": "✅ Zalogowano pomyślnie.",
-  "logoutSuccess": "✅ Wylogowano pomyślnie.",
-  "loginRequired": "Zaloguj się, aby uzyskać dostęp do tej funkcji.",
-  "emailPlaceholder": "Email",
-  "passwordPlaceholder": "Hasło",
-  "confirmPasswordPlaceholder": "Potwierdź hasło",
-  "passwordMismatch": "Hasła nie są takie same.",
-  "weakPassword": "Hasło musi mieć co najmniej 8 znaków i zawierać 1 wielką literę, 1 cyfrę i 1 znak specjalny.",
-  "mustAcceptTerms": "Musisz zaakceptować regulamin.",
-  "agreeTo": "Akceptuję",
-  "terms": "Regulamin",
-  "termsTooltip": "Zobacz pełny regulamin (plik PDF)",
-  "loginButton": "Zaloguj się",
-  "registerButton": "Zarejestruj się",
-  "googleSignIn": "Zaloguj się przez Google",
-  "googleSuccess": "✅ Zalogowano przez Google pomyślnie.",
-  "errorPrefix": "❌ Błąd:",
-  "showPassword": "Pokaż hasło",
-  "hidePassword": "Ukryj hasło",
-  "forgotPasswordQuestion": "Zapomniałeś hasła?",
-  "forgotPasswordTitle": "Zresetuj hasło",
-  "sendResetLink": "Wyślij link resetujący",
-  "resetEmailSent": "✅ E-mail z resetem wysłany. Sprawdź skrzynkę.",
-  "noAccount": "Nie masz konta?",
-  "alreadyHaveAccount": "Masz już konto?"
-},
+  "auth": {
+    "register": "Zarejestruj się",
+    "login": "Zaloguj się",
+    "logout": "Wyloguj się",
+    "registerSuccess": "✅ Rejestracja zakończona sukcesem.",
+    "loginSuccess": "✅ Zalogowano pomyślnie.",
+    "logoutSuccess": "✅ Wylogowano pomyślnie.",
+    "loginRequired": "Zaloguj się, aby uzyskać dostęp do tej funkcji.",
+    "emailPlaceholder": "Email",
+    "passwordPlaceholder": "Hasło",
+    "confirmPasswordPlaceholder": "Potwierdź hasło",
+    "passwordMismatch": "Hasła nie są takie same.",
+    "weakPassword": "Hasło musi mieć co najmniej 8 znaków i zawierać 1 wielką literę, 1 cyfrę i 1 znak specjalny.",
+    "mustAcceptTerms": "Musisz zaakceptować regulamin.",
+    "agreeTo": "Akceptuję",
+    "terms": "Regulamin",
+    "termsTooltip": "Zobacz pełny regulamin (plik PDF)",
+    "loginButton": "Zaloguj się",
+    "registerButton": "Zarejestruj się",
+    "googleSignIn": "Zaloguj się przez Google",
+    "googleSuccess": "✅ Zalogowano przez Google pomyślnie.",
+    "errorPrefix": "❌ Błąd:",
+    "showPassword": "Pokaż hasło",
+    "hidePassword": "Ukryj hasło",
+    "forgotPasswordQuestion": "Zapomniałeś hasła?",
+    "forgotPasswordTitle": "Zresetuj hasło",
+    "sendResetLink": "Wyślij link resetujący",
+    "resetEmailSent": "✅ E-mail z resetem wysłany. Sprawdź skrzynkę.",
+    "noAccount": "Nie masz konta?",
+    "alreadyHaveAccount": "Masz już konto?"
+  },
 
-"privacyPolicy": {
-  "title": "Polityka prywatności",
-  "sections": [
-    {
-      "heading": "1. Wprowadzenie",
-      "content": "SayRight to edukacyjna platforma dostępna pod adresem gottaspeak.com/sayright. Ma charakter niekomercyjny i nie oferuje usług odpłatnych. Niniejsza strona wyjaśnia zasady przetwarzania i ochrony danych osobowych."
-    },
-    {
-      "heading": "2. Zakres gromadzonych danych",
-      "content": "W przypadku rejestracji zapisywany jest adres e-mail. Formularz kontaktowy umożliwia przesłanie imienia, adresu e-mail i treści wiadomości. Nagrania wymowy są przesyłane do Cloudinary i przetwarzane przez AssemblyAI w celu wygenerowania informacji zwrotnej."
-    },
-    {
-      "heading": "3. Cel wykorzystania danych",
-      "content": "Zebrane dane służą wyłącznie do działania podstawowych funkcji platformy, takich jak logowanie, analiza nagrań i zapisywanie postępów. Dane nie są sprzedawane ani przekazywane podmiotom trzecim w celach marketingowych."
-    },
-    {
-      "heading": "4. Usługi zewnętrzne",
-      "content": "Nagrania są przechowywane w Cloudinary. Analiza mowy odbywa się przy użyciu AssemblyAI. Strona jest hostowana na platformie Netlify. Wszystkie podmioty współpracujące stosują się do obowiązujących standardów ochrony danych."
-    },
-    {
-      "heading": "5. Prawa użytkownika",
-      "content": "Użytkownik ma prawo zażądać dostępu do swoich danych, ich poprawienia lub usunięcia, w tym usunięcia konta. Wnioski należy przesyłać za pomocą formularza kontaktowego. Należy pamiętać, że nagrania i historia nauki mogą być przechowywane na zewnętrznych serwerach, takich jak Cloudinary czy AssemblyAI."
-    },
-    {
-      "heading": "6. Kontakt",
-      "content": "Wszelkie pytania dotyczące prywatności można zgłaszać poprzez formularz dostępny na stronie gottaspeak.com/sayright/contact."
-    }
-  ]
-}
+  "privacyPolicy": {
+    "title": "Polityka prywatności",
+    "sections": [
+      {
+        "heading": "1. Wprowadzenie",
+        "content": "SayRight to edukacyjna platforma dostępna pod adresem gottaspeak.com/sayright. Ma charakter niekomercyjny i nie oferuje usług odpłatnych. Niniejsza strona wyjaśnia zasady przetwarzania i ochrony danych osobowych."
+      },
+      {
+        "heading": "2. Zakres gromadzonych danych",
+        "content": "W przypadku rejestracji zapisywany jest adres e-mail. Formularz kontaktowy umożliwia przesłanie imienia, adresu e-mail i treści wiadomości. Nagrania wymowy są przesyłane do Cloudinary i przetwarzane przez AssemblyAI w celu wygenerowania informacji zwrotnej."
+      },
+      {
+        "heading": "3. Cel wykorzystania danych",
+        "content": "Zebrane dane służą wyłącznie do działania podstawowych funkcji platformy, takich jak logowanie, analiza nagrań i zapisywanie postępów. Dane nie są sprzedawane ani przekazywane podmiotom trzecim w celach marketingowych."
+      },
+      {
+        "heading": "4. Usługi zewnętrzne",
+        "content": "Nagrania są przechowywane w Cloudinary. Analiza mowy odbywa się przy użyciu AssemblyAI. Strona jest hostowana na platformie Netlify. Wszystkie podmioty współpracujące stosują się do obowiązujących standardów ochrony danych."
+      },
+      {
+        "heading": "5. Prawa użytkownika",
+        "content": "Użytkownik ma prawo zażądać dostępu do swoich danych, ich poprawienia lub usunięcia, w tym usunięcia konta. Wnioski należy przesyłać za pomocą formularza kontaktowego. Należy pamiętać, że nagrania i historia nauki mogą być przechowywane na zewnętrznych serwerach, takich jak Cloudinary czy AssemblyAI."
+      },
+      {
+        "heading": "6. Kontakt",
+        "content": "Wszelkie pytania dotyczące prywatności można zgłaszać poprzez formularz dostępny na stronie gottaspeak.com/sayright/contact."
+      }
+    ]
+  },
 
+  "maintenance": {
+    "message": "🚧 Trwają prace konserwacyjne. Niektóre funkcje mogą być tymczasowo niedostępne."
+  }
 }
 
 

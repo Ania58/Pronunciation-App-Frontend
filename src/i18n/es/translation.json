@@ -20,12 +20,12 @@
   "seeProgress": "📊 Ver tu progreso",
   "yourAttempts": "🎧 Tus intentos",
    "footer": {
-    "createdBy": "todos los derechos reservados. Creado por",
-    "name": "Anna Heliasz",
-    "aboutMe": "Sobre mí",
-     "terms": "Términos de uso",
-    "privacy": "Política de privacidad"
-  },
+      "createdBy": "todos los derechos reservados. Creado por",
+      "name": "Anna Heliasz",
+      "aboutMe": "Sobre mí",
+      "terms": "Términos de uso",
+      "privacy": "Política de privacidad"
+    },
 
   "mainTitle": "Bienvenido a SayRight",
   "mainDescription": "SayRight es tu compañero impulsado por IA para dominar la pronunciación de palabras en inglés. Explora miles de palabras con transcripciones IPA, audios de hablantes nativos, categorías y niveles de dificultad. Regístrate para grabar tu pronunciación y recibir comentarios inteligentes con consejos de mejora. Haz seguimiento de tu progreso guardando las palabras que ya dominas o con las que necesitas más práctica. ¿Listo para hablar con claridad y confianza? ¡Empecemos!",
@@ -125,7 +125,7 @@
     "sending": "Enviando...",
     "success": "Mensaje enviado con éxito.",
     "error": "Algo salió mal. Por favor, inténtalo de nuevo."
-},
+  },
 
   "contactPage": "Página de contacto",
 
@@ -133,7 +133,7 @@
     "message": "💡 Este sitio web se basa en mi tiempo, creatividad y algo de magia de IA — todo lo cual tiene un costo. Si te gusta o te resulta útil, puedes apoyar mi trabajo invitándome a un café. ☕",
     "button": "Invítame a un café",
     "dismiss": "Ocultar"
-},
+  },
 
   "ipa": {
     "title": "Aprende los símbolos IPA: Videos + Guía",
@@ -152,128 +152,130 @@
     "altPolishSubs": "Subtítulos en polaco funcionando",
     "altChooseSpanish": "Elige el idioma español",
     "altSpanishSubs": "Subtítulos en español funcionando"
-},
+  },
 
   "nav": {
     "ipaGuide": "Guía IPA",
     "pronunciationPatterns": "Patrones de Pronunciación"
-},
+  },
 
-"about": {
-  "title": "Sobre mí",
-  "photoAlt": "Anna Heliasz sonriendo",
-  "paragraph1": "¡Hola! Soy Anna Heliasz — profesora de inglés convertida en desarrolladora full-stack, apasionada por los idiomas, la lógica y el aprendizaje continuo.",
-  "paragraph2": "Tengo una licenciatura y un máster en Filología Inglesa, con especialización en enseñanza y en lengua, cultura y literatura. Desde 2017 he enseñado a cientos de estudiantes en Polonia y España, ayudándoles a dominar la gramática inglesa (¡y hasta disfrutarla!).",
-  "paragraph3": "En 2023 descubrí mi nuevo amor: la programación. Empecé con HTML y CSS, me gradué del bootcamp The Bridge en desarrollo web full-stack, y desde entonces sigo con JavaScript, React, Node.js, PostgreSQL, MongoDB y TypeScript.",
-  "paragraph4": "Fuera del aula y del código, me interesan la inteligencia artificial, el SEO y cómo explicar cosas difíciles de forma sencilla. Esta web es una parte de mí — ¡espero que te sea útil y que te saque una sonrisa!"
-},
+  "about": {
+    "title": "Sobre mí",
+    "photoAlt": "Anna Heliasz sonriendo",
+    "paragraph1": "¡Hola! Soy Anna Heliasz — profesora de inglés convertida en desarrolladora full-stack, apasionada por los idiomas, la lógica y el aprendizaje continuo.",
+    "paragraph2": "Tengo una licenciatura y un máster en Filología Inglesa, con especialización en enseñanza y en lengua, cultura y literatura. Desde 2017 he enseñado a cientos de estudiantes en Polonia y España, ayudándoles a dominar la gramática inglesa (¡y hasta disfrutarla!).",
+    "paragraph3": "En 2023 descubrí mi nuevo amor: la programación. Empecé con HTML y CSS, me gradué del bootcamp The Bridge en desarrollo web full-stack, y desde entonces sigo con JavaScript, React, Node.js, PostgreSQL, MongoDB y TypeScript.",
+    "paragraph4": "Fuera del aula y del código, me interesan la inteligencia artificial, el SEO y cómo explicar cosas difíciles de forma sencilla. Esta web es una parte de mí — ¡espero que te sea útil y que te saque una sonrisa!"
+  },
 
-"patterns": {
-  "title": "Patrones comunes de pronunciación en inglés",
-  "intro": "La ortografía y la pronunciación en inglés pueden ser confusas. Aquí tienes algunas combinaciones comunes que te ayudarán a entender mejor cómo se pronuncian las palabras.",
-  "silentTitle": "Letras silenciosas en combinaciones",
-  "soundTitle": "Combinaciones de letras con pronunciación específica",
-  "cautionTitle": "Combinaciones difíciles con muchas excepciones",
-  "combination": "Combinación",
-  "pronunciation": "Pronunciación",
-  "notes": "Notas / Ejemplo",
-  "caution": "Precaución",
-  "silentCombos": [
-    { "combo": "kn", "sound": "/n/", "example": "knee, knife — la k no se pronuncia" },
-    { "combo": "gn", "sound": "/n/", "example": "gnome, gnaw — la g no se pronuncia" },
-    { "combo": "wr", "sound": "/r/", "example": "write, wrist — la w no se pronuncia" },
-    { "combo": "ps", "sound": "/s/", "example": "psychology — la p no se pronuncia" },
-    { "combo": "bt", "sound": "/t/", "example": "doubt — la b no se pronuncia" },
-    { "combo": "mb", "sound": "/m/", "example": "bomb, thumb — la b no se pronuncia" },
-    { "combo": "lk", "sound": "/k/", "example": "walk, folk — la l a menudo es muda" },
-    { "combo": "gh", "sound": "silencioso o /f/", "example": "high → mudo; laugh → /f/" }
-  ],
-  "soundCombos": [
-    { "combo": "ph", "sound": "/f/", "example": "phone, photo" },
-    { "combo": "sh", "sound": "/ʃ/", "example": "shoe, ship" },
-    { "combo": "ch", "sound": "/tʃ/", "example": "chair, chocolate" },
-    { "combo": "th", "sound": "/θ/ o /ð/", "example": "think, this" },
-    { "combo": "qu", "sound": "/kw/", "example": "queen, quick" },
-    { "combo": "wh", "sound": "/w/", "example": "what, where" },
-    { "combo": "ck", "sound": "/k/", "example": "duck, lock" },
-    { "combo": "dge", "sound": "/dʒ/", "example": "bridge, judge" },
-    { "combo": "tch", "sound": "/tʃ/", "example": "watch, match" },
-    { "combo": "ough", "sound": "varía", "example": "tough, though, through" },
-    { "combo": "ai", "sound": "/eɪ/", "example": "rain, mail" },
-    { "combo": "ie", "sound": "/iː/ o /aɪ/", "example": "field, pie" },
-    { "combo": "ch (griego)", "sound": "/k/", "example": "chorus, chemistry" }
-  ],
-  "cautionCombos": [
-    { "combo": "ough", "warning": "Tiene muchas pronunciaciones: tough, though, through, etc." },
-    { "combo": "ea", "warning": "Puede sonar como /iː/, /ɛ/ o /eɪ/" },
-    { "combo": "ei/ie", "warning": "Ortografía y sonido poco consistentes" },
-    { "combo": "ch", "warning": "Usualmente /tʃ/, pero también /k/ en palabras griegas" }
-  ],
-  "closingNote": "¿Sabías que en inglés palabras como 'chemist', 'school', 'orchestra' o 'echo' se escriben con 'ch' pero se pronuncian como /k/? Es por su origen griego, igual que en español en palabras como 'química', 'escuela' o 'orquesta'."
-},
+  "patterns": {
+    "title": "Patrones comunes de pronunciación en inglés",
+    "intro": "La ortografía y la pronunciación en inglés pueden ser confusas. Aquí tienes algunas combinaciones comunes que te ayudarán a entender mejor cómo se pronuncian las palabras.",
+    "silentTitle": "Letras silenciosas en combinaciones",
+    "soundTitle": "Combinaciones de letras con pronunciación específica",
+    "cautionTitle": "Combinaciones difíciles con muchas excepciones",
+    "combination": "Combinación",
+    "pronunciation": "Pronunciación",
+    "notes": "Notas / Ejemplo",
+    "caution": "Precaución",
+    "silentCombos": [
+      { "combo": "kn", "sound": "/n/", "example": "knee, knife — la k no se pronuncia" },
+      { "combo": "gn", "sound": "/n/", "example": "gnome, gnaw — la g no se pronuncia" },
+      { "combo": "wr", "sound": "/r/", "example": "write, wrist — la w no se pronuncia" },
+      { "combo": "ps", "sound": "/s/", "example": "psychology — la p no se pronuncia" },
+      { "combo": "bt", "sound": "/t/", "example": "doubt — la b no se pronuncia" },
+      { "combo": "mb", "sound": "/m/", "example": "bomb, thumb — la b no se pronuncia" },
+      { "combo": "lk", "sound": "/k/", "example": "walk, folk — la l a menudo es muda" },
+      { "combo": "gh", "sound": "silencioso o /f/", "example": "high → mudo; laugh → /f/" }
+    ],
+    "soundCombos": [
+      { "combo": "ph", "sound": "/f/", "example": "phone, photo" },
+      { "combo": "sh", "sound": "/ʃ/", "example": "shoe, ship" },
+      { "combo": "ch", "sound": "/tʃ/", "example": "chair, chocolate" },
+      { "combo": "th", "sound": "/θ/ o /ð/", "example": "think, this" },
+      { "combo": "qu", "sound": "/kw/", "example": "queen, quick" },
+      { "combo": "wh", "sound": "/w/", "example": "what, where" },
+      { "combo": "ck", "sound": "/k/", "example": "duck, lock" },
+      { "combo": "dge", "sound": "/dʒ/", "example": "bridge, judge" },
+      { "combo": "tch", "sound": "/tʃ/", "example": "watch, match" },
+      { "combo": "ough", "sound": "varía", "example": "tough, though, through" },
+      { "combo": "ai", "sound": "/eɪ/", "example": "rain, mail" },
+      { "combo": "ie", "sound": "/iː/ o /aɪ/", "example": "field, pie" },
+      { "combo": "ch (griego)", "sound": "/k/", "example": "chorus, chemistry" }
+    ],
+    "cautionCombos": [
+      { "combo": "ough", "warning": "Tiene muchas pronunciaciones: tough, though, through, etc." },
+      { "combo": "ea", "warning": "Puede sonar como /iː/, /ɛ/ o /eɪ/" },
+      { "combo": "ei/ie", "warning": "Ortografía y sonido poco consistentes" },
+      { "combo": "ch", "warning": "Usualmente /tʃ/, pero también /k/ en palabras griegas" }
+    ],
+    "closingNote": "¿Sabías que en inglés palabras como 'chemist', 'school', 'orchestra' o 'echo' se escriben con 'ch' pero se pronuncian como /k/? Es por su origen griego, igual que en español en palabras como 'química', 'escuela' o 'orquesta'."
+  },
 
-"auth": {
-  "register": "Registrarse",
-  "login": "Iniciar sesión",
-  "logout": "Cerrar sesión",
-  "registerSuccess": "✅ Registro exitoso.",
-  "loginSuccess": "✅ Sesión iniciada con éxito.",
-  "logoutSuccess": "✅ Sesión cerrada con éxito.",
-  "loginRequired": "Por favor inicia sesión para acceder a esta función.",
-  "emailPlaceholder": "Correo electrónico",
-  "passwordPlaceholder": "Contraseña",
-  "confirmPasswordPlaceholder": "Confirmar contraseña",
-  "passwordMismatch": "Las contraseñas no coinciden.",
-  "weakPassword": "La contraseña debe tener al menos 8 caracteres, incluir 1 mayúscula, 1 número y 1 carácter especial.",
-  "mustAcceptTerms": "Debes aceptar los términos y condiciones.",
-  "agreeTo": "Acepto los",
-  "terms": "Términos de uso",
-  "termsTooltip": "Ver los términos completos (PDF)",
-  "loginButton": "Iniciar sesión",
-  "registerButton": "Registrarse",
-  "googleSignIn": "Iniciar sesión con Google",
-  "googleSuccess": "✅ Sesión iniciada con Google correctamente.",
-  "errorPrefix": "❌ Error:",
-  "showPassword": "Mostrar contraseña",
-  "hidePassword": "Ocultar contraseña",
-  "forgotPasswordQuestion": "¿Olvidaste tu contraseña?",
-  "forgotPasswordTitle": "Restablecer la contraseña",
-  "sendResetLink": "Enviar enlace de restablecimiento",
-  "resetEmailSent": "✅ Correo enviado. Revisa tu bandeja de entrada.",
-  "noAccount": "¿No tienes una cuenta?",
-  "alreadyHaveAccount": "¿Ya tienes una cuenta?"
-},
+  "auth": {
+    "register": "Registrarse",
+    "login": "Iniciar sesión",
+    "logout": "Cerrar sesión",
+    "registerSuccess": "✅ Registro exitoso.",
+    "loginSuccess": "✅ Sesión iniciada con éxito.",
+    "logoutSuccess": "✅ Sesión cerrada con éxito.",
+    "loginRequired": "Por favor inicia sesión para acceder a esta función.",
+    "emailPlaceholder": "Correo electrónico",
+    "passwordPlaceholder": "Contraseña",
+    "confirmPasswordPlaceholder": "Confirmar contraseña",
+    "passwordMismatch": "Las contraseñas no coinciden.",
+    "weakPassword": "La contraseña debe tener al menos 8 caracteres, incluir 1 mayúscula, 1 número y 1 carácter especial.",
+    "mustAcceptTerms": "Debes aceptar los términos y condiciones.",
+    "agreeTo": "Acepto los",
+    "terms": "Términos de uso",
+    "termsTooltip": "Ver los términos completos (PDF)",
+    "loginButton": "Iniciar sesión",
+    "registerButton": "Registrarse",
+    "googleSignIn": "Iniciar sesión con Google",
+    "googleSuccess": "✅ Sesión iniciada con Google correctamente.",
+    "errorPrefix": "❌ Error:",
+    "showPassword": "Mostrar contraseña",
+    "hidePassword": "Ocultar contraseña",
+    "forgotPasswordQuestion": "¿Olvidaste tu contraseña?",
+    "forgotPasswordTitle": "Restablecer la contraseña",
+    "sendResetLink": "Enviar enlace de restablecimiento",
+    "resetEmailSent": "✅ Correo enviado. Revisa tu bandeja de entrada.",
+    "noAccount": "¿No tienes una cuenta?",
+    "alreadyHaveAccount": "¿Ya tienes una cuenta?"
+  },
 
-"privacyPolicy": {
-  "title": "Política de privacidad",
-  "sections": [
-    {
-      "heading": "1. Introducción",
-      "content": "SayRight es una plataforma educativa disponible en gottaspeak.com/sayright. Tiene carácter no comercial y no ofrece servicios de pago. Esta página describe cómo se procesan y protegen los datos personales."
-    },
-    {
-      "heading": "2. Datos recopilados",
-      "content": "Al registrarse, se almacena la dirección de correo electrónico del usuario. Al utilizar el formulario de contacto, se recogen el nombre, el correo y el mensaje enviados. Las grabaciones de pronunciación se suben a Cloudinary y se analizan mediante AssemblyAI para ofrecer retroalimentación."
-    },
-    {
-      "heading": "3. Finalidad del uso de los datos",
-      "content": "Los datos recopilados se utilizan exclusivamente para el funcionamiento de la plataforma, como el inicio de sesión, el análisis de audio y el seguimiento del progreso. Los datos no se venden ni se comparten con fines de marketing."
-    },
-    {
-      "heading": "4. Servicios externos",
-      "content": "Las grabaciones se alojan en Cloudinary. El análisis de voz se realiza a través de AssemblyAI. El sitio web está alojado en Netlify. Todos los servicios utilizados cumplen con los estándares de protección de datos."
-    },
-    {
-      "heading": "5. Derechos del usuario",
-      "content": "Cada usuario puede solicitar el acceso, la corrección o la eliminación de sus datos personales, incluida la eliminación de la cuenta. Las solicitudes deben enviarse a través del formulario de contacto. Ten en cuenta que las grabaciones y el historial de práctica pueden almacenarse en servicios externos como Cloudinary o AssemblyAI."
-    },
-    {
-      "heading": "6. Contacto",
-      "content": "Las consultas relacionadas con la privacidad pueden enviarse a través del formulario disponible en gottaspeak.com/sayright/contact."
-    }
-  ]
-}
-
+  "privacyPolicy": {
+    "title": "Política de privacidad",
+    "sections": [
+      {
+        "heading": "1. Introducción",
+        "content": "SayRight es una plataforma educativa disponible en gottaspeak.com/sayright. Tiene carácter no comercial y no ofrece servicios de pago. Esta página describe cómo se procesan y protegen los datos personales."
+      },
+      {
+        "heading": "2. Datos recopilados",
+        "content": "Al registrarse, se almacena la dirección de correo electrónico del usuario. Al utilizar el formulario de contacto, se recogen el nombre, el correo y el mensaje enviados. Las grabaciones de pronunciación se suben a Cloudinary y se analizan mediante AssemblyAI para ofrecer retroalimentación."
+      },
+      {
+        "heading": "3. Finalidad del uso de los datos",
+        "content": "Los datos recopilados se utilizan exclusivamente para el funcionamiento de la plataforma, como el inicio de sesión, el análisis de audio y el seguimiento del progreso. Los datos no se venden ni se comparten con fines de marketing."
+      },
+      {
+        "heading": "4. Servicios externos",
+        "content": "Las grabaciones se alojan en Cloudinary. El análisis de voz se realiza a través de AssemblyAI. El sitio web está alojado en Netlify. Todos los servicios utilizados cumplen con los estándares de protección de datos."
+      },
+      {
+        "heading": "5. Derechos del usuario",
+        "content": "Cada usuario puede solicitar el acceso, la corrección o la eliminación de sus datos personales, incluida la eliminación de la cuenta. Las solicitudes deben enviarse a través del formulario de contacto. Ten en cuenta que las grabaciones y el historial de práctica pueden almacenarse en servicios externos como Cloudinary o AssemblyAI."
+      },
+      {
+        "heading": "6. Contacto",
+        "content": "Las consultas relacionadas con la privacidad pueden enviarse a través del formulario disponible en gottaspeak.com/sayright/contact."
+      }
+    ]
+  },
+  "maintenance": {
+    "message": "🚧 El sitio está en mantenimiento. Algunas funciones pueden no estar disponibles temporalmente."
+  }
 }
 
 

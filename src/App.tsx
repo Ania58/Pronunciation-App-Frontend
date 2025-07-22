@@ -15,11 +15,13 @@ import RegisterPage from './pages/RegisterPage';
 import LoginPage from './pages/LoginPage';
 import ResetPassword from './pages/ResetPassword';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import MaintenanceBanner from "./components/MaintenanceBanner";
 
 function App() {
   return (
     <Router>
       <SupportBanner />
+      {import.meta.env.VITE_SHOW_MAINTENANCE === "true" && <MaintenanceBanner />}
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/words" element={<WordList />} />
