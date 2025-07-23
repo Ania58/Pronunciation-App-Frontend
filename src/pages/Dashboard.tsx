@@ -11,7 +11,6 @@ export default function Dashboard() {
 
   return (
     <main className="bg-gradient-to-br from-sky-50 to-indigo-50 min-h-screen px-4 py-12 max-w-6xl mx-auto space-y-12">
-      {/* Top Navigation */}
       <div className="flex justify-between items-center mb-6">
         <button
           onClick={() => navigate(-1)}
@@ -30,7 +29,6 @@ export default function Dashboard() {
         </div>
       </div>
 
-      {/* Title */}
       <motion.h2
         className="text-4xl font-extrabold text-indigo-900 text-center tracking-tight"
         initial={{ opacity: 0, y: -20 }}
@@ -40,7 +38,6 @@ export default function Dashboard() {
         {t('title')}
       </motion.h2>
 
-      {/* Difficulty */}
       <motion.section
         className="space-y-4"
         initial={{ opacity: 0 }}
@@ -70,7 +67,6 @@ export default function Dashboard() {
         </div>
       </motion.section>
 
-      {/* Categories */}
       <motion.section
         className="space-y-4"
         initial={{ opacity: 0 }}
@@ -90,7 +86,6 @@ export default function Dashboard() {
         </div>
       </motion.section>
 
-      {/* CTA Buttons */}
       <motion.div
         className="flex flex-wrap gap-4 justify-center"
         initial={{ opacity: 0 }}
