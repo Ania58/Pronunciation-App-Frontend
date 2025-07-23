@@ -166,20 +166,20 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur border-b border-gray-200 shadow-sm">
-      <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3 sm:flex-nowrap">
         <Link
           to="/"
           className="flex items-center gap-2 sm:gap-3 text-xl font-bold text-gray-800 hover:text-indigo-600 transition"
         >
           <img
-            src="/logo.png" 
+            src="/logo.png"
             alt="SayRight logo"
             className="w-10 h-10 sm:w-12 sm:h-12"
           />
-          <span className="text-2xl font-extrabold tracking-tigh">SayRight</span>
+          <span className="text-2xl font-extrabold tracking-tight">SayRight</span>
         </Link>
 
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center justify-end gap-2 sm:gap-3">
           {(['en', 'pl', 'es'] as const).map((lng) => (
             <button
               key={lng}
