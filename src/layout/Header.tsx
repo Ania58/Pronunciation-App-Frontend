@@ -194,13 +194,35 @@ export default function Header() {
             </button>
           ))}
 
-          <Link
-            to="/dashboard"
-            className="text-sm font-semibold text-indigo-700 bg-indigo-100 hover:bg-indigo-200 hover:text-indigo-900 px-3 py-1.5 rounded-md shadow-sm transition cursor-pointer"
-          >
-            {t('nav.dashboard')}
-          </Link>
+          <div className="relative group hidden sm:block">
+            <Link
+              to="/dashboard"
+              className="text-sm font-semibold text-white bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 px-4 py-1.5 rounded-md shadow-md transition"
+            >
+              📂 {t('nav.dashboard')}
+            </Link>
 
+            <div className="absolute left-0 mt-2 w-64 bg-white border border-gray-200 shadow-lg rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50">
+              <p className="px-4 py-2 text-xs font-semibold text-gray-500 uppercase">{t('byDifficulty')}</p>
+              <Link to="/words?difficulty=easy" className="block px-4 py-2 text-sm hover:bg-indigo-50">🟢 {t('easy')}</Link>
+              <Link to="/words?difficulty=medium" className="block px-4 py-2 text-sm hover:bg-indigo-50">🟡 {t('medium')}</Link>
+              <Link to="/words?difficulty=hard" className="block px-4 py-2 text-sm hover:bg-indigo-50">🔴 {t('hard')}</Link>
+
+              <p className="px-4 pt-3 pb-2 text-xs font-semibold text-gray-500 uppercase border-t">{t('byCategory')}</p>
+              <Link to="/words?category=schwa" className="block px-4 py-2 text-sm hover:bg-indigo-50">ə Schwa</Link>
+              <Link to="/words?category=stress" className="block px-4 py-2 text-sm hover:bg-indigo-50">📣 {t('stress')}</Link>
+              <Link to="/dashboard" className="block px-4 py-2 text-sm text-indigo-600 font-semibold hover:bg-indigo-100">
+                → {t('browseAll')}
+              </Link>
+            </div>
+            <Link
+              to="/dashboard"
+              className="sm:hidden text-sm font-semibold text-white bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 px-4 py-1.5 rounded-md shadow-md transition animate-bounce"
+            >
+              📂 {t('nav.dashboard')}
+            </Link>
+          </div>
+          
           {!user ? (
             <>
               <Link
