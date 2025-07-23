@@ -154,6 +154,7 @@ export default function Header() {
 }*/
 
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import LogoutButton from '../auth/LogoutButton';
 import { useUser } from '../contexts/UserContext';
@@ -161,6 +162,8 @@ import { useUser } from '../contexts/UserContext';
 export default function Header() {
   const { t, i18n } = useTranslation();
   const { user } = useUser();
+
+  const [showLearnDropdown, setShowLearnDropdown] = useState(false);
 
   const changeLang = (lng: 'en' | 'pl' | 'es') => i18n.changeLanguage(lng);
 
@@ -194,6 +197,38 @@ export default function Header() {
             </button>
           ))}
 
+          <div className="relative">
+            <button
+              onClick={() => setShowLearnDropdown((prev) => !prev)}
+              onMouseEnter={() => setShowLearnDropdown(true)}
+              className="text-sm font-semibold text-green-700 bg-green-100 hover:bg-green-200 hover:text-green-900 px-3 py-1.5 rounded-md shadow-sm transition cursor-pointer"
+            >
+              {t('nav.learn') ?? 'Learn'} <span className="ml-1">▼</span>
+            </button>
+
+            {showLearnDropdown && (
+              <div
+                className="absolute right-0 mt-2 w-52 bg-white border border-gray-200 rounded-md shadow-md z-50"
+                onMouseLeave={() => setShowLearnDropdown(false)}
+              >
+                <Link
+                  to="/ipa-guide"
+                  onClick={() => setShowLearnDropdown(false)}
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-800 transition"
+                >
+                  📘 {t('nav.ipaGuide')}
+                </Link>
+                <Link
+                  to="/pronunciation-patterns"
+                  onClick={() => setShowLearnDropdown(false)}
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-800 transition"
+                >
+                  🧠 {t('nav.pronunciationPatterns')}
+                </Link>
+              </div>
+            )}
+          </div>
+
           <div className="relative group hidden sm:block">
             <Link
               to="/dashboard"
@@ -222,7 +257,7 @@ export default function Header() {
               📂 {t('nav.dashboard')}
             </Link>
           </div>
-          
+
           {!user ? (
             <>
               <Link

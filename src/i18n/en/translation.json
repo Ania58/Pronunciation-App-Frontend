@@ -155,6 +155,7 @@
   },
 
   "nav": {
+    "learn": "Learn",
     "ipaGuide": "IPA Guide",
     "pronunciationPatterns": "Pronunciation Patterns",
     "dashboard": "Explore"

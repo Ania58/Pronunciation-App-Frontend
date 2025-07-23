@@ -108,12 +108,6 @@ export default function Dashboard() {
             </Link>
           </>
         )}
-        <Link to="/ipa-guide" className="text-white font-semibold px-6 py-3 rounded-xl shadow text-center transition w-full sm:w-auto bg-sky-600 hover:bg-sky-700">
-          📘 {t('nav.ipaGuide')}
-        </Link>
-        <Link to="/pronunciation-patterns" className="text-white font-semibold px-6 py-3 rounded-xl shadow text-center transition w-full sm:w-auto bg-pink-600 hover:bg-pink-700">
-          🧠 {t('nav.pronunciationPatterns')}
-        </Link>
       </motion.div>
     </main>
   );
