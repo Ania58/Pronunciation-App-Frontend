@@ -165,6 +165,8 @@ export default function Header() {
 
   const [showLearnDropdown, setShowLearnDropdown] = useState(false);
 
+  const [showAccountDropdown, setShowAccountDropdown] = useState(false);
+
   const changeLang = (lng: 'en' | 'pl' | 'es') => i18n.changeLanguage(lng);
 
   return (
@@ -257,6 +259,40 @@ export default function Header() {
               📂 {t('nav.dashboard')}
             </Link>
           </div>
+
+          {user && (
+            <div className="relative group">
+              <button
+                onClick={() => setShowAccountDropdown((prev) => !prev)}
+                onMouseEnter={() => setShowAccountDropdown(true)}
+                className="text-sm font-semibold text-indigo-700 bg-indigo-100 hover:bg-indigo-200 hover:text-indigo-900 px-3 py-1.5 rounded-md shadow-sm transition cursor-pointer"
+              >
+                👤 {t('nav.account')} <span className="ml-1">▼</span>
+              </button>
+
+              {showAccountDropdown && (
+                <div
+                  className="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-md z-50"
+                  onMouseLeave={() => setShowAccountDropdown(false)}
+                >
+                  <Link
+                    to="/progress"
+                    onClick={() => setShowAccountDropdown(false)}
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50 transition"
+                  >
+                    {t('seeProgress')}
+                  </Link>
+                  <Link
+                    to="/attempts"
+                    onClick={() => setShowAccountDropdown(false)}
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50 transition"
+                  >
+                    {t('yourAttempts')}
+                  </Link>
+                </div>
+              )}
+            </div>
+          )}
 
           {!user ? (
             <>
