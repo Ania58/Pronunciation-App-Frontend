@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+/*import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import LogoutButton from '../auth/LogoutButton';
 import { useUser } from '../contexts/UserContext';
@@ -151,4 +151,77 @@ export default function Header() {
       </div>
     </header>
   );
+}*/
+
+import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import LogoutButton from '../auth/LogoutButton';
+import { useUser } from '../contexts/UserContext';
+
+export default function Header() {
+  const { t, i18n } = useTranslation();
+  const { user } = useUser();
+
+  const changeLang = (lng: 'en' | 'pl' | 'es') => i18n.changeLanguage(lng);
+
+  return (
+    <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur border-b border-gray-200 shadow-sm">
+      <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+        <Link
+          to="/"
+          className="flex items-center gap-2 sm:gap-3 text-xl font-bold text-gray-800 hover:text-indigo-600 transition"
+        >
+          <img
+            src="/logo.png" 
+            alt="SayRight logo"
+            className="w-10 h-10 sm:w-12 sm:h-12"
+          />
+          <span className="text-2xl font-extrabold tracking-tigh">SayRight</span>
+        </Link>
+
+        <div className="flex items-center gap-3">
+          {(['en', 'pl', 'es'] as const).map((lng) => (
+            <button
+              key={lng}
+              onClick={() => changeLang(lng)}
+              className={`text-sm px-2 py-1 rounded border transition cursor-pointer ${
+                i18n.resolvedLanguage === lng
+                  ? 'bg-indigo-600 text-white border-indigo-600'
+                  : 'border-gray-300 text-gray-600 hover:bg-gray-100'
+              }`}
+            >
+              {lng.toUpperCase()}
+            </button>
+          ))}
+
+          <Link
+            to="/dashboard"
+            className="text-sm font-semibold text-indigo-700 bg-indigo-100 hover:bg-indigo-200 hover:text-indigo-900 px-3 py-1.5 rounded-md shadow-sm transition cursor-pointer"
+          >
+            {t('nav.dashboard')}
+          </Link>
+
+          {!user ? (
+            <>
+              <Link
+                to="/login"
+                className="text-sm text-gray-700 hover:text-indigo-600 px-3 py-1 transition"
+              >
+                {t('auth.login')}
+              </Link>
+              <Link
+                to="/register"
+                className="text-sm text-white bg-indigo-600 hover:bg-indigo-700 px-3 py-1 rounded transition"
+              >
+                {t('auth.register')}
+              </Link>
+            </>
+          ) : (
+            <LogoutButton />
+          )}
+        </div>
+      </div>
+    </header>
+  );
 }
+

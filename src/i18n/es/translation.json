@@ -156,7 +156,8 @@
 
   "nav": {
     "ipaGuide": "Guía IPA",
-    "pronunciationPatterns": "Patrones de Pronunciación"
+    "pronunciationPatterns": "Patrones de Pronunciación",
+    "dashboard": "Explorar"
   },
 
   "about": {
