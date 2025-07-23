@@ -9,7 +9,7 @@ export default function RecordPage() {
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-4">🎤 {t('practicePrompt')}</h1>
+      <h1 className="text-3xl font-bold mb-4"> {t('micTest')}</h1>
       <p className="text-lg mb-2">{t('micCheckInfo')}</p>
       <p className="text-sm text-gray-600 mb-6">{t('micCheckNote')}</p>
 

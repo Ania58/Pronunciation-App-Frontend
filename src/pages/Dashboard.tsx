@@ -96,7 +96,7 @@ export default function Dashboard() {
            {t('browseAll')}
         </Link>
         <Link to="/record" className="text-white font-semibold px-6 py-3 rounded-xl shadow text-center transition w-full sm:w-auto bg-purple-600 hover:bg-purple-700">
-           {t('practicePronunciation')}
+           {t('micTest')}
         </Link>
         {user && (
           <>
