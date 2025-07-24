@@ -18,17 +18,17 @@ export default function Footer() {
       : '/terms-of-use-en.pdf';
 
   return (
-    <footer className="w-full bg-gradient-to-br from-[#D9FAF6] via-white to-[#E0F0FF]">
-      <div className="flex flex-col items-center space-y-2 pt-6">
+    <footer className="w-full bg-gradient-to-br from-[#D9FAF6] via-white to-[#E0F0FF] px-4 sm:px-0">
+      <div className="flex flex-col items-center space-y-2 pt-6 text-center">
         <Link
           to="/contact"
-          className="text-indigo-700 hover:text-indigo-900 hover:underline transition-colors"
+          className="text-indigo-700 hover:text-indigo-900 hover:underline transition-colors text-sm sm:text-base"
         >
           {t('contactPage')}
         </Link>
         <Link
           to="/about-me"
-          className="text-indigo-700 hover:text-indigo-900 hover:underline transition-colors"
+          className="text-indigo-700 hover:text-indigo-900 hover:underline transition-colors text-sm sm:text-base"
         >
           {t('footer.aboutMe')}
         </Link>
@@ -36,7 +36,7 @@ export default function Footer() {
           href={linkedinUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-indigo-700 hover:text-indigo-900 hover:underline transition-colors"
+          className="text-indigo-700 hover:text-indigo-900 hover:underline transition-colors text-sm sm:text-base"
         >
           LinkedIn
         </a>
@@ -44,18 +44,18 @@ export default function Footer() {
           href={termsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-indigo-700 hover:text-indigo-900 hover:underline transition-colors"
+          className="text-indigo-700 hover:text-indigo-900 hover:underline transition-colors text-sm sm:text-base"
         >
           {t('footer.terms')}
         </a>
         <Link
           to="/privacy-policy"
-          className="text-indigo-700 hover:text-indigo-900 hover:underline transition-colors"
+          className="text-indigo-700 hover:text-indigo-900 hover:underline transition-colors text-sm sm:text-base"
         >
           {t('footer.privacy')}
         </Link>
       </div>
-      <div className="text-center py-6 text-sm text-indigo-600">
+      <div className="text-center py-6 text-xs sm:text-sm text-indigo-600 px-4 sm:px-0">
         © {year} SayRight — {t('footer.createdBy')}{' '}
         <Link
           to="/about-me"
