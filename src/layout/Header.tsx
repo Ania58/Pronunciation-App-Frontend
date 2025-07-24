@@ -199,38 +199,38 @@ export default function Header() {
             </button>
           ))}
 
-          <div className="relative">
+          <div
+            className="relative group hidden sm:block"
+            onMouseEnter={() => setShowLearnDropdown(true)}
+            onMouseLeave={() => setShowLearnDropdown(false)}
+          >
             <button
-              onClick={() => setShowLearnDropdown((prev) => !prev)}
-              onMouseEnter={() => setShowLearnDropdown(true)}
               className="text-sm font-semibold text-green-700 bg-green-100 hover:bg-green-200 hover:text-green-900 px-3 py-1.5 rounded-md shadow-sm transition cursor-pointer"
             >
-              {t('nav.learn') ?? 'Learn'} <span className="ml-1">▼</span>
+              {t('nav.learn')} <span className="ml-1">▼</span>
             </button>
 
-            {showLearnDropdown && (
-              <div
-                className="absolute right-0 mt-2 w-52 bg-white border border-gray-200 rounded-md shadow-md z-50"
-                onMouseLeave={() => setShowLearnDropdown(false)}
+            <div
+              className={`absolute right-0 mt-2 w-52 bg-white border border-gray-200 rounded-md shadow-md z-50 transition-opacity duration-200 ${
+                showLearnDropdown ? 'opacity-100 visible' : 'opacity-0 invisible'
+              }`}
+            >
+              <Link
+                to="/ipa-guide"
+                onClick={() => setShowLearnDropdown(false)}
+                className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-800 transition"
               >
-                <Link
-                  to="/ipa-guide"
-                  onClick={() => setShowLearnDropdown(false)}
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-800 transition"
-                >
-                  📘 {t('nav.ipaGuide')}
-                </Link>
-                <Link
-                  to="/pronunciation-patterns"
-                  onClick={() => setShowLearnDropdown(false)}
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-800 transition"
-                >
-                  🧠 {t('nav.pronunciationPatterns')}
-                </Link>
-              </div>
-            )}
+                📘 {t('nav.ipaGuide')}
+              </Link>
+              <Link
+                to="/pronunciation-patterns"
+                onClick={() => setShowLearnDropdown(false)}
+                className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-800 transition"
+              >
+                🧠 {t('nav.pronunciationPatterns')}
+              </Link>
+            </div>
           </div>
-
           <div className="relative group hidden sm:block">
             <Link
               to="/dashboard"
@@ -261,36 +261,37 @@ export default function Header() {
           </div>
 
           {user && (
-            <div className="relative group">
+            <div
+              className="relative group hidden sm:block"
+              onMouseEnter={() => setShowAccountDropdown(true)}
+              onMouseLeave={() => setShowAccountDropdown(false)}
+            >
               <button
-                onClick={() => setShowAccountDropdown((prev) => !prev)}
-                onMouseEnter={() => setShowAccountDropdown(true)}
                 className="text-sm font-semibold text-indigo-700 bg-indigo-100 hover:bg-indigo-200 hover:text-indigo-900 px-3 py-1.5 rounded-md shadow-sm transition cursor-pointer"
               >
                 👤 {t('nav.account')} <span className="ml-1">▼</span>
               </button>
 
-              {showAccountDropdown && (
-                <div
-                  className="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-md z-50"
-                  onMouseLeave={() => setShowAccountDropdown(false)}
+              <div
+                className={`absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-md z-50 transition-opacity duration-200 ${
+                  showAccountDropdown ? 'opacity-100 visible' : 'opacity-0 invisible'
+                }`}
+              >
+                <Link
+                  to="/progress"
+                  onClick={() => setShowAccountDropdown(false)}
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50 transition"
                 >
-                  <Link
-                    to="/progress"
-                    onClick={() => setShowAccountDropdown(false)}
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50 transition"
-                  >
-                    {t('seeProgress')}
-                  </Link>
-                  <Link
-                    to="/attempts"
-                    onClick={() => setShowAccountDropdown(false)}
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50 transition"
-                  >
-                    {t('yourAttempts')}
-                  </Link>
-                </div>
-              )}
+                  {t('seeProgress')}
+                </Link>
+                <Link
+                  to="/attempts"
+                  onClick={() => setShowAccountDropdown(false)}
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50 transition"
+                >
+                  {t('yourAttempts')}
+                </Link>
+              </div>
             </div>
           )}
 
