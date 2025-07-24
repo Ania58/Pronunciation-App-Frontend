@@ -22,7 +22,6 @@ export default function AttemptHistoryPage() {
   const [loading, setLoading] = useState(true);
 
   const fakeUserId = 'dev-user-001';
-
   const { t } = useTranslation();
 
   useEffect(() => {
@@ -59,85 +58,95 @@ export default function AttemptHistoryPage() {
   }, []);
 
   const handleDeleteAttempt = async (attemptId: string) => {
-  if (!window.confirm(t('confirmDelete'))) return;
+    if (!window.confirm(t('confirmDelete'))) return;
 
-  try {
-    await api.delete(`/pronunciation/${attemptId}`, {
-      params: { userId: fakeUserId },
-    });
+    try {
+      await api.delete(`/pronunciation/${attemptId}`, {
+        params: { userId: fakeUserId },
+      });
 
-    setAttempts((prev) => prev.filter((a) => a._id !== attemptId));
-  } catch (error) {
-    console.error('Failed to delete attempt:', error);
-    alert(t('deleteError'));
-  }
-};
+      setAttempts((prev) => prev.filter((a) => a._id !== attemptId));
+    } catch (error) {
+      console.error('Failed to delete attempt:', error);
+      alert(t('deleteError'));
+    }
+  };
 
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-white rounded shadow">
-      <div className="mb-4">
-        <Link to="/" className="text-blue-600 hover:underline">
-          🏠 {t('home')}
-        </Link>
-      </div>
-      <LanguageSwitcher />
-      <h1 className="text-2xl font-bold mb-4">{t('yourAttempts')}</h1>
-      <p className="text-sm text-gray-600 mb-6">{t('allAttemptsInfo')}</p>
+    <div className="min-h-screen flex flex-col justify-between bg-gradient-to-br from-white via-sky-50 to-cyan-100">
+      <div className="max-w-6xl w-full mx-auto px-4 pt-10 pb-20">
+        <div className="bg-white bg-opacity-80 shadow-xl rounded-xl p-6 sm:p-10">
+          <div className="mb-4 flex justify-between items-center">
+            <Link to="/" className="text-purple-600 hover:underline text-sm font-semibold">
+              🏠 {t('home')}
+            </Link>
+            <LanguageSwitcher />
+          </div>
+          <h1 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-sky-500 mb-2">
+            {t('yourAttempts')}
+          </h1>
+          <p className="text-gray-700 mb-6">{t('allAttemptsInfo')}</p>
 
-      {loading ? (
-        <p className="text-gray-500">{t('loading')}</p>
-      ) : attempts.length === 0 ? (
-        <p className="text-gray-500">{t('noAttempts')}</p>
-      ) : (
-        <table className="w-full table-auto border border-gray-200 text-sm">
-          <thead>
-            <tr className="bg-gray-100">
-              <th className="p-2 border">{t('actions')}</th>
-              <th className="p-2 border">{t('word')}</th>
-              <th className="p-2 border">{t('score')}</th>
-              <th className="p-2 border">{t('feedback')}</th>
-              <th className="p-2 border">{t('audio')}</th>
-              <th className="p-2 border">{t('date')}</th>
-            </tr>
-          </thead>
-          <tbody>
-            {attempts
-            .slice()
-            .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
-            .map((attempt) => (
-              <tr key={attempt._id}>
-                <td className="p-2 border text-center">
-                  <button
-                    onClick={() => handleDeleteAttempt(attempt._id)}
-                    className="text-red-600 hover:text-red-700 hover:underline cursor-pointer text-sm"
-                  >
-                    🗑 {t('delete')}
-                  </button>
-                </td>
-                <td className="p-2 border font-medium hover:underline">
-                  {words[attempt.wordId]?.word ? (
-                    <Link to={`/words/${attempt.wordId}`}>
-                      {words[attempt.wordId].word}
-                    </Link>
-                    ) : ( t('unknown'))
-                  }
-                </td>
-                <td className="p-2 border">{attempt.score ?? '–'}</td>
-                <td className="p-2 border">{attempt.feedback || t('pending')}</td>
-                <td className="p-2 border">
-                  <audio controls className="w-full">
-                    <source src={attempt.audioUrl} type="audio/webm" />
-                    {t('noPlayback')}
-                  </audio>
-                </td>
-                <td className="p-2 border text-gray-500">
-                  {new Date(attempt.createdAt).toLocaleString()}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
+          {loading ? (
+            <p className="text-gray-500">{t('loading')}</p>
+          ) : attempts.length === 0 ? (
+            <p className="text-blue-500 font-medium">{t('noAttempts')}</p>
+          ) : (
+            <div className="overflow-x-auto">
+              <table className="w-full table-auto border border-gray-200 text-sm bg-white bg-opacity-90 rounded-md">
+                <thead>
+                  <tr className="bg-gradient-to-r from-indigo-50 to-blue-50">
+                    <th className="p-2 border">{t('action')}</th>
+                    <th className="p-2 border">{t('word')}</th>
+                    <th className="p-2 border">{t('score')}</th>
+                    <th className="p-2 border">{t('feedback')}</th>
+                    <th className="p-2 border">{t('audio')}</th>
+                    <th className="p-2 border">{t('date')}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {attempts
+                    .slice()
+                    .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+                    .map((attempt) => (
+                      <tr key={attempt._id}>
+                        <td className="p-2 border text-center">
+                          <button
+                            onClick={() => handleDeleteAttempt(attempt._id)}
+                            className="text-red-600 hover:text-red-700 hover:underline cursor-pointer text-sm"
+                          >
+                            🗑 {t('delete')}
+                          </button>
+                        </td>
+                        <td className="p-2 border font-medium hover:underline">
+                          {words[attempt.wordId]?.word ? (
+                            <Link to={`/words/${attempt.wordId}`}>
+                              {words[attempt.wordId].word}
+                            </Link>
+                          ) : (
+                            t('unknown')
+                          )}
+                        </td>
+                        <td className="p-2 border">{attempt.score ?? '–'}</td>
+                        <td className="p-2 border">{attempt.feedback || t('pending')}</td>
+                        <td className="p-2 border">
+                          <audio controls className="w-full">
+                            <source src={attempt.audioUrl} type="audio/webm" />
+                            {t('noPlayback')}
+                          </audio>
+                        </td>
+                        <td className="p-2 border text-gray-500">
+                          {new Date(attempt.createdAt).toLocaleString()}
+                        </td>
+                      </tr>
+                    ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+        </div>
+      </div>
+
       <Footer />
     </div>
   );
