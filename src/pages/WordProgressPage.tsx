@@ -48,7 +48,7 @@ export default function WordProgressPage() {
     };
 
     fetchStatusesAndWords();
-  }, []);
+  }, [user?.uid]);
 
   const filtered = words.filter(w =>
     filter === 'all' ? true : statuses[w.id] === filter
