@@ -8,13 +8,13 @@ export default function Dashboard() {
   const navigate = useNavigate();
 
   return (
-    <main className="bg-gradient-to-br from-sky-50 to-indigo-50 min-h-screen px-4 py-12 max-w-6xl mx-auto space-y-12">
+    <main className="w-full min-h-screen px-4 py-12 space-y-12 bg-gradient-to-br from-[#D9FAF6] via-white to-[#E0F0FF]">
       <div className="flex justify-between items-center mb-6">
         <button
           onClick={() => navigate(-1)}
           className="text-sm text-gray-700 hover:text-indigo-700 bg-white hover:bg-indigo-50 px-4 py-2 rounded-lg shadow-sm transition cursor-pointer"
         >
-          ← {t('goBack') ?? 'Wróć'}
+          ← {t('goBack')}
         </button>
         <div className="flex items-center gap-2">
           <LanguageSwitcher />
@@ -22,7 +22,7 @@ export default function Dashboard() {
             to="/"
             className="text-sm text-gray-700 hover:text-indigo-700 bg-white hover:bg-indigo-50 px-4 py-2 rounded-lg shadow-sm transition"
           >
-            🏠 {t('home') ?? 'Strona główna'}
+            🏠 {t('home')}
           </Link>
         </div>
       </div>
@@ -73,14 +73,24 @@ export default function Dashboard() {
       >
         <h3 className="text-xl font-semibold text-indigo-800 text-center">{t('byCategory')}</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          <Link to="/words?category=voiceless%20TH" className="bg-white hover:bg-indigo-50 text-gray-700 border border-indigo-100 px-4 py-2 rounded-lg text-center text-sm font-medium shadow-sm transition">{t('voicelessTH')}</Link>
-          <Link to="/words?category=voiced%20TH" className="bg-white hover:bg-indigo-50 text-gray-700 border border-indigo-100 px-4 py-2 rounded-lg text-center text-sm font-medium shadow-sm transition">{t('voicedTH')}</Link>
-          <Link to="/words?category=schwa" className="bg-white hover:bg-indigo-50 text-gray-700 border border-indigo-100 px-4 py-2 rounded-lg text-center text-sm font-medium shadow-sm transition">{t('schwa')}</Link>
-          <Link to="/words?category=diphthongs" className="bg-white hover:bg-indigo-50 text-gray-700 border border-indigo-100 px-4 py-2 rounded-lg text-center text-sm font-medium shadow-sm transition">{t('diphthongs')}</Link>
-          <Link to="/words?category=stress" className="bg-white hover:bg-indigo-50 text-gray-700 border border-indigo-100 px-4 py-2 rounded-lg text-center text-sm font-medium shadow-sm transition">{t('stress')}</Link>
-          <Link to="/words?category=consonant%20clusters" className="bg-white hover:bg-indigo-50 text-gray-700 border border-indigo-100 px-4 py-2 rounded-lg text-center text-sm font-medium shadow-sm transition">{t('consonantClusters')}</Link>
-          <Link to="/words?category=vowels" className="bg-white hover:bg-indigo-50 text-gray-700 border border-indigo-100 px-4 py-2 rounded-lg text-center text-sm font-medium shadow-sm transition">{t('vowels')}</Link>
-          <Link to="/words?category=other" className="bg-white hover:bg-indigo-50 text-gray-700 border border-indigo-100 px-4 py-2 rounded-lg text-center text-sm font-medium shadow-sm transition">{t('other')}</Link>
+          {[
+            { cat: 'voiceless%20TH', label: t('voicelessTH') },
+            { cat: 'voiced%20TH', label: t('voicedTH') },
+            { cat: 'schwa', label: t('schwa') },
+            { cat: 'diphthongs', label: t('diphthongs') },
+            { cat: 'stress', label: t('stress') },
+            { cat: 'consonant%20clusters', label: t('consonantClusters') },
+            { cat: 'vowels', label: t('vowels') },
+            { cat: 'other', label: t('other') },
+          ].map(({ cat, label }) => (
+            <Link
+              key={cat}
+              to={`/words?category=${cat}`}
+              className="bg-white/90 hover:bg-indigo-50 text-gray-700 border border-indigo-100 px-4 py-2 rounded-lg text-center text-sm font-medium shadow-sm transition"
+            >
+              {label}
+            </Link>
+          ))}
         </div>
       </motion.section>
 
@@ -90,13 +100,20 @@ export default function Dashboard() {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.6, duration: 0.5 }}
       >
-        <Link to="/words" className="text-white font-semibold px-6 py-3 rounded-xl shadow text-center transition w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700">
-           {t('browseAll')}
+        <Link
+          to="/words"
+          className="text-white font-semibold px-6 py-3 rounded-xl shadow text-center transition w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700"
+        >
+          {t('browseAll')}
         </Link>
-        <Link to="/record" className="text-white font-semibold px-6 py-3 rounded-xl shadow text-center transition w-full sm:w-auto bg-purple-600 hover:bg-purple-700">
-           {t('micTest')}
+        <Link
+          to="/record"
+          className="text-white font-semibold px-6 py-3 rounded-xl shadow text-center transition w-full sm:w-auto bg-purple-600 hover:bg-purple-700"
+        >
+          {t('micTest')}
         </Link>
       </motion.div>
     </main>
   );
 }
+
