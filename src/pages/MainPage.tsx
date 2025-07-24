@@ -15,7 +15,7 @@ export default function MainPage() {
     <>
       <Header />
 
-      <main className="relative bg-white">
+      <main className="relative bg-gradient-to-br from-[#D9FAF6] via-white to-[#E0F0FF]">
         <div className="absolute inset-0 bg-gradient-to-tr from-[#D9FAF6] via-white to-[#E0F0FF] pointer-events-none z-0" />
 
         <motion.div
