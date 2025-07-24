@@ -5,11 +5,8 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from '../components/LanguageSwitcher';
 import Footer from '../layout/Footer';
+import { useUser } from '../contexts/UserContext';
 
-/*interface StatusEntry {
-  wordId: string;
-  status: 'mastered' | 'practice';
-}*/
 
 export default function WordProgressPage() {
   const [words, setWords] = useState<Word[]>([]);
@@ -17,15 +14,17 @@ export default function WordProgressPage() {
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState<'all' | 'mastered' | 'practice'>('all');
 
-  const fakeUserId = 'dev-user-001';
+  const { user } = useUser();
 
   const { t } = useTranslation();
 
   useEffect(() => {
+    if (!user?.uid) return;
+
     const fetchStatusesAndWords = async () => {
       try {
         const res = await api.get('/words/statuses', {
-            params: { userId: fakeUserId },
+            params: { userId: user.uid },
         });
         const allStatuses: Record<string, 'mastered' | 'practice'> = res.data;
 
@@ -63,7 +62,7 @@ export default function WordProgressPage() {
 
     try {
       await api.delete(`/words/${wordId}/status`, {
-        params: { userId: fakeUserId },
+        params: { userId: user?.uid  },
       });
 
       setWords(prev => prev.filter(word => word.id !== wordId));
@@ -76,6 +75,10 @@ export default function WordProgressPage() {
       console.error('Failed to delete word status', err);
     }
   };
+
+  if (!user) {
+    return <p className="text-center mt-10 text-gray-500">{t('auth.loginRequired')}</p>;
+  }
 
   return (
     <div className="max-w-3xl mx-auto p-6 bg-white rounded shadow">
