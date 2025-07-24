@@ -1,12 +1,10 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { useUser } from '../contexts/UserContext';
 import { motion } from 'framer-motion';
 import LanguageSwitcher from '../components/LanguageSwitcher';
 
 export default function Dashboard() {
   const { t } = useTranslation();
-  const { user } = useUser();
   const navigate = useNavigate();
 
   return (
@@ -98,16 +96,6 @@ export default function Dashboard() {
         <Link to="/record" className="text-white font-semibold px-6 py-3 rounded-xl shadow text-center transition w-full sm:w-auto bg-purple-600 hover:bg-purple-700">
            {t('micTest')}
         </Link>
-        {user && (
-          <>
-            <Link to="/progress" className="text-white font-semibold px-6 py-3 rounded-xl shadow text-center transition w-full sm:w-auto bg-blue-600 hover:bg-blue-700">
-               {t('seeProgress')}
-            </Link>
-            <Link to="/attempts" className="text-white font-semibold px-6 py-3 rounded-xl shadow text-center transition w-full sm:w-auto bg-fuchsia-600 hover:bg-fuchsia-700">
-               {t('yourAttempts')}
-            </Link>
-          </>
-        )}
       </motion.div>
     </main>
   );
