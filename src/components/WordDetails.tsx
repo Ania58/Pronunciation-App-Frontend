@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { api } from '../services/api';
@@ -44,7 +44,7 @@ export default function WordDetails() {
 
   const { user } = useUser();
 
-
+  const location = useLocation();
 
   const updateStatus = async (newStatus: 'mastered' | 'practice') => {
   try {
@@ -253,7 +253,7 @@ const handleDeleteAttempt = async (attemptId: string) => {
                 onClick={() => {
                   if (!user) {
                     if (window.confirm(t('auth.loginRequired'))) {
-                      navigate('/login');
+                      navigate('/login', { state: { from: location.pathname + location.search } });
                     }
                     return;
                   }
@@ -272,7 +272,7 @@ const handleDeleteAttempt = async (attemptId: string) => {
                 onClick={() => {
                   if (!user) {
                     if (window.confirm(t('auth.loginRequired'))) {
-                      navigate('/login');
+                      navigate('/login', { state: { from: location.pathname + location.search } });
                     }
                     return;
                   }
@@ -330,7 +330,7 @@ const handleDeleteAttempt = async (attemptId: string) => {
                         onClick={() => {
                           if (!user) {
                             if (window.confirm(t('auth.loginRequired'))) {
-                              navigate('/login');
+                              navigate('/login', { state: { from: location.pathname + location.search } });
                             }
                             return;
                           }
@@ -351,7 +351,7 @@ const handleDeleteAttempt = async (attemptId: string) => {
               onClick={() => {
                 if (!user) {
                   if (window.confirm(t('auth.loginRequired'))) {
-                    navigate('/login');
+                    navigate('/login', { state: { from: location.pathname + location.search } });
                   }
                   return;
                 }
@@ -366,7 +366,7 @@ const handleDeleteAttempt = async (attemptId: string) => {
               onClick={() => {
                 if (!user) {
                   if (window.confirm(t('auth.loginRequired'))) {
-                    navigate('/login');
+                    navigate('/login', { state: { from: location.pathname + location.search } });
                   }
                   return;
                 }
