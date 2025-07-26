@@ -1,4 +1,4 @@
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { api } from '../services/api';
@@ -6,7 +6,7 @@ import type { Word } from '../types/word';
 import { useRecorder } from '../hooks/useRecorder';
 import { uploadAudio } from '../utils/uploadAudio';
 import { useUser } from "../contexts/UserContext";
-import LanguageSwitcher from './LanguageSwitcher';
+import Header from '../layout/Header';
 import Footer from '../layout/Footer';
 
 
@@ -181,217 +181,210 @@ const handleDeleteAttempt = async (attemptId: string) => {
 
   
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-indigo-200 via-violet-100 to-cyan-100 px-4 py-12 sm:px-8 md:px-16 flex flex-col items-center justify-between transition-all duration-700 ease-in-out animate-fade-in">
-      <div className="w-full max-w-7xl bg-white/60 rounded-3xl shadow-xl p-6 sm:p-10 backdrop-blur-md animate-slide-in-up duration-700 ease-out">
+    <>
+      <Header />
+      <div className="min-h-screen w-full bg-gradient-to-br from-indigo-200 via-violet-100 to-cyan-100 px-4 py-12 sm:px-8 md:px-16 flex flex-col items-center justify-between transition-all duration-700 ease-in-out animate-fade-in">
+        <div className="w-full max-w-7xl bg-white/60 rounded-3xl shadow-xl p-6 sm:p-10 backdrop-blur-md animate-slide-in-up duration-700 ease-out">
 
-        <div className="flex justify-between items-center mb-6">
-          <button
-            onClick={() => navigate(-1)}
-            className="text-indigo-700 hover:text-indigo-500 hover:underline font-medium transition-all duration-300 transform hover:scale-105 cursor-pointer"
-          >
-            ← {t('goBack')}
-          </button>
-          <Link
-            to="/"
-            className="text-indigo-700 hover:text-indigo-500 hover:underline font-medium transition-all duration-300 transform hover:scale-105 cursor-pointer"
-          >
-            🏠 {t('home')}
-          </Link>
-        </div>
-
-        <div className="mb-6">
-          <LanguageSwitcher />
-        </div>
-
-        <h2 className="text-4xl font-extrabold mb-6 tracking-wide text-center text-indigo-800 animate-fade-in delay-100">
-          {word.word}
-        </h2>
-
-        <div className="text-center space-y-1 text-indigo-700 animate-fade-in delay-200">
-          <p><strong>IPA:</strong> {word.ipa}</p>
-          <p><strong>{t('language')}:</strong> {word.language}</p>
-          {word.category && <p><strong>{t('category')}:</strong> {t(word.category)}</p>}
-          {word.difficulty && <p><strong>{t('difficulty')}:</strong> {t(word.difficulty)}</p>}
-        </div>
-
-        {audioExists && (
-          <div className="flex justify-center my-6 animate-fade-in delay-300">
-            <audio
-              className="w-full max-w-md"
-              controls
-              src={`https://api.dictionaryapi.dev/media/pronunciations/en/${word.word}-us.mp3`}
-            />
+          <div className="flex justify-between items-center mb-6">
+            <button
+              onClick={() => navigate(-1)}
+              className="text-indigo-700 hover:text-indigo-500 hover:underline font-medium transition-all duration-300 transform hover:scale-105 cursor-pointer"
+            >
+              ← {t('goBack')}
+            </button>
           </div>
-        )}
 
-        <div className="bg-gradient-to-r from-indigo-100 via-white to-lime-100 p-6 rounded-lg shadow-md animate-fade-in delay-400 mb-6">
-          <h3 className="text-xl font-semibold mb-2 text-indigo-800">🎤 {t('practicePrompt')}</h3>
-          <p className="text-sm text-gray-700">
-            {audioExists ? t('practiceHintWithAudio') : t('practiceHintNoAudio')}
-          </p>
-        </div>
+          <h2 className="text-4xl font-extrabold mb-6 tracking-wide text-center text-indigo-800 animate-fade-in delay-100">
+            {word.word}
+          </h2>
 
-        {word.status && (
-          <p className="text-center text-md text-violet-800 font-semibold mb-6 animate-fade-in delay-500">
-            {t('currentStatus')} <strong>{t(word.status)}</strong>
-          </p>
-        )}
+          <div className="text-center space-y-1 text-indigo-700 animate-fade-in delay-200">
+            <p><strong>IPA:</strong> {word.ipa}</p>
+            <p><strong>{t('language')}:</strong> {word.language}</p>
+            {word.category && <p><strong>{t('category')}:</strong> {t(word.category)}</p>}
+            {word.difficulty && <p><strong>{t('difficulty')}:</strong> {t(word.difficulty)}</p>}
+          </div>
 
-        <div className="bg-gradient-to-br from-lime-100 via-white to-cyan-100 p-6 rounded-lg shadow-md mb-6 animate-fade-in delay-600">
-          <h3 className="text-lg font-semibold mb-4 text-indigo-800">{t('submitRecording')}</h3>
-
-          {recordedUrl && (
-            <div className="mb-4">
-              <p className="text-sm mb-2">{t('preview')}:</p>
-              <audio controls src={recordedUrl} className="w-full mb-2" />
-              <button
-                onClick={() => {
-                  setAudioUrl('');
-                  setAudioBlob(null);
-                }}
-                className="px-4 py-2 bg-red-500 hover:bg-red-600 text-white font-semibold rounded shadow text-sm cursor-pointer transition-all transform hover:scale-105"
-              >
-                ❌ {t('deleteRecording')}
-              </button>
+          {audioExists && (
+            <div className="flex justify-center my-6 animate-fade-in delay-300">
+              <audio
+                className="w-full max-w-md"
+                controls
+                src={`https://api.dictionaryapi.dev/media/pronunciations/en/${word.word}-us.mp3`}
+              />
             </div>
           )}
 
-          <div className="flex flex-col sm:flex-row gap-4">
-            <button
-              onClick={() => {
-                if (!user) {
-                  if (window.confirm(t('auth.loginRequired'))) {
-                    navigate('/login');
-                  }
-                  return;
-                }
-                isRecording ? stopRecording() : startRecording();
-              }}
-              className={`flex-1 px-6 py-3 rounded font-semibold shadow transition-all transform hover:scale-105 hover:shadow-lg cursor-pointer ${
-                isRecording
-                  ? 'bg-red-500 hover:bg-red-600 text-white'
-                  : 'bg-green-500 hover:bg-green-600 text-white'
-              }`}
-            >
-              {isRecording ? '⏹ ' + t('stop') : '🎙 ' + t('start')}
-            </button>
-
-            <button
-              onClick={() => {
-                if (!user) {
-                  if (window.confirm(t('auth.loginRequired'))) {
-                    navigate('/login');
-                  }
-                  return;
-                }
-                submitAttempt();
-              }}
-              disabled={!audioBlob || hasReachedLimit}
-              className="flex-1 px-6 py-3 rounded bg-indigo-500 hover:bg-indigo-600 text-white font-semibold shadow disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer transition-all transform hover:scale-105 hover:shadow-lg"
-            >
-              {t('submit')}
-            </button>
+          <div className="bg-gradient-to-r from-indigo-100 via-white to-lime-100 p-6 rounded-lg shadow-md animate-fade-in delay-400 mb-6">
+            <h3 className="text-xl font-semibold mb-2 text-indigo-800">🎤 {t('practicePrompt')}</h3>
+            <p className="text-sm text-gray-700">
+              {audioExists ? t('practiceHintWithAudio') : t('practiceHintNoAudio')}
+            </p>
           </div>
 
-          <div className="mt-4 text-sm space-y-1">
-            {hasReachedLimit && <p className="text-red-600">{t('limitReached')}</p>}
-            {submitStatus === 'submitting' && <p className="text-indigo-600">{t('uploading')}</p>}
-            {submitStatus === 'success' && <p className="text-green-600">{t('submitted')}</p>}
-            {submitStatus === 'error' && <p className="text-red-600">{t('submitError')}</p>}
-          </div>
-        </div>
-
-        {latestFeedback && (
-          <div className="mt-4 p-4 bg-green-50 border border-green-300 text-green-800 rounded shadow animate-fade-in delay-700">
-            <strong>{t('aiFeedback')}:</strong> {latestFeedback}
-          </div>
-        )}
-
-        {statusMessage && (
-          <div className="mt-4 p-3 bg-lime-100 border border-lime-300 text-lime-800 rounded shadow text-sm animate-fade-in delay-700">
-            {statusMessage}
-          </div>
-        )}
-
-        <div className="mt-6 animate-fade-in delay-800">
-          <h3 className="text-lg font-semibold mb-2 text-indigo-800">🗂 {t('yourAttempts')}</h3>
-          {attempts.length === 0 ? (
-            <p className="text-sm text-gray-600">{t('noAttempts')}</p>
-          ) : (
-            <ul className="space-y-4">
-              {attempts
-                .slice()
-                .sort((a, b) => new Date(b.createdAt || '').getTime() - new Date(a.createdAt || '').getTime())
-                .map((a) => (
-                  <li
-                    key={a._id}
-                    className="p-4 bg-white/60 rounded shadow transition-all duration-300 hover:shadow-xl hover:scale-[1.01]"
-                  >
-                    <p className="text-sm text-gray-700">
-                      <strong>{t('date')}:</strong>{' '}
-                      {a.createdAt ? new Date(a.createdAt).toLocaleString() : t('unknown')}
-                    </p>
-                    <audio controls src={a.audioUrl} className="w-full my-2" />
-                    <p><strong>{t('score')}:</strong> {a.score ?? 'N/A'}</p>
-                    <p><strong>{t('feedback')}:</strong> {a.feedback ?? t('pending')}</p>
-                    <button
-                      onClick={() => {
-                        if (!user) {
-                          if (window.confirm(t('auth.loginRequired'))) {
-                            navigate('/login');
-                          }
-                          return;
-                        }
-                        handleDeleteAttempt(a._id);
-                      }}
-                      className="mt-2 text-sm text-red-600 hover:underline font-medium transition-all duration-300 transform hover:scale-105 hover:-translate-x-1 cursor-pointer"
-                    >
-                      🗑 {t('delete')}
-                    </button>
-                  </li>
-                ))}
-            </ul>
+          {word.status && (
+            <p className="text-center text-md text-violet-800 font-semibold mb-6 animate-fade-in delay-500">
+              {t('currentStatus')} <strong>{t(word.status)}</strong>
+            </p>
           )}
+
+          <div className="bg-gradient-to-br from-lime-100 via-white to-cyan-100 p-6 rounded-lg shadow-md mb-6 animate-fade-in delay-600">
+            <h3 className="text-lg font-semibold mb-4 text-indigo-800">{t('submitRecording')}</h3>
+
+            {recordedUrl && (
+              <div className="mb-4">
+                <p className="text-sm mb-2">{t('preview')}:</p>
+                <audio controls src={recordedUrl} className="w-full mb-2" />
+                <button
+                  onClick={() => {
+                    setAudioUrl('');
+                    setAudioBlob(null);
+                  }}
+                  className="px-4 py-2 bg-red-500 hover:bg-red-600 text-white font-semibold rounded shadow text-sm cursor-pointer transition-all transform hover:scale-105"
+                >
+                  ❌ {t('deleteRecording')}
+                </button>
+              </div>
+            )}
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <button
+                onClick={() => {
+                  if (!user) {
+                    if (window.confirm(t('auth.loginRequired'))) {
+                      navigate('/login');
+                    }
+                    return;
+                  }
+                  isRecording ? stopRecording() : startRecording();
+                }}
+                className={`flex-1 px-6 py-3 rounded font-semibold shadow transition-all transform hover:scale-105 hover:shadow-lg cursor-pointer ${
+                  isRecording
+                    ? 'bg-red-500 hover:bg-red-600 text-white'
+                    : 'bg-green-500 hover:bg-green-600 text-white'
+                }`}
+              >
+                {isRecording ? '⏹ ' + t('stop') : '🎙 ' + t('start')}
+              </button>
+
+              <button
+                onClick={() => {
+                  if (!user) {
+                    if (window.confirm(t('auth.loginRequired'))) {
+                      navigate('/login');
+                    }
+                    return;
+                  }
+                  submitAttempt();
+                }}
+                disabled={!audioBlob || hasReachedLimit}
+                className="flex-1 px-6 py-3 rounded bg-indigo-500 hover:bg-indigo-600 text-white font-semibold shadow disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer transition-all transform hover:scale-105 hover:shadow-lg"
+              >
+                {t('submit')}
+              </button>
+            </div>
+
+            <div className="mt-4 text-sm space-y-1">
+              {hasReachedLimit && <p className="text-red-600">{t('limitReached')}</p>}
+              {submitStatus === 'submitting' && <p className="text-indigo-600">{t('uploading')}</p>}
+              {submitStatus === 'success' && <p className="text-green-600">{t('submitted')}</p>}
+              {submitStatus === 'error' && <p className="text-red-600">{t('submitError')}</p>}
+            </div>
+          </div>
+
+          {latestFeedback && (
+            <div className="mt-4 p-4 bg-green-50 border border-green-300 text-green-800 rounded shadow animate-fade-in delay-700">
+              <strong>{t('aiFeedback')}:</strong> {latestFeedback}
+            </div>
+          )}
+
+          {statusMessage && (
+            <div className="mt-4 p-3 bg-lime-100 border border-lime-300 text-lime-800 rounded shadow text-sm animate-fade-in delay-700">
+              {statusMessage}
+            </div>
+          )}
+
+          <div className="mt-6 animate-fade-in delay-800">
+            <h3 className="text-lg font-semibold mb-2 text-indigo-800">🗂 {t('yourAttempts')}</h3>
+            {attempts.length === 0 ? (
+              <p className="text-sm text-gray-600">{t('noAttempts')}</p>
+            ) : (
+              <ul className="space-y-4">
+                {attempts
+                  .slice()
+                  .sort((a, b) => new Date(b.createdAt || '').getTime() - new Date(a.createdAt || '').getTime())
+                  .map((a) => (
+                    <li
+                      key={a._id}
+                      className="p-4 bg-white/60 rounded shadow transition-all duration-300 hover:shadow-xl hover:scale-[1.01]"
+                    >
+                      <p className="text-sm text-gray-700">
+                        <strong>{t('date')}:</strong>{' '}
+                        {a.createdAt ? new Date(a.createdAt).toLocaleString() : t('unknown')}
+                      </p>
+                      <audio controls src={a.audioUrl} className="w-full my-2" />
+                      <p><strong>{t('score')}:</strong> {a.score ?? 'N/A'}</p>
+                      <p><strong>{t('feedback')}:</strong> {a.feedback ?? t('pending')}</p>
+                      <button
+                        onClick={() => {
+                          if (!user) {
+                            if (window.confirm(t('auth.loginRequired'))) {
+                              navigate('/login');
+                            }
+                            return;
+                          }
+                          handleDeleteAttempt(a._id);
+                        }}
+                        className="mt-2 text-sm text-red-600 hover:underline font-medium transition-all duration-300 transform hover:scale-105 hover:-translate-x-1 cursor-pointer"
+                      >
+                        🗑 {t('delete')}
+                      </button>
+                    </li>
+                  ))}
+              </ul>
+            )}
+          </div>
+
+          <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6 animate-fade-in delay-900">
+            <button
+              onClick={() => {
+                if (!user) {
+                  if (window.confirm(t('auth.loginRequired'))) {
+                    navigate('/login');
+                  }
+                  return;
+                }
+                updateStatus('mastered');
+              }}
+              className="bg-green-500 text-white px-6 py-2 rounded hover:bg-green-600 shadow transition-all transform hover:scale-105 hover:shadow-lg cursor-pointer"
+            >
+              ✅ {t('mastered')}
+            </button>
+
+            <button
+              onClick={() => {
+                if (!user) {
+                  if (window.confirm(t('auth.loginRequired'))) {
+                    navigate('/login');
+                  }
+                  return;
+                }
+                updateStatus('practice');
+              }}
+              className="bg-yellow-300 text-black px-6 py-2 rounded hover:bg-yellow-400 shadow transition-all transform hover:scale-105 hover:shadow-lg cursor-pointer"
+            >
+              🕒 {t('practice')}
+            </button>
+          </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6 animate-fade-in delay-900">
-          <button
-            onClick={() => {
-              if (!user) {
-                if (window.confirm(t('auth.loginRequired'))) {
-                  navigate('/login');
-                }
-                return;
-              }
-              updateStatus('mastered');
-            }}
-            className="bg-green-500 text-white px-6 py-2 rounded hover:bg-green-600 shadow transition-all transform hover:scale-105 hover:shadow-lg cursor-pointer"
-          >
-            ✅ {t('mastered')}
-          </button>
-
-          <button
-            onClick={() => {
-              if (!user) {
-                if (window.confirm(t('auth.loginRequired'))) {
-                  navigate('/login');
-                }
-                return;
-              }
-              updateStatus('practice');
-            }}
-            className="bg-yellow-300 text-black px-6 py-2 rounded hover:bg-yellow-400 shadow transition-all transform hover:scale-105 hover:shadow-lg cursor-pointer"
-          >
-            🕒 {t('practice')}
-          </button>
+        <div className="w-full mt-24 pt-16 pb-12 bg-gradient-to-b from-transparent via-indigo-100/70 to-cyan-100/60 animate-fade-in delay-1000">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-2 text-sm text-indigo-800 transition-all">
+            <Footer />
+          </div>
         </div>
       </div>
-
-      <div className="w-full mt-24 pt-16 pb-12 bg-gradient-to-b from-transparent via-indigo-100/70 to-cyan-100/60 animate-fade-in delay-1000">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-2 text-sm text-indigo-800 transition-all">
-          <Footer />
-        </div>
-      </div>
-    </div>
+    </>
   );
 }
