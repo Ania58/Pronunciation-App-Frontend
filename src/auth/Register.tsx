@@ -98,6 +98,15 @@ const Register = () => {
                 {showPassword ? t("auth.hidePassword") : t("auth.showPassword")}
               </button>
             </div>
+            <p
+              className={`text-sm mt-1 ${
+                password && validatePassword(password)
+                  ? 'text-green-600'
+                  : 'text-red-600'
+              }`}
+            >
+              {t('auth.weakPassword')}
+            </p>
 
             <input
               type={showPassword ? "text" : "password"}
