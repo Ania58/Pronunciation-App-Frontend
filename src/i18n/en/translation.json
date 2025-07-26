@@ -72,6 +72,7 @@
   "practice": "Practice",
 
   "allWords": "All Words",
+  "filteredWords": "Filtered Words",
   "tryWordBrowser": "Try the new Word Browser with advanced filters",
   "searchWordsPlaceholder": "Search words...",
   "loadingWords": "Loading words...",

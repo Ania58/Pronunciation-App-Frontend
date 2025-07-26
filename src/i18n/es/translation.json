@@ -72,6 +72,7 @@
   "practice": "Para practicar",
 
   "allWords": "Todas las palabras",
+  "filteredWords": "Palabras según el filtro",
   "tryWordBrowser": "Prueba el nuevo explorador de palabras con filtros avanzados",
   "searchWordsPlaceholder": "Buscar palabras...",
   "loadingWords": "Cargando palabras...",

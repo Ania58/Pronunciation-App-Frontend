@@ -19,6 +19,9 @@ export default function WordList() {
   const navigate = useNavigate();
 
   const params = new URLSearchParams(location.search);
+  const category = params.get('category') || '';
+  const difficulty = params.get('difficulty') || '';
+
   const initialPage = parseInt(params.get('page') || '1');
   const [page, setPage] = useState(initialPage);
 
@@ -103,7 +106,7 @@ export default function WordList() {
         </Link>
 
         <h2 className="text-4xl font-bold mb-6 tracking-wide text-violet-800 animate-slide-in-up">
-          {t('allWords')}
+          {category || difficulty ? t('filteredWords') : t('allWords')}
         </h2>
 
       <div className="mb-6 flex flex-col items-start gap-4">
