@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { api } from '../services/api';
 import type { Word } from '../types/word';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import LanguageSwitcher from '../components/LanguageSwitcher';
+import Header from '../layout/Header';
 import Footer from '../layout/Footer';
 import { useUser } from '../contexts/UserContext';
 
@@ -15,6 +15,8 @@ export default function WordProgressPage() {
 
   const { user } = useUser();
   const { t } = useTranslation();
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!user?.uid) return;
@@ -79,85 +81,84 @@ export default function WordProgressPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-blue-50 via-white to-yellow-50">
-      <div className="w-full flex justify-end p-4">
-        <LanguageSwitcher />
-      </div>
-
-      <main className="flex-grow flex justify-center">
-        <div className="w-full max-w-4xl bg-white shadow-lg rounded-xl p-8 m-4 border border-gray-200">
-          <div className="mb-6">
-            <Link
-              to="/"
-              className="text-blue-600 hover:underline text-sm font-medium cursor-pointer"
-            >
-              🏠 {t('home')}
-            </Link>
-          </div>
-
-          <div className="mb-6 flex flex-wrap gap-3">
-            {(['all', 'mastered', 'practice'] as const).map(btn => (
+    <>
+      <Header />
+      <div className="min-h-screen flex flex-col bg-gradient-to-b from-blue-50 via-white to-yellow-50">
+        <main className="flex-grow flex justify-center">
+          <div className="w-full max-w-4xl bg-white shadow-lg rounded-xl p-8 m-4 border border-gray-200">
+            <div className="mb-6">
               <button
-                key={btn}
-                onClick={() => setFilter(btn)}
-                className={`px-4 py-1.5 rounded-full text-sm font-medium shadow-sm transition cursor-pointer ${
-                  filter === btn
-                    ? 'bg-gradient-to-r from-pink-500 to-purple-500 text-white'
-                    : 'bg-gray-100 hover:bg-gray-200 text-gray-700'
-                }`}
+                onClick={() => navigate(-1)}
+                className="text-indigo-700 hover:text-indigo-500 hover:underline font-medium transition-all duration-300 transform hover:scale-105 cursor-pointer"
               >
-                {t(`filter.${btn}`)}
+              ← {t('goBack')}
               </button>
-            ))}
-          </div>
-
-          <h1 className="text-3xl font-bold mb-3">🧠 {t('yourProgress')}</h1>
-          <p className="text-gray-600 text-sm mb-6">{t('markedWordsDescription')}</p>
-
-          {loading ? (
-            <p className="text-gray-500">{t('loading')}</p>
-          ) : words.length === 0 ? (
-            <p className="text-gray-500">{t('noWordsMarked')}</p>
-          ) : (
-            <div className="overflow-x-auto">
-              <table className="w-full table-auto border border-gray-200 text-sm text-left rounded-lg overflow-hidden">
-                <thead>
-                  <tr className="bg-gray-50">
-                    <th className="p-3 border border-gray-200">{t('sort.word')}</th>
-                    <th className="p-3 border border-gray-200">{t('currentStatus')}</th>
-                    <th className="p-3 border border-gray-200">{t('action')}</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {filtered.map((w) => (
-                    <tr key={w.id} className="hover:bg-gray-50">
-                      <td className="p-3 border border-gray-100 font-medium">{w.word}</td>
-                      <td className="p-3 border border-gray-100 capitalize">{t(statuses[w.id])}</td>
-                      <td className="p-3 border border-gray-100 space-x-3">
-                        <Link
-                          to={`/words/${w.id}`}
-                          className="text-blue-600 hover:underline font-medium cursor-pointer"
-                        >
-                          {t('viewDetails')} →
-                        </Link>
-                        <button
-                          onClick={() => handleRemoveWord(w.id, w.word)}
-                          className="text-red-600 hover:underline font-medium cursor-pointer"
-                        >
-                          {t('delete')}
-                        </button>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
             </div>
-          )}
-        </div>
-      </main>
 
-      <Footer />
-    </div>
+            <div className="mb-6 flex flex-wrap gap-3">
+              {(['all', 'mastered', 'practice'] as const).map(btn => (
+                <button
+                  key={btn}
+                  onClick={() => setFilter(btn)}
+                  className={`px-4 py-1.5 rounded-full text-sm font-medium shadow-sm transition cursor-pointer ${
+                    filter === btn
+                      ? 'bg-gradient-to-r from-pink-500 to-purple-500 text-white'
+                      : 'bg-gray-100 hover:bg-gray-200 text-gray-700'
+                  }`}
+                >
+                  {t(`filter.${btn}`)}
+                </button>
+              ))}
+            </div>
+
+            <h1 className="text-3xl font-bold mb-3">🧠 {t('yourProgress')}</h1>
+            <p className="text-gray-600 text-sm mb-6">{t('markedWordsDescription')}</p>
+
+            {loading ? (
+              <p className="text-gray-500">{t('loading')}</p>
+            ) : words.length === 0 ? (
+              <p className="text-gray-500">{t('noWordsMarked')}</p>
+            ) : (
+              <div className="overflow-x-auto">
+                <table className="w-full table-auto border border-gray-200 text-sm text-left rounded-lg overflow-hidden">
+                  <thead>
+                    <tr className="bg-gray-50">
+                      <th className="p-3 border border-gray-200">{t('sort.word')}</th>
+                      <th className="p-3 border border-gray-200">{t('currentStatus')}</th>
+                      <th className="p-3 border border-gray-200">{t('action')}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {filtered.map((w) => (
+                      <tr key={w.id} className="hover:bg-gray-50">
+                        <td className="p-3 border border-gray-100 font-medium">{w.word}</td>
+                        <td className="p-3 border border-gray-100 capitalize">{t(statuses[w.id])}</td>
+                        <td className="p-3 border border-gray-100 space-x-3">
+                          <Link
+                            to={`/words/${w.id}`}
+                            className="text-blue-600 hover:underline font-medium cursor-pointer"
+                          >
+                            {t('viewDetails')} →
+                          </Link>
+                          <button
+                            onClick={() => handleRemoveWord(w.id, w.word)}
+                            className="text-red-600 hover:underline font-medium cursor-pointer"
+                          >
+                            {t('delete')}
+                          </button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+          </div>
+        </main>
+
+        <Footer />
+      </div>
+    </>
   );
 }
 
