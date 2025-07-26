@@ -1,19 +1,22 @@
 import { useUser } from "../contexts/UserContext";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const LogoutButton = () => {
   const { user, logout } = useUser();
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.pathname + location.search;
+
   const [showMessage, setShowMessage] = useState(false);
 
   if (!user) return null; 
 
   const handleLogout = async () => {
     await logout();
-    navigate("/"); 
+    navigate(from, { replace: true }); 
     setShowMessage(true);
 
     setTimeout(() => {
