@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, useLocation } from "react-router-dom";
 import { loginWithEmail } from "../firebase/firebaseAuth";
 import GoogleSignInButton from './GoogleSignInButton';
 import { useTranslation } from "react-i18next";
@@ -16,6 +16,10 @@ const Login = () => {
 
   const navigate = useNavigate();
 
+  const location = useLocation();
+  const from = (location.state as { from?: string })?.from || "/";
+
+
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
@@ -24,7 +28,7 @@ const Login = () => {
       setEmail("");
       setPassword("");
       setTimeout(() => {
-        navigate("/");
+        navigate(from, { replace: true });
       }, 1500);
     } catch (error: any) {
       setMessage(`${t("auth.errorPrefix")} ${error.message}`);

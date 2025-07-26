@@ -298,9 +298,23 @@ export default function Header() {
 
           {!user ? (
             <>
-              <Link to="/login" className="text-sm text-gray-700 hover:text-indigo-600 px-3 py-1 transition">
-                {t('auth.login')}
-              </Link>
+              {location.pathname !== '/login' ? (
+                <Link
+                  to="/login"
+                  state={{ from: location.pathname + location.search }}
+                  className="text-sm text-gray-700 hover:text-indigo-600 px-3 py-1 transition"
+                >
+                  {t('auth.login')}
+                </Link>
+              ) : (
+                <Link
+                  to="/login"
+                  className="text-sm text-gray-700 hover:text-indigo-600 px-3 py-1 transition"
+                >
+                  {t('auth.login')}
+                </Link>
+              )}
+
               <Link to="/register" className="text-sm text-white bg-indigo-600 hover:bg-indigo-700 px-3 py-1 rounded transition">
                 {t('auth.register')}
               </Link>
@@ -350,9 +364,25 @@ export default function Header() {
           )}
           {!user ? (
             <>
-              <Link to="/login" onClick={() => setMobileMenuOpen(false)} className="block text-sm text-gray-700">
-                {t('auth.login')}
-              </Link>
+              {location.pathname !== '/login' ? (
+                <Link
+                  to="/login"
+                  onClick={() => setMobileMenuOpen(false)}
+                  state={{ from: location.pathname + location.search }}
+                  className="block text-sm text-gray-700"
+                >
+                  {t('auth.login')}
+                </Link>
+              ) : (
+                <Link
+                  to="/login"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block text-sm text-gray-700"
+                >
+                  {t('auth.login')}
+                </Link>
+              )}
+
               <Link to="/register" onClick={() => setMobileMenuOpen(false)} className="block text-sm text-gray-700">
                 {t('auth.register')}
               </Link>
