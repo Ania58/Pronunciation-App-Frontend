@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, useLocation } from "react-router-dom";
 import { registerWithEmail } from "../firebase/firebaseAuth";
 import GoogleSignInButton from "./GoogleSignInButton";
 import { useTranslation } from "react-i18next";
@@ -16,6 +16,10 @@ const Register = () => {
 
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
+
+  const location = useLocation();
+  const from = (location.state as { from?: string })?.from || "/";
+
 
   const validatePassword = (password: string) => {
     return /^(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/.test(password);
@@ -46,7 +50,7 @@ const Register = () => {
       setPassword("");
       setConfirmPassword("");
       setTimeout(() => {
-        navigate("/");
+        navigate(from, { replace: true });
       }, 1500);
     } catch (error: any) {
       setMessage(`${t("auth.errorPrefix")} ${error.message}`);
