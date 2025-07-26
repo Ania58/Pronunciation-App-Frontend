@@ -153,7 +153,7 @@ export default function Header() {
   );
 }*/
 
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import LogoutButton from '../auth/LogoutButton';
@@ -170,11 +170,14 @@ export default function Header() {
 
   const changeLang = (lng: 'en' | 'pl' | 'es') => i18n.changeLanguage(lng);
 
+  const location = useLocation();
+
   return (
     <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur border-b border-gray-200 shadow-sm">
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         <Link
           to="/"
+          title={location.pathname !== '/' ? `🏠 ${t('home')}` : undefined}
           className="flex items-center gap-2 text-xl font-bold text-gray-800 hover:text-indigo-600 transition"
         >
           <img
