@@ -27,7 +27,7 @@ export default function PronunciationPatternsPage() {
   return (
     <>
       <Header />
-      <div className="min-h-screen bg-gradient-to-b from-cyan-50 via-white to-cyan-100 px-4 py-10 flex flex-col items-center animate-fade-in">
+      <div className="min-h-screen bg-gradient-to-b from-cyan-100 via-lime-100 to-violet-100 px-4 py-10 flex flex-col items-center animate-fade-in">
         <div className="w-full max-w-5xl bg-white/90 border border-cyan-200 rounded-xl shadow-xl p-6 transition-transform hover:scale-[1.01] duration-300">
           <div className="flex justify-between items-center mb-4">
             <button
@@ -49,19 +49,19 @@ export default function PronunciationPatternsPage() {
           </h2>
           <div className="overflow-x-auto mb-8">
             <table className="min-w-full border border-cyan-200 text-sm rounded-xl shadow-md overflow-hidden">
-              <thead className="bg-cyan-100 text-cyan-900">
+              <thead className="bg-indigo-100 text-indigo-900">
                 <tr>
-                  <th className="border border-cyan-200 px-4 py-2">{t('patterns.combination')}</th>
-                  <th className="border border-cyan-200 px-4 py-2">{t('patterns.pronunciation')}</th>
-                  <th className="border border-cyan-200 px-4 py-2">{t('patterns.notes')}</th>
+                  <th className="border border-indigo-200 px-4 py-2">{t('patterns.combination')}</th>
+                  <th className="border border-indigo-200 px-4 py-2">{t('patterns.pronunciation')}</th>
+                  <th className="border border-indigo-200 px-4 py-2">{t('patterns.notes')}</th>
                 </tr>
               </thead>
               <tbody>
                 {silentCombos.map((row, index) => (
-                  <tr key={index} className="even:bg-white odd:bg-cyan-50 hover:bg-cyan-100 transition">
-                    <td className="border border-cyan-100 px-4 py-2 text-center">{row.combo}</td>
-                    <td className="border border-cyan-100 px-4 py-2 text-center">{row.sound}</td>
-                    <td className="border border-cyan-100 px-4 py-2 text-center">{row.example}</td>
+                  <tr key={index} className="even:bg-white odd:bg-violet-50 hover:bg-lime-100 transition">
+                    <td className="border border-indigo-100 px-4 py-2 text-center">{row.combo}</td>
+                    <td className="border border-indigo-100 px-4 py-2 text-center">{row.sound}</td>
+                    <td className="border border-indigo-100 px-4 py-2 text-center">{row.example}</td>
                   </tr>
                 ))}
               </tbody>
@@ -73,19 +73,19 @@ export default function PronunciationPatternsPage() {
           </h2>
           <div className="overflow-x-auto mb-8">
             <table className="min-w-full border border-cyan-200 text-sm rounded-xl shadow-md overflow-hidden">
-              <thead className="bg-cyan-100 text-cyan-900">
+              <thead className="bg-indigo-100 text-indigo-900">
                 <tr>
-                  <th className="border border-cyan-200 px-4 py-2">{t('patterns.combination')}</th>
-                  <th className="border border-cyan-200 px-4 py-2">{t('patterns.pronunciation')}</th>
-                  <th className="border border-cyan-200 px-4 py-2">{t('patterns.notes')}</th>
+                  <th className="border border-indigo-200 px-4 py-2">{t('patterns.combination')}</th>
+                  <th className="border border-indigo-200 px-4 py-2">{t('patterns.pronunciation')}</th>
+                  <th className="border border-indigo-200 px-4 py-2">{t('patterns.notes')}</th>
                 </tr>
               </thead>
               <tbody>
                 {soundCombos.map((row, index) => (
-                  <tr key={index} className="even:bg-white odd:bg-cyan-50 hover:bg-cyan-100 transition">
-                    <td className="border border-cyan-100 px-4 py-2 text-center">{row.combo}</td>
-                    <td className="border border-cyan-100 px-4 py-2 text-center">{row.sound}</td>
-                    <td className="border border-cyan-100 px-4 py-2 text-center">{row.example}</td>
+                  <tr key={index} className="even:bg-white odd:bg-violet-50 hover:bg-lime-100 transition">
+                    <td className="border border-indigo-100 px-4 py-2 text-center">{row.combo}</td>
+                    <td className="border border-indigo-100 px-4 py-2 text-center">{row.sound}</td>
+                    <td className="border border-indigo-100 px-4 py-2 text-center">{row.example}</td>
                   </tr>
                 ))}
               </tbody>
@@ -97,17 +97,17 @@ export default function PronunciationPatternsPage() {
           </h2>
           <div className="overflow-x-auto mb-8">
             <table className="min-w-full border border-cyan-200 text-sm rounded-xl shadow-md overflow-hidden">
-              <thead className="bg-cyan-100 text-cyan-900">
+              <thead className="bg-indigo-100 text-indigo-900">
                 <tr>
-                  <th className="border border-cyan-200 px-4 py-2">{t('patterns.combination')}</th>
-                  <th className="border border-cyan-200 px-4 py-2">{t('patterns.caution')}</th>
+                  <th className="border border-indigo-200 px-4 py-2">{t('patterns.combination')}</th>
+                  <th className="border border-indigo-200 px-4 py-2">{t('patterns.caution')}</th>
                 </tr>
               </thead>
               <tbody>
                 {cautionCombos.map((row, index) => (
-                  <tr key={index} className="even:bg-white odd:bg-cyan-50 hover:bg-cyan-100 transition">
-                    <td className="border border-cyan-100 px-4 py-2 text-center">{row.combo}</td>
-                    <td className="border border-cyan-100 px-4 py-2 text-center">{row.warning}</td>
+                  <tr key={index} className="even:bg-white odd:bg-violet-50 hover:bg-lime-100 transition">
+                    <td className="border border-indigo-100 px-4 py-2 text-center">{row.combo}</td>
+                    <td className="border border-indigo-100 px-4 py-2 text-center">{row.warning}</td>
                   </tr>
                 ))}
               </tbody>
