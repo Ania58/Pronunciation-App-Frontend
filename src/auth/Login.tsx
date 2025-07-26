@@ -99,7 +99,6 @@ const Login = () => {
     <Footer />
   </>
 );
-
 };
 
 export default Login;
