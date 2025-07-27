@@ -22,7 +22,11 @@ export default function WordBrowser() {
   const navigate = useNavigate();
   const { t } = useTranslation();
 
-   const from = (location.state as { from?: string })?.from || "/";
+  const from = (location.state as { from?: string })?.from || "/";
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
 
   useEffect(() => {
