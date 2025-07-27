@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import RecorderWidget from '../features/record/RecorderWidget';
 import Header from '../layout/Header';
@@ -7,6 +8,10 @@ import Footer from '../layout/Footer';
 export default function RecordPage() {
   const { t } = useTranslation();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
