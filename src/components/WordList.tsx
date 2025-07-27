@@ -28,6 +28,10 @@ export default function WordList() {
   const from = (location.state as { from?: string })?.from || "/";
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     const params = new URLSearchParams(location.search);
     const category = params.get('category') || '';
     const difficulty = params.get('difficulty') || '';
