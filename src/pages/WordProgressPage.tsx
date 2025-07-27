@@ -19,6 +19,11 @@ export default function WordProgressPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+
+  useEffect(() => {
     if (!user?.uid) return;
 
     const fetchStatusesAndWords = async () => {
