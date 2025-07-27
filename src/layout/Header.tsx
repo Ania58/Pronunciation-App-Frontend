@@ -292,6 +292,13 @@ export default function Header() {
                 >
                   {t('yourAttempts')}
                 </Link>
+                <Link
+                  to="/delete-account"
+                  onClick={() => setShowAccountDropdown(false)}
+                  className="block px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition font-medium"
+                >
+                  ❌ {t('account.deleteTitle')}
+                </Link>
               </div>
             </div>
           )}
@@ -373,6 +380,9 @@ export default function Header() {
               </Link>
               <Link to="/attempts" onClick={() => setMobileMenuOpen(false)} className="block text-sm text-gray-700">
                 {t('yourAttempts')}
+              </Link>
+              <Link to="/delete-account" onClick={() => setMobileMenuOpen(false)} className="block text-sm text-red-600 font-medium">
+                ❌ {t('account.deleteTitle')}
               </Link>
             </>
           )}

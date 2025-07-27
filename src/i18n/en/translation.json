@@ -272,7 +272,7 @@
       },
       {
         "heading": "5. User Rights",
-        "content":"Each user may request access to, correction of, or deletion of personal data, including account deletion. Requests should be submitted via the contact form. Please note that pronunciation recordings and practice history may be stored on third-party services such as Cloudinary and AssemblyAI."
+        "content":"Each user may request access to, correction of, or deletion of personal data. Requests should be submitted via the contact form. Please note that pronunciation recordings and practice history may be stored on third-party services such as Cloudinary and AssemblyAI."
       },
       {
         "heading": "6. Contact",
@@ -283,6 +283,17 @@
 
   "maintenance": {
     "message": "🚧 The site is currently undergoing maintenance. Some features may be temporarily unavailable."
+  },
+
+  "account": {
+    "deleteTitle": "Delete Account",
+    "deleteWarning": "This action is irreversible. All your pronunciation attempts, AI feedback, and files will be permanently removed.",
+    "deleteButton": "Delete My Account",
+    "deleting": "Deleting...",
+    "deleteSuccess": "Your account has been deleted.",
+    "deleteError": "Error deleting account",
+    "invalidEmail": "Entered email doesn't match your account.",
+    "confirmFinalDelete": "Are you absolutely sure you want to permanently delete your account?"
   }
 }
 

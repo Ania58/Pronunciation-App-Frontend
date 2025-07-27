@@ -273,7 +273,7 @@
       },
       {
         "heading": "5. Prawa użytkownika",
-        "content": "Użytkownik ma prawo zażądać dostępu do swoich danych, ich poprawienia lub usunięcia, w tym usunięcia konta. Wnioski należy przesyłać za pomocą formularza kontaktowego. Należy pamiętać, że nagrania i historia nauki mogą być przechowywane na zewnętrznych serwerach, takich jak Cloudinary czy AssemblyAI."
+        "content": "Użytkownik ma prawo zażądać dostępu do swoich danych, ich poprawienia lub usunięcia. Wnioski należy przesyłać za pomocą formularza kontaktowego. Należy pamiętać, że nagrania i historia nauki mogą być przechowywane na zewnętrznych serwerach, takich jak Cloudinary czy AssemblyAI."
       },
       {
         "heading": "6. Kontakt",
@@ -284,6 +284,17 @@
 
   "maintenance": {
     "message": "🚧 Trwają prace konserwacyjne. Niektóre funkcje mogą być tymczasowo niedostępne."
+  },
+
+  "account": {
+    "deleteTitle": "Usuń konto",
+    "deleteWarning": "Ta operacja jest nieodwracalna. Wszystkie Twoje próby wymowy, opinie AI oraz pliki zostaną trwale usunięte.",
+    "deleteButton": "Usuń moje konto",
+    "deleting": "Usuwanie...",
+    "deleteSuccess": "Twoje konto zostało usunięte.",
+    "deleteError": "Błąd podczas usuwania konta",
+    "invalidEmail": "Wprowadzony adres e-mail nie pasuje do Twojego konta.",
+    "confirmFinalDelete": "Czy na pewno chcesz trwale usunąć swoje konto?"
   }
 }
 

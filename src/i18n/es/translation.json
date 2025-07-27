@@ -272,7 +272,7 @@
       },
       {
         "heading": "5. Derechos del usuario",
-        "content": "Cada usuario puede solicitar el acceso, la corrección o la eliminación de sus datos personales, incluida la eliminación de la cuenta. Las solicitudes deben enviarse a través del formulario de contacto. Ten en cuenta que las grabaciones y el historial de práctica pueden almacenarse en servicios externos como Cloudinary o AssemblyAI."
+        "content": "Cada usuario puede solicitar el acceso, la corrección o la eliminación de sus datos personales. Las solicitudes deben enviarse a través del formulario de contacto. Ten en cuenta que las grabaciones y el historial de práctica pueden almacenarse en servicios externos como Cloudinary o AssemblyAI."
       },
       {
         "heading": "6. Contacto",
@@ -282,6 +282,17 @@
   },
   "maintenance": {
     "message": "🚧 El sitio está en mantenimiento. Algunas funciones pueden no estar disponibles temporalmente."
+  },
+
+  "account": {
+    "deleteTitle": "Eliminar cuenta",
+    "deleteWarning": "Esta acción es irreversible. Todos tus intentos de pronunciación, comentarios de la IA y archivos se eliminarán de forma permanente.",
+    "deleteButton": "Eliminar mi cuenta",
+    "deleting": "Eliminando...",
+    "deleteSuccess": "Tu cuenta ha sido eliminada.",
+    "deleteError": "Error al eliminar la cuenta",
+    "invalidEmail": "El correo electrónico introducido no coincide con tu cuenta.",
+    "confirmFinalDelete": "¿Estás absolutamente seguro de que deseas eliminar tu cuenta de forma permanente?"
   }
 }
 

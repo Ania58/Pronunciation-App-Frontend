@@ -17,6 +17,7 @@ import ResetPassword from './pages/ResetPassword';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import MaintenanceBanner from "./components/MaintenanceBanner";
 import Dashboard from './pages/Dashboard';
+import DeleteAccountPage from './pages/DeleteAccountPage';
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/delete-account" element={<DeleteAccountPage />} />
       </Routes>
     </Router>
   );
