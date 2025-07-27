@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { api } from '../services/api';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import type { Word } from '../types/word';
 import Header from '../layout/Header';
@@ -26,6 +26,10 @@ export default function AttemptHistoryPage() {
   const { t } = useTranslation();
 
   const navigate = useNavigate();
+
+  const location = useLocation();
+  const from = (location.state as { from?: string })?.from || "/";
+
 
   useEffect(() => {
     const fetchAttempts = async () => {
@@ -85,7 +89,7 @@ export default function AttemptHistoryPage() {
           <div className="bg-white bg-opacity-80 shadow-xl rounded-xl p-6 sm:p-10">
             <div className="mb-4 flex justify-between items-center">
               <button
-                onClick={() => navigate(-1)}
+                onClick={() => navigate(from)}
                 className="text-indigo-700 hover:text-indigo-500 hover:underline font-medium transition-all duration-300 transform hover:scale-105 cursor-pointer"
               >
                 ← {t('goBack')}
