@@ -22,7 +22,6 @@ export default function WordBrowser() {
   const navigate = useNavigate();
   const { t } = useTranslation();
 
-  const from = (location.state as { from?: string })?.from || "/";
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -85,7 +84,7 @@ export default function WordBrowser() {
 
           <div className="flex justify-between items-center mb-6">
             <button
-              onClick={() => navigate(from)}
+              onClick={() => navigate(-1)}
               className="text-indigo-700 hover:text-indigo-500 hover:underline font-medium transition-all duration-300 transform hover:scale-105 cursor-pointer"
             >
               ← {t('goBack')}
