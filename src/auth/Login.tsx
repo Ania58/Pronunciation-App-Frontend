@@ -42,7 +42,7 @@ const Login = () => {
       <div className="w-full max-w-md bg-white/80 backdrop-blur-md shadow-xl rounded-2xl p-6 sm:p-10 transform transition-transform duration-700 ease-out translate-y-0">
         <div className="flex justify-between items-center mb-6">
           <button
-            onClick={() => navigate(from)}
+            onClick={() => navigate(-1)}
             className="text-indigo-700 hover:underline font-medium cursor-pointer transition-opacity duration-300"
           >
             ← {t("goBack")}
