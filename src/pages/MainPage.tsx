@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Header from '../layout/Header';
 import Footer from '../layout/Footer';
 import RandomWordWidget from '../components/RandomWordWidget';
@@ -10,6 +11,10 @@ import sayrightBot from '../assets/sayrightBot.json';
 
 export default function MainPage() {
   const { t } = useTranslation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
