@@ -32,6 +32,7 @@ export default function AttemptHistoryPage() {
 
 
   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
     const fetchAttempts = async () => {
       if (!user?.uid) return;
 
