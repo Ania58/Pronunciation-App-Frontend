@@ -6,12 +6,21 @@ import { useTranslation } from 'react-i18next';
 import Header from '../layout/Header';
 import Footer from '../layout/Footer';
 import { useUser } from '../contexts/UserContext';
+import ConfirmationModal from '../components/ConfirmationModal';
+
 
 export default function WordProgressPage() {
   const [words, setWords] = useState<Word[]>([]);
   const [statuses, setStatuses] = useState<Record<string, 'mastered' | 'practice'>>({});
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState<'all' | 'mastered' | 'practice'>('all');
+
+  const [modal, setModal] = useState<{
+    isOpen: boolean;
+    messageKey: string;
+    onConfirm: () => void;
+  } | null>(null);
+
 
   const { user } = useUser();
   const { t } = useTranslation();
@@ -61,10 +70,18 @@ export default function WordProgressPage() {
     filter === 'all' ? true : statuses[w.id] === filter
   );
 
-  const handleRemoveWord = async (wordId: string, wordText: string) => {
-    const confirmed = window.confirm(t('removeWordConfirm', { word: wordText }));
-    if (!confirmed) return;
+  const confirmRemoveWord = (wordId: string, wordText: string) => {
+  setModal({
+    isOpen: true,
+    messageKey: t('removeWordConfirm', { word: wordText }), 
+    onConfirm: () => {
+      setModal(null);
+      handleRemoveWord(wordId);
+    }
+  });
+};
 
+  const handleRemoveWord = async (wordId: string) => {
     try {
       await api.delete(`/words/${wordId}/status`, {
         params: { userId: user?.uid },
@@ -146,7 +163,7 @@ export default function WordProgressPage() {
                             {t('viewDetails')} →
                           </Link>
                           <button
-                            onClick={() => handleRemoveWord(w.id, w.word)}
+                            onClick={() => confirmRemoveWord(w.id, w.word)}
                             className="text-red-600 hover:underline font-medium cursor-pointer"
                           >
                             {t('delete')}
@@ -163,6 +180,14 @@ export default function WordProgressPage() {
 
         <Footer />
       </div>
+      {modal && (
+        <ConfirmationModal
+          isOpen={modal.isOpen}
+          messageKey={modal.messageKey}
+          onConfirm={modal.onConfirm}
+          onCancel={() => setModal(null)}
+        />
+      )}
     </>
   );
 }
