@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../layout/Header';
 import Footer from '../layout/Footer';
@@ -6,7 +7,11 @@ import Footer from '../layout/Footer';
 export default function PronunciationPatternsPage() {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const silentCombos = t('patterns.silentCombos', { returnObjects: true }) as {
     combo: string;
     sound: string;
