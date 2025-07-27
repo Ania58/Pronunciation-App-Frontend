@@ -73,6 +73,14 @@ export default function DeleteAccountPage() {
       <Header />
       <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-cyan-200 via-lime-100 to-violet-200 px-4 py-10 animate-fade-in">
         <div className="w-full max-w-md bg-white/80 backdrop-blur-md shadow-xl rounded-2xl p-6 sm:p-10 animate-slide-in-up">
+        <div className="flex justify-between items-center mb-6">
+            <button
+              onClick={() => navigate(-1)}
+              className="text-blue-600 hover:underline text-sm font-medium cursor-pointer"
+            >
+              ← {t('goBack')}
+            </button>
+          </div>
           <h2 className="text-2xl font-bold text-center text-red-600 mb-6">
             {t("account.deleteTitle")}
           </h2>
