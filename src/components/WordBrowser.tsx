@@ -22,6 +22,9 @@ export default function WordBrowser() {
   const navigate = useNavigate();
   const { t } = useTranslation();
 
+   const from = (location.state as { from?: string })?.from || "/";
+
+
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
     const categoryFromUrl = queryParams.get('category') || '';
@@ -78,7 +81,7 @@ export default function WordBrowser() {
 
           <div className="flex justify-between items-center mb-6">
             <button
-              onClick={() => navigate(-1)}
+              onClick={() => navigate(from)}
               className="text-indigo-700 hover:text-indigo-500 hover:underline font-medium transition-all duration-300 transform hover:scale-105 cursor-pointer"
             >
               ← {t('goBack')}
