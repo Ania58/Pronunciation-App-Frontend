@@ -25,7 +25,6 @@ export default function WordList() {
   const initialPage = parseInt(params.get('page') || '1');
   const [page, setPage] = useState(initialPage);
 
-  const from = (location.state as { from?: string })?.from || "/";
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -100,7 +99,7 @@ export default function WordList() {
       <div className="min-h-screen bg-gradient-to-br from-indigo-200 via-violet-200 to-lime-200 flex flex-col justify-between">
         <div className="max-w-5xl w-full mx-auto px-6 py-10 animate-fade-in text-lime-100">
            <button
-              onClick={() => navigate(from)}
+              onClick={() => navigate(-1)}
               className="text-indigo-700 hover:text-indigo-500 hover:underline font-medium transition-all duration-300 transform hover:scale-105 cursor-pointer"
             >
               ← {t('goBack')}
