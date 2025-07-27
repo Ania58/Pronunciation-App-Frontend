@@ -93,7 +93,7 @@ export default function WordBrowser() {
           </div>
 
           <h2 className="text-4xl font-extrabold mb-8 tracking-wide text-center text-indigo-800 animate-fade-in delay-100">
-            {t('browseAllWords')}
+            {category || difficulty ? t('filteredWords') : t('browseAllWords')}
           </h2>
 
           <div className="flex flex-col sm:flex-row sm:flex-wrap gap-4 mb-6 justify-center">
