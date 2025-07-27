@@ -71,6 +71,9 @@
   "mastered": "Dominado",
   "practice": "Para practicar",
 
+  "confirm": "Confirma",
+  "cancel": "Cancela",
+
   "allWords": "Todas las palabras",
   "filteredWords": "Palabras según el filtro",
   "tryWordBrowser": "Prueba el nuevo explorador de palabras con filtros avanzados",

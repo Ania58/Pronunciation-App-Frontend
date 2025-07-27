@@ -71,6 +71,9 @@
   "mastered": "Mastered",
   "practice": "Practice",
 
+  "confirm": "Confirm",
+  "cancel": "Cancel",
+
   "allWords": "All Words",
   "filteredWords": "Filtered Words",
   "tryWordBrowser": "Try the new Word Browser with advanced filters",
