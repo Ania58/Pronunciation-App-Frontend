@@ -8,6 +8,7 @@ import { uploadAudio } from '../utils/uploadAudio';
 import { useUser } from "../contexts/UserContext";
 import Header from '../layout/Header';
 import Footer from '../layout/Footer';
+import ConfirmationModal from '../components/ConfirmationModal';
 
 
 interface Attempt {
@@ -40,6 +41,13 @@ export default function WordDetails() {
 
   const [hasReachedLimit, setHasReachedLimit] = useState(false);
 
+  const [modal, setModal] = useState<{
+    isOpen: boolean;
+    messageKey: string;
+    onConfirm: () => void;
+  } | null>(null);
+
+
   const { t, i18n } = useTranslation();
 
   const { user } = useUser();
@@ -51,6 +59,21 @@ export default function WordDetails() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const requireLogin = () => {
+  if (!user) {
+    setModal({
+      isOpen: true,
+      messageKey: 'auth.loginRequired',
+      onConfirm: () => {
+        setModal(null);
+        navigate('/login', { state: { from: location.pathname + location.search } });
+      }
+    });
+    return false;
+  }
+  return true;
+};
 
   const updateStatus = async (newStatus: 'mastered' | 'practice') => {
   try {
@@ -127,10 +150,19 @@ const submitAttempt = async () => {
   }
 };
 
+const confirmDeleteAttempt = (attemptId: string) => {
+  setModal({
+    isOpen: true,
+    messageKey: 'confirmDelete',
+    onConfirm: () => {
+      setModal(null);
+      handleDeleteAttempt(attemptId);
+    }
+  });
+};
+
 
 const handleDeleteAttempt = async (attemptId: string) => {
-  if (!window.confirm(t('confirmDelete'))) return;
-
   try {
     await api.delete(`/pronunciation/${attemptId}`, {
       params: { userId: user?.uid },
@@ -257,12 +289,7 @@ const handleDeleteAttempt = async (attemptId: string) => {
             <div className="flex flex-col sm:flex-row gap-4">
               <button
                 onClick={() => {
-                  if (!user) {
-                    if (window.confirm(t('auth.loginRequired'))) {
-                      navigate('/login', { state: { from: location.pathname + location.search } });
-                    }
-                    return;
-                  }
+                  if (!requireLogin()) return;
                   isRecording ? stopRecording() : startRecording();
                 }}
                 className={`flex-1 px-6 py-3 rounded font-semibold shadow transition-all transform hover:scale-105 hover:shadow-lg cursor-pointer ${
@@ -276,12 +303,7 @@ const handleDeleteAttempt = async (attemptId: string) => {
 
               <button
                 onClick={() => {
-                  if (!user) {
-                    if (window.confirm(t('auth.loginRequired'))) {
-                      navigate('/login', { state: { from: location.pathname + location.search } });
-                    }
-                    return;
-                  }
+                  if (!requireLogin()) return;
                   submitAttempt();
                 }}
                 disabled={!audioBlob || hasReachedLimit}
@@ -334,13 +356,8 @@ const handleDeleteAttempt = async (attemptId: string) => {
                       <p><strong>{t('feedback')}:</strong> {a.feedback ?? t('pending')}</p>
                       <button
                         onClick={() => {
-                          if (!user) {
-                            if (window.confirm(t('auth.loginRequired'))) {
-                              navigate('/login', { state: { from: location.pathname + location.search } });
-                            }
-                            return;
-                          }
-                          handleDeleteAttempt(a._id);
+                          if (!requireLogin()) return;
+                          confirmDeleteAttempt(a._id);
                         }}
                         className="mt-2 text-sm text-red-600 hover:underline font-medium transition-all duration-300 transform hover:scale-105 hover:-translate-x-1 cursor-pointer"
                       >
@@ -355,12 +372,7 @@ const handleDeleteAttempt = async (attemptId: string) => {
           <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6 animate-fade-in delay-900">
             <button
               onClick={() => {
-                if (!user) {
-                  if (window.confirm(t('auth.loginRequired'))) {
-                    navigate('/login', { state: { from: location.pathname + location.search } });
-                  }
-                  return;
-                }
+               if (!requireLogin()) return;
                 updateStatus('mastered');
               }}
               className="bg-green-500 text-white px-6 py-2 rounded hover:bg-green-600 shadow transition-all transform hover:scale-105 hover:shadow-lg cursor-pointer"
@@ -370,12 +382,7 @@ const handleDeleteAttempt = async (attemptId: string) => {
 
             <button
               onClick={() => {
-                if (!user) {
-                  if (window.confirm(t('auth.loginRequired'))) {
-                    navigate('/login', { state: { from: location.pathname + location.search } });
-                  }
-                  return;
-                }
+               if (!requireLogin()) return;
                 updateStatus('practice');
               }}
               className="bg-yellow-300 text-black px-6 py-2 rounded hover:bg-yellow-400 shadow transition-all transform hover:scale-105 hover:shadow-lg cursor-pointer"
@@ -391,6 +398,14 @@ const handleDeleteAttempt = async (attemptId: string) => {
           </div>
         </div>
       </div>
+      {modal && (
+        <ConfirmationModal
+          isOpen={modal.isOpen}
+          messageKey={modal.messageKey}
+          onConfirm={modal.onConfirm}
+          onCancel={() => setModal(null)}
+        />
+      )}
     </>
   );
 }
