@@ -1,4 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import Header from '../layout/Header';
@@ -7,6 +8,11 @@ import Footer from '../layout/Footer';
 export default function Dashboard() {
   const { t } = useTranslation();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, []);
+
 
   return (
     <>
