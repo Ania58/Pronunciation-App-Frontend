@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { api } from '../services/api';
 import { useTranslation } from 'react-i18next';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Header from '../layout/Header';
 import Footer from '../layout/Footer';
 
@@ -18,9 +18,6 @@ export default function ContactPage() {
   const [feedback, setFeedback] = useState('');
 
   const navigate = useNavigate();
-
-  const location = useLocation();
-  const from = (location.state as { from?: string })?.from || "/";
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
@@ -57,7 +54,7 @@ export default function ContactPage() {
         <div className="w-full max-w-xl bg-white/80 border border-gray-200 rounded-xl shadow-lg p-8 transition-transform hover:scale-[1.01] duration-300">
           <div className="flex justify-between items-center mb-6">
             <button
-              onClick={() => navigate(from)}
+              onClick={() => navigate(-1)}
               className="text-blue-600 hover:underline text-sm font-medium cursor-pointer"
             >
               ← {t('goBack')}
