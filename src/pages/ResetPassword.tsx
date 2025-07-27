@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { sendResetEmail } from "../firebase/firebaseAuth";
 import { useTranslation } from "react-i18next";
@@ -10,6 +10,10 @@ const ResetPassword = () => {
   const [message, setMessage] = useState("");
   const { t } = useTranslation();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleReset = async (e: React.FormEvent) => {
     e.preventDefault();
