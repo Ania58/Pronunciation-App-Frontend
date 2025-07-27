@@ -9,6 +9,8 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
+  "author": "Anna Heliasz",
+  "license": "UNLICENSED",
   "dependencies": {
     "@lottiefiles/react-lottie-player": "^3.6.0",
     "@tailwindcss/vite": "^4.1.10",

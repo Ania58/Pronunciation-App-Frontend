@@ -1,0 +1,14 @@
+Copyright © 2025 Anna Heliasz. All rights reserved.
+
+This software and all associated files are the proprietary and confidential property of Anna Heliasz (“the Author”).
+
+Unauthorized use, copying, modification, distribution, or publication of any part of this codebase is strictly prohibited without prior written permission from the Author.
+
+This frontend application is part of the SayRight project and is intended solely for personal, internal, or evaluation use. It is not open source and may not be reused, forked, or resold.
+
+By accessing or using this codebase, you agree not to:
+- Reproduce or redistribute the source code or compiled output
+- Use any part of the software in other applications, commercial or otherwise
+- Reverse-engineer or attempt to extract the source logic
+
+For licensing or partnership inquiries, please contact the Author via email: annemaryheliasz@gmail.com

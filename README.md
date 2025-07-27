@@ -1,54 +1,106 @@
-# React + TypeScript + Vite
+# SayRight – Frontend (Pronunciation App)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the **React + TypeScript** frontend for the SayRight web application — a dynamic tool for improving English pronunciation through interactive word exploration, real-time recording, and AI-powered feedback.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌐 Overview
 
-## Expanding the ESLint configuration
+- 🎧 Record your pronunciation and get instant feedback powered by AI
+- 🧠 Practice words by category, difficulty, or language
+- 📈 Track your attempts and progress
+- 🌍 Multi-language interface (English, Spanish, Polish)
+- 🔐 Authentication with Firebase (email and Google)
+- ☁️ Cloud storage of pronunciation attempts via Cloudinary
+- 💡 Friendly UI with animated transitions and responsive design
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 📁 Project Structure
+
+```plaintext
+src/
+├── auth/              # Login, Register, Google Sign-In
+├── components/        # Reusable components (modals, switchers, widgets)
+├── contexts/          # User context for auth state
+├── features/record/   # Recorder widget (record, replay, send)
+├── firebase/          # Firebase config and auth
+├── hooks/             # Custom React hooks (e.g. useRecorder)
+├── i18n/              # Multilingual support (EN, ES, PL)
+├── layout/            # Header, Footer
+├── pages/             # Main views (home, dashboard, details, contact, etc.)
+├── services/          # API communication layer
+├── types/             # TypeScript interfaces
+├── utils/             # Utility functions (e.g. uploadAudio)
+├── App.tsx            # Root component
+└── main.tsx           # App entry point
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 Key Features
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 🧾 Word List & Details
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+#### `WordList.tsx`
+- Displays paginated word results
+- Supports filtering by category and difficulty
+- Includes search functionality and page navigation
+
+#### `WordDetails.tsx`
+- Displays full word details
+- Enables real-time pronunciation recording
+- Submits audio for AI feedback and scoring
+- Shows attempt history with delete and progress tracking
+
+---
+
+### 🔊 Recording & Feedback
+
+- Record pronunciation via microphone  
+- Upload audio to **Cloudinary**  
+- Receive transcription and feedback via backend (**AssemblyAI + LLM**)  
+- Save pronunciation attempts  
+- Mark words as `mastered` or `practice`
+
+---
+
+### 📋 Pages
+
+- `/` — Main landing page  
+- `/dashboard` — explore page 
+- `/words` — Paginated word list  
+- `/words/:id` — Full word detail with recording  
+- `/record` — Standalone recording view  
+- `/login`, `/register`, `/logout` — Authentication  
+- `/contact`, `/privacy-policy`, `/about` — Informational static pages
+
+---
+
+### 🌍 Internationalization (i18n)
+
+Supported languages:
+
+- 🇬🇧 English (`en`)
+- 🇪🇸 Spanish (`es`)
+- 🇵🇱 Polish (`pl`)
+
+Includes automatic language detection and manual override via `LanguageSwitcher.tsx`.
+
+---
+
+### 🧪 Technologies Used
+
+- **React + TypeScript**
+- **Tailwind CSS**
+- **React Router**
+- **Firebase Auth** (Email + Google)
+- **Cloudinary** (for audio storage)
+- **AssemblyAI + LLM feedback** (via backend)
+- **i18next** (for multilingual support)
+
+---
+
+### ✨ Acknowledgments
+
+This app is part of the **SayRight** project — created to help English learners build clarity and confidence in their speech through practical, interactive feedback.
+
+---
