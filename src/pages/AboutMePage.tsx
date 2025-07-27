@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,  useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Header from '../layout/Header';
 import Footer from '../layout/Footer';
@@ -8,6 +8,10 @@ const AboutMePage = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const [show, setShow] = useState(false);
+
+  const location = useLocation();
+  const from = (location.state as { from?: string })?.from || "/";
+
 
   useEffect(() => {
     const timeout = setTimeout(() => setShow(true), 10);
@@ -25,7 +29,7 @@ const AboutMePage = () => {
         >
           <div className="mb-4">
             <button
-              onClick={() => navigate(-1)}
+              onClick={() => navigate(from)}
               className="text-blue-600 hover:underline cursor-pointer text-sm font-medium"
             >
               ← {t('goBack')}
