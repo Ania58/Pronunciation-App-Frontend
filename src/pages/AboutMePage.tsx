@@ -14,6 +14,7 @@ const AboutMePage = () => {
 
 
   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
     const timeout = setTimeout(() => setShow(true), 10);
     return () => clearTimeout(timeout);
   }, []);
