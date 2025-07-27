@@ -48,6 +48,10 @@ export default function WordDetails() {
 
   const from = (location.state as { from?: string })?.from || "/";
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const updateStatus = async (newStatus: 'mastered' | 'practice') => {
   try {
     if (!word || !word.id) return;
