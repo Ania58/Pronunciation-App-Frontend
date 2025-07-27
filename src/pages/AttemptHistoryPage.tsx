@@ -6,6 +6,8 @@ import type { Word } from '../types/word';
 import Header from '../layout/Header';
 import Footer from '../layout/Footer';
 import { useUser } from '../contexts/UserContext';
+import ConfirmationModal from '../components/ConfirmationModal';
+
 
 interface Attempt {
   _id: string;
@@ -21,6 +23,13 @@ export default function AttemptHistoryPage() {
   const [attempts, setAttempts] = useState<Attempt[]>([]);
   const [words, setWords] = useState<Record<string, Word>>({});
   const [loading, setLoading] = useState(true);
+
+  const [modal, setModal] = useState<{
+    isOpen: boolean;
+    messageKey: string;
+    onConfirm: () => void;
+  } | null>(null);
+
 
   const { user } = useUser();
   const { t } = useTranslation();
@@ -67,9 +76,19 @@ export default function AttemptHistoryPage() {
     fetchAttempts();
   }, [user?.uid]);
 
-  const handleDeleteAttempt = async (attemptId: string) => {
-    if (!window.confirm(t('confirmDelete'))) return;
+  const confirmDeleteAttempt = (attemptId: string) => {
+  setModal({
+    isOpen: true,
+    messageKey: 'confirmDelete',
+    onConfirm: () => {
+      setModal(null);
+      handleDeleteAttempt(attemptId);
+    }
+  });
+};
 
+
+  const handleDeleteAttempt = async (attemptId: string) => {
     try {
       await api.delete(`/pronunciation/${attemptId}`, {
         params: { userId: user?.uid },
@@ -127,7 +146,7 @@ export default function AttemptHistoryPage() {
                           <tr key={attempt._id}>
                             <td className="p-2 border text-center">
                               <button
-                                onClick={() => handleDeleteAttempt(attempt._id)}
+                                onClick={() => confirmDeleteAttempt(attempt._id)}
                                 className="text-red-600 hover:text-red-700 hover:underline cursor-pointer text-sm"
                               >
                                 🗑 {t('delete')}
@@ -194,7 +213,7 @@ export default function AttemptHistoryPage() {
                           <strong>{t('date')}:</strong> {new Date(attempt.createdAt).toLocaleString()}
                         </p>
                         <button
-                          onClick={() => handleDeleteAttempt(attempt._id)}
+                          onClick={() => confirmDeleteAttempt(attempt._id)}
                           className="text-red-600 hover:text-red-700 underline text-sm"
                         >
                           🗑 {t('delete')}
@@ -209,6 +228,14 @@ export default function AttemptHistoryPage() {
 
         <Footer />
       </div>
+      {modal && (
+        <ConfirmationModal
+          isOpen={modal.isOpen}
+          messageKey={modal.messageKey}
+          onConfirm={modal.onConfirm}
+          onCancel={() => setModal(null)}
+        />
+      )}
     </>
   );
 }
