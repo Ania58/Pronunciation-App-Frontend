@@ -46,6 +46,8 @@ export default function WordDetails() {
 
   const location = useLocation();
 
+  const from = (location.state as { from?: string })?.from || "/";
+
   const updateStatus = async (newStatus: 'mastered' | 'practice') => {
   try {
     if (!word || !word.id) return;
@@ -188,7 +190,7 @@ const handleDeleteAttempt = async (attemptId: string) => {
 
           <div className="flex justify-between items-center mb-6">
             <button
-              onClick={() => navigate(-1)}
+              onClick={() => navigate(from)}
               className="text-indigo-700 hover:text-indigo-500 hover:underline font-medium transition-all duration-300 transform hover:scale-105 cursor-pointer"
             >
               ← {t('goBack')}
