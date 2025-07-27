@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 import Header from '../layout/Header';
 import Footer from '../layout/Footer';
 
@@ -8,6 +9,11 @@ const IPAVideosPage = () => {
   const lang = i18n.language;
   const basePath = '/subtitles';
   const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, []);
+
 
   return (
     <>
