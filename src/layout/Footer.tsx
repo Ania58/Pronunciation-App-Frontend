@@ -55,15 +55,18 @@ export default function Footer() {
           {t('footer.privacy')}
         </Link>
       </div>
-      <div className="text-center py-6 text-xs sm:text-sm text-indigo-600 px-4 sm:px-0">
-        © {year} SayRight — {t('footer.createdBy')}{' '}
-        <Link
-          to="/about-me"
-          className="hover:underline hover:text-indigo-900 transition-colors"
-        >
-          {t('footer.name')}
-        </Link>
-        .
+      <div className="text-center py-6 px-4 sm:px-0 text-indigo-600 text-xs sm:text-sm leading-relaxed">
+        <div>
+          © {year} SayRight — {t('footer.createdBy')}{' '}
+          <Link
+            to="/about-me"
+            className="hover:underline hover:text-indigo-900 transition-colors"
+          >
+            {t('footer.name')}
+          </Link>
+          .
+        </div>
+        <div className="mt-1.5">{t('footer.partOfGottaSpeak')}</div>
       </div>
     </footer>
   );
