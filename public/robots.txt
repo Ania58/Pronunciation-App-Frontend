@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sayright.gottaspeak.com/sitemap.xml
