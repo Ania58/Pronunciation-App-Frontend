@@ -20,7 +20,7 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
     const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
       setUser(firebaseUser);
       if (firebaseUser) {
-        const token = await firebaseUser.getIdToken();
+        const token = await firebaseUser.getIdToken(true);
         localStorage.setItem("authToken", token);
       } else {
         localStorage.removeItem("authToken");
@@ -33,7 +33,7 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     const unsubscribe = onIdTokenChanged(auth, async (firebaseUser) => {
       if (firebaseUser) {
-        const token = await firebaseUser.getIdToken();
+        const token = await firebaseUser.getIdToken(true);
         localStorage.setItem("authToken", token);
       }
     });
