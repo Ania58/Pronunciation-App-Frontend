@@ -41,6 +41,20 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
     return () => unsubscribe();
   }, []);
 
+  useEffect(() => {
+    const interval = setInterval(async () => {
+      const currentUser = auth.currentUser;
+      if (currentUser) {
+        const token = await currentUser.getIdToken(true);
+        localStorage.setItem("authToken", token);
+        console.log("[TOKEN REFRESHED]");
+      }
+    }, 50 * 60 * 1000); 
+
+    return () => clearInterval(interval);
+  }, []);
+
+
   const logout = async () => {
     await signOut(auth);
     setUser(null);
