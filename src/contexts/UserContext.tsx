@@ -33,7 +33,7 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     const unsubscribe = onIdTokenChanged(auth, async (firebaseUser) => {
       if (firebaseUser) {
-        const token = await firebaseUser.getIdToken(true);
+        const token = await firebaseUser.getIdToken();
         localStorage.setItem("authToken", token);
       }
     });
@@ -45,7 +45,7 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
     const interval = setInterval(async () => {
       const currentUser = auth.currentUser;
       if (currentUser) {
-        const token = await currentUser.getIdToken(true);
+        const token = await currentUser.getIdToken();
         localStorage.setItem("authToken", token);
         console.log("[TOKEN REFRESHED]");
       }
