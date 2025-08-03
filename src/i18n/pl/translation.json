@@ -34,7 +34,13 @@
     },
 
   "mainTitle": "Witaj w SayRight",
-  "mainDescription": "SayRight to Twój asystent wspierany przez AI, który pomoże Ci opanować angielską wymowę. W bazie znajdziesz ponad 135 000 słów z dokładnymi transkrypcjami IPA, nagraniami native speakerów, kategoriami oraz poziomami trudności. Zarejestruj się, aby nagrywać swoją wymowę i otrzymywać inteligentne informacje zwrotne z propozycjami ulepszeń. Śledź swoje postępy, zapisując słowa, które już opanowałeś lub które wymagają więcej ćwiczeń. SayRight to część rosnącej inicjatywy wspierającej osoby uczące się języka. Uwaga: SayRight znajduje się obecnie w wersji beta. Opinie AI są eksperymentalne i stale się rozwijają. Gotowy, by mówić wyraźnie i pewnie? Zaczynamy!",
+  "mainDescription": {
+    "p1": "SayRight to Twój asystent wspierany przez AI, który pomoże Ci opanować angielską wymowę. W bazie znajdziesz ponad 135 000 słów z dokładnymi transkrypcjami IPA, nagraniami native speakerów, kategoriami oraz poziomami trudności.",
+    "p2": "Zarejestruj się, aby nagrywać swoją wymowę i otrzymywać inteligentne informacje zwrotne z propozycjami ulepszeń. Śledź swoje postępy, zapisując słowa, które już opanowałeś lub które wymagają więcej ćwiczeń. SayRight to część rosnącej inicjatywy wspierającej osoby uczące się języka.",
+    "betaTitle": "Uwaga:",
+    "betaText": " SayRight znajduje się obecnie w wersji beta. Opinie AI są eksperymentalne i stale się rozwijają.",
+    "final": "Gotowy, by mówić wyraźnie i pewnie? Zaczynamy!"
+  },
 
   "searchPlaceholder": "Wyszukaj słowo",
   "search": "Szukaj",

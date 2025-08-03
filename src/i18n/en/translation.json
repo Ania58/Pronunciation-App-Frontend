@@ -33,7 +33,13 @@
   },
 
   "mainTitle": "Welcome to SayRight",
-  "mainDescription": "SayRight is your AI-powered assistant for mastering English pronunciation. With over 135,000 words, you'll find detailed IPA transcriptions, native speaker recordings, categories, and difficulty levels to explore. Sign up to record your pronunciation and receive intelligent feedback with suggestions for improvement. Track your progress by saving words you've mastered or those needing more practice. SayRight is part of a growing initiative to support language learners like you. Please note: SayRight is currently in beta. AI feedback is experimental and evolving. Ready to speak clearly and confidently? Let’s begin!",
+  "mainDescription": {
+    "p1": "SayRight is your AI-powered assistant for mastering English pronunciation. With over 135,000 words, you'll find detailed IPA transcriptions, native speaker recordings, categories, and difficulty levels to explore.",
+    "p2": "Sign up to record your pronunciation and receive intelligent feedback with suggestions for improvement. Track your progress by saving words you've mastered or those needing more practice. SayRight is part of a growing initiative to support language learners like you.",
+    "betaTitle": "Note:",
+    "betaText": " SayRight is currently in beta. AI feedback is experimental and continuously improving.",
+    "final": "Ready to speak clearly and confidently? Let’s begin!"
+  },
 
   "searchPlaceholder": "Search for a word",
   "search": "Search",

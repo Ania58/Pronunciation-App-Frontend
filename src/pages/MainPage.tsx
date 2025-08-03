@@ -48,9 +48,21 @@ export default function MainPage() {
             {t('mainTitle')}
           </h1>
 
-          <p className="text-lg sm:text-xl text-gray-700 leading-relaxed mb-10 max-w-3xl mx-auto">
-            {t('mainDescription')}
-          </p>
+          <div className="text-lg sm:text-xl text-gray-700 leading-relaxed mb-10 max-w-3xl mx-auto space-y-5">
+            <p>
+              {t('mainDescription.p1')}
+            </p>
+            <p>
+              {t('mainDescription.p2')}
+            </p>
+            <p>
+              <span className="font-semibold text-indigo-700">{t('mainDescription.betaTitle')}</span>{' '}
+              {t('mainDescription.betaText')}
+            </p>
+            <p className="font-semibold text-center text-indigo-800">
+              {t('mainDescription.final')}
+            </p>
+          </div>
 
           <motion.div
             className="flex justify-center mb-10"

@@ -33,7 +33,13 @@
     },
 
   "mainTitle": "Bienvenido a SayRight",
-  "mainDescription": "SayRight es tu asistente con tecnología de IA para dominar la pronunciación del inglés. Con más de 135 000 palabras, encontrarás transcripciones IPA detalladas, grabaciones de hablantes nativos, categorías y niveles de dificultad para explorar. Regístrate para grabar tu pronunciación y recibir comentarios inteligentes con sugerencias para mejorar. Haz seguimiento de tu progreso guardando las palabras que ya dominas o las que necesitas practicar más. SayRight forma parte de una iniciativa creciente para apoyar a estudiantes de idioma como tú. Ten en cuenta que SayRight está en fase beta. La retroalimentación de IA es experimental y está en evolución. ¿Listo para hablar con claridad y confianza? ¡Empecemos!",
+  "mainDescription": {
+    "p1": "SayRight es tu asistente con tecnología de IA para dominar la pronunciación del inglés. Con más de 135 000 palabras, encontrarás transcripciones IPA detalladas, grabaciones de hablantes nativos, categorías y niveles de dificultad para explorar.",
+    "p2": "Regístrate para grabar tu pronunciación y recibir comentarios inteligentes con sugerencias para mejorar. Haz seguimiento de tu progreso guardando las palabras que ya dominas o las que necesitas practicar más. SayRight forma parte de una iniciativa creciente para apoyar a estudiantes de idiomas como tú.",
+    "betaTitle": "Aviso:",
+    "betaText": " SayRight está actualmente en fase beta. La retroalimentación de la IA es experimental y está en constante mejora.",
+    "final": "¿Listo para hablar con claridad y confianza? ¡Empecemos!"
+  },
 
   "searchPlaceholder": "Buscar una palabra",
   "search": "Buscar",
