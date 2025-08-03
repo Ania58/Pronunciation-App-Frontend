@@ -67,6 +67,14 @@ export default function Footer() {
           .
         </div>
         <div className="mt-1.5">{t('footer.partOfGottaSpeak')}</div>
+        <div className="mt-2 text-indigo-500 italic text-xs sm:text-sm leading-snug text-center max-w-xl mx-auto">
+          <span className="block">
+            ⚠️ {t('footer.betaNotice.line1')}
+          </span>
+          <span className="block">
+            {t('footer.betaNotice.line2')}
+          </span>
+        </div>
       </div>
     </footer>
   );

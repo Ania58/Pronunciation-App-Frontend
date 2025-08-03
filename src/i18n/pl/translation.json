@@ -26,11 +26,15 @@
       "aboutMe": "O mnie",
       "terms": "Regulamin",
       "privacy": "Polityka prywatności",
-      "partOfGottaSpeak": "SayRight jest częścią rozwijanej inicjatywy edukacyjnej o nazwie GottaSpeak."
+      "partOfGottaSpeak": "SayRight jest częścią rozwijanej inicjatywy edukacyjnej o nazwie GottaSpeak.",
+      "betaNotice": {
+        "line1": "Aplikacja znajduje się obecnie w fazie beta.",
+        "line2": "Informacje zwrotne generowane przez AI są eksperymentalne i mogą nie być w pełni dokładne, ale są stale udoskonalane."
+      }
     },
 
   "mainTitle": "Witaj w SayRight",
-  "mainDescription": "SayRight to Twój asystent wspierany przez AI, który pomoże Ci opanować angielską wymowę. W bazie znajdziesz ponad 135 000 słów z dokładnymi transkrypcjami IPA, nagraniami native speakerów, kategoriami oraz poziomami trudności. Zarejestruj się, aby nagrywać swoją wymowę i otrzymywać inteligentne informacje zwrotne z propozycjami ulepszeń. Śledź swoje postępy, zapisując słowa, które już opanowałeś lub które wymagają więcej ćwiczeń. SayRight to część rosnącej inicjatywy wspierającej osoby uczące się języka. Gotowy, by mówić wyraźnie i pewnie? Zaczynamy!",
+  "mainDescription": "SayRight to Twój asystent wspierany przez AI, który pomoże Ci opanować angielską wymowę. W bazie znajdziesz ponad 135 000 słów z dokładnymi transkrypcjami IPA, nagraniami native speakerów, kategoriami oraz poziomami trudności. Zarejestruj się, aby nagrywać swoją wymowę i otrzymywać inteligentne informacje zwrotne z propozycjami ulepszeń. Śledź swoje postępy, zapisując słowa, które już opanowałeś lub które wymagają więcej ćwiczeń. SayRight to część rosnącej inicjatywy wspierającej osoby uczące się języka. Uwaga: SayRight znajduje się obecnie w wersji beta. Opinie AI są eksperymentalne i stale się rozwijają. Gotowy, by mówić wyraźnie i pewnie? Zaczynamy!",
 
   "searchPlaceholder": "Wyszukaj słowo",
   "search": "Szukaj",

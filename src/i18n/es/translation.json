@@ -25,11 +25,15 @@
       "aboutMe": "Sobre mí",
       "terms": "Términos de uso",
       "privacy": "Política de privacidad",
-      "partOfGottaSpeak": "SayRight forma parte de una iniciativa educativa en desarrollo llamada GottaSpeak."
+      "partOfGottaSpeak": "SayRight forma parte de una iniciativa educativa en desarrollo llamada GottaSpeak.",
+      "betaNotice": {
+        "line1": "Esta aplicación se encuentra actualmente en fase beta.",
+        "line2": "La retroalimentación generada por IA es experimental y puede no ser completamente precisa, pero se mejora continuamente."
+      }
     },
 
   "mainTitle": "Bienvenido a SayRight",
-  "mainDescription": "SayRight es tu asistente con tecnología de IA para dominar la pronunciación del inglés. Con más de 135 000 palabras, encontrarás transcripciones IPA detalladas, grabaciones de hablantes nativos, categorías y niveles de dificultad para explorar. Regístrate para grabar tu pronunciación y recibir comentarios inteligentes con sugerencias para mejorar. Haz seguimiento de tu progreso guardando las palabras que ya dominas o las que necesitas practicar más. SayRight forma parte de una iniciativa creciente para apoyar a estudiantes de idioma como tú. ¿Listo para hablar con claridad y confianza? ¡Empecemos!",
+  "mainDescription": "SayRight es tu asistente con tecnología de IA para dominar la pronunciación del inglés. Con más de 135 000 palabras, encontrarás transcripciones IPA detalladas, grabaciones de hablantes nativos, categorías y niveles de dificultad para explorar. Regístrate para grabar tu pronunciación y recibir comentarios inteligentes con sugerencias para mejorar. Haz seguimiento de tu progreso guardando las palabras que ya dominas o las que necesitas practicar más. SayRight forma parte de una iniciativa creciente para apoyar a estudiantes de idioma como tú. Ten en cuenta que SayRight está en fase beta. La retroalimentación de IA es experimental y está en evolución. ¿Listo para hablar con claridad y confianza? ¡Empecemos!",
 
   "searchPlaceholder": "Buscar una palabra",
   "search": "Buscar",
