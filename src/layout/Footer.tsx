@@ -6,9 +6,12 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   const linkedinUrl =
-    i18n.language === 'es'
-      ? 'https://www.linkedin.com/in/anna-heliasz-dev/'
-      : 'https://www.linkedin.com/in/anna-heliasz-dev/?locale=en_US';
+    i18n.language === 'pl'
+      ? 'https://www.linkedin.com/in/anna-heliasz-dev/?locale=pl_PL'
+      : i18n.language === 'en'
+      ? 'https://www.linkedin.com/in/anna-heliasz-dev/?locale=en_US'
+      : 'https://www.linkedin.com/in/anna-heliasz-dev/';
+
 
   const termsUrl =
     i18n.language === 'pl'
